@@ -1,0 +1,11 @@
+---
+
+- name: Create redis container
+  community.general.docker_container:
+    name: redis
+    image: redis:6-alpine
+    command: redis-server
+    state: started
+    recreate: yes
+    restart_policy: on-failure
+    published_ports: "10.110.0.5:6379:6379"
