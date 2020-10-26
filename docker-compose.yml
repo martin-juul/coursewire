@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:13-alpine
+    shm_size: 256M
+    restart: unless-stopped
+    networks:
+      - back-tier
+    ports:
+      - 127.0.0.1:5432:5432
+    environment:
+      - POSTGRES_DB=coursewire
+      - POSTGRES_USER=coursewire
+      - POSTGRES_PASSWORD=secret
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
+  redis:
+    image: redislabs/redismod:latest
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:6379:6379
+    networks:
+      - back-tier
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    restart: unless-stopped
+    networks:
+      - back-tier
+    ports:
+      - 1025:1025
+      - 8025:8025
+
+networks:
+  back-tier:
