@@ -95,7 +95,7 @@ Periodically, changes made to `master` (if any) should be merged back into your 
 $ git merge master                                  // merges changes from master into bug branch
 ```
 
-When development on the bug is complete, [the Lead] should merge changes into `master` and then make sure the remote branch is deleted.
+When development on the bug is complete, **the Lead** should merge changes into `master` and then make sure the remote branch is deleted.
 
 ```
 $ git checkout master                               // change to the master branch  
@@ -126,7 +126,7 @@ $ git checkout -b hotfix-id stable                  // creates a local branch fo
 $ git push origin hotfix-id                         // makes the new hotfix remotely available
 ```
 
-When development on the hotfix is complete, [the Lead] should merge changes into `stable` and then update the tag.
+When development on the hotfix is complete, **the Lead** should merge changes into `stable` and then update the tag.
 
 ```
 $ git checkout stable                               // change to the stable branch

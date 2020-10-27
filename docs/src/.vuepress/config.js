@@ -16,7 +16,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/config/#head
    */
   head: [
-    ['meta', {name: 'theme-color', content: '#3eaf7c'}],
+    ['meta', {name: 'theme-color', content: '#c87f2f'}],
     ['meta', {name: 'apple-mobile-web-app-capable', content: 'yes'}],
     ['meta', {name: 'apple-mobile-web-app-status-bar-style', content: 'black'}]
   ],
@@ -123,5 +123,9 @@ module.exports = {
       sidebarLinkSelector: '.sidebar-link',
       headerAnchorSelector: '.header-anchor'
     }
-  ]
+  ],
+
+  // This will disable ES5 transpilation and polyfills for IE,
+  // and result in faster builds and smaller files.
+  evergreen: true,
 }
