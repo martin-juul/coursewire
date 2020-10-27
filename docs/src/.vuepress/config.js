@@ -38,6 +38,10 @@ module.exports = {
         link: '/setup/',
       },
       {
+        text: 'Style guide',
+        link: '/style-guide/',
+      },
+      {
         text: 'Nova',
         link: '/nova/'
       }
@@ -51,6 +55,16 @@ module.exports = {
             '',
             'laravel-valet',
           ]
+        }
+      ],
+      '/style-guide/': [
+        {
+          title: 'Style guide',
+          collapsable: false,
+          children: [
+            '',
+            'guides/git'
+          ],
         }
       ],
       '/nova/': [
