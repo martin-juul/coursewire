@@ -26,27 +26,14 @@
 <body class="font-sans antialiased">
 <div id="app">
     <v-app>
-        <v-app-bar app flat>
 
-            <v-img
-                :contain="true"
-                max-height="48px"
-                src="/branding/sde/sde-logo-large.png"></v-img>
-
-            <v-tabs centered class="ml-9" color="grey darken-1">
-                <v-tab href="/">Hjem</v-tab>
-                <v-tab href="#">Uddannelserne</v-tab>
-                <v-tab href="#">SDE</v-tab>
-            </v-tabs>
-        </v-app-bar>
+        <masthead></masthead>
 
         <v-main>
             @yield('content')
         </v-main>
 
-        <v-footer app>
-
-        </v-footer>
+        <impressum></impressum>
     </v-app>
 </div>
 </body>

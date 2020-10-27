@@ -4,3 +4,14 @@
 @import '~vuetify/dist/vuetify.min.css';
 // Variables
 @import 'variables';
+
+.footer-branding-link {
+    color: unset;
+    text-decoration: unset;
+    line-height: unset;
+    border-color: unset;
+
+    &:after, &:before {
+        text-decoration: unset;
+    }
+}
