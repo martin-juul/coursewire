@@ -33,6 +33,11 @@ class Education extends Resource
         'title',
     ];
 
+    public static function label()
+    {
+        return 'Uddannelse';
+    }
+
     /**
      * Get the fields displayed by the resource.
      *

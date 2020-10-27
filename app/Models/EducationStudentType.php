@@ -8,7 +8,7 @@ namespace App\Models;
  * @property string $id
  * @property string $education_id
  * @property string $student_type_id
- * @property string $user_id
+ * @property string|null $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\User $createdBy

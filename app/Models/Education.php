@@ -12,9 +12,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string $id
  * @property string $title
  * @property string $slug
- * @property string $user_id
  * @property string|null $overview
  * @property string|null $about
+ * @property string $version
+ * @property string|null $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\User $createdBy
@@ -30,6 +31,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @method static \Illuminate\Database\Eloquent\Builder|Education whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Education whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Education whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Education whereVersion($value)
  * @mixin \Eloquent
  */
 class Education extends AbstractModel

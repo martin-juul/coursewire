@@ -33,6 +33,11 @@ class User extends Resource
         'email',
     ];
 
+    public static function label()
+    {
+        return 'Brugere';
+    }
+
     /**
      * Get the fields displayed by the resource.
      *

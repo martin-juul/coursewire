@@ -3,25 +3,26 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Course extends Resource
+class CourseSemester extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Course::class;
+    public static $model = \App\Models\CourseSemester::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'course_no';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -29,16 +30,8 @@ class Course extends Resource
      * @var array
      */
     public static $search = [
-        'course_no',
-        'title',
+        'id',
     ];
-
-    public static $preventFormAbandonment = true;
-
-    public static function label()
-    {
-        return 'Fag';
-    }
 
     /**
      * Get the fields displayed by the resource.
@@ -50,10 +43,10 @@ class Course extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make(__('Fag Nr'), 'course_no')->sortable(),
-            Text::make(__('Titel'), 'title'),
-            Text::make(__('Oversigt'), 'overview'),
-            Trix::make(__('Beskrivelse'), 'about'),
+            ID::make(__('ID'), 'id')->sortable(),
+            BelongsTo::make('Semester'),
+            BelongsTo::make('Course'),
+            Number::make(__('Dage'), 'duration'),
         ];
     }
 
