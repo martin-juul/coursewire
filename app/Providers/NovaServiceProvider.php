@@ -17,6 +17,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+
+        Nova::style('cw-dash', base_path('public/css/dashboard.css'));
     }
 
     /**
