@@ -17,16 +17,16 @@ class CreateCoursesTable extends Migration
             $table->uuid('id')->primary();
             $table->text('course_no')->unique();
 
-            $table->uuid('user_id');
-            $table->foreign('user_id')
-                ->references('id')->on('users')
-                ->cascadeOnDelete();
-
             $table->text('title')->index();
             $table->text('slug')->unique();
 
             $table->text('overview')->nullable();
             $table->text('about')->nullable();
+
+            $table->uuid('user_id')->nullable();
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->nullOnDelete();
 
             $table->timestampsTz();
         });

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEducationStudentTypeTable extends Migration
+class CreateSemestersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateEducationStudentTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('education_student_type', function (Blueprint $table) {
+        Schema::create('semesters', function (Blueprint $table) {
             $table->uuid('id')->primary();
 
             $table->uuid('education_id');
@@ -26,14 +26,18 @@ class CreateEducationStudentTypeTable extends Migration
                 ->references('id')->on('student_types')
                 ->cascadeOnDelete();
 
+            $table->bigInteger('semester');
+
             $table->uuid('user_id')->nullable();
             $table->foreign('user_id')
                 ->references('id')->on('users')
                 ->nullOnDelete();
 
             $table->timestampsTz();
+
+            $table->unique(['education_id', 'student_type_id', 'semester']);
         });
-        autogen_uuidv4('education_student_type');
+        autogen_uuidv4('semesters');
     }
 
     /**
@@ -43,6 +47,6 @@ class CreateEducationStudentTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('education_student_type');
+        Schema::dropIfExists('semesters');
     }
 }

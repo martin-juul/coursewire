@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
@@ -23,10 +25,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  */
 class StudentType extends AbstractModel
 {
-    use HasFactory;
+    use HasCreatedBy, HasFactory, Sluggable, SluggableScopeHelpers;
 
-    public function createdBy()
+    protected $fillable = [
+        'title',
+        'overview',
+        'description',
+    ];
+
+    public function sluggable(): array
     {
-        return $this->belongsTo(User::class);
+        return [
+            'slug' => [
+                'source' => ['title'],
+            ],
+        ];
     }
 }

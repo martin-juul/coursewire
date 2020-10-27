@@ -34,7 +34,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  */
 class Education extends AbstractModel
 {
-    use HasFactory, Sluggable, SluggableScopeHelpers;
+    use HasCreatedBy, HasFactory, Sluggable, SluggableScopeHelpers;
 
     protected $fillable = [
         'title',
@@ -49,10 +49,5 @@ class Education extends AbstractModel
                 'source' => ['title'],
             ],
         ];
-    }
-
-    public function createdBy()
-    {
-        return $this->belongsTo(User::class);
     }
 }

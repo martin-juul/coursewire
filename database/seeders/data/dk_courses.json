@@ -1,0 +1,340 @@
+{
+  "RECORDS": [
+    {
+      "course_no": "16471",
+      "name": "Grundlæggende programmering",
+      "school_attendance_desc": "Faget introducerer eleven for de grundlæggende principper i programmering.\rDer arbejdes med konsolapplikations-opgaver i med programmeringssproget\rC#, dog er selve sproget sekundært og der lægges vægt\rpå metodikker, fagtermer og grundlæggende forståelse. Faget kommer\romkring emnerne: kodekonventioner, navnekonventioner, syntax, udviklingsmijø,\rCompiled og Interpreted software, Framework, datatyper,\rvariable, array, konstanter, funktioner (metoder), operatorer, betingelser\rog kontrolstruktur, løkker og forgreninger.\rYderligere arbejdes der med fejlhåndtering med debugging, exception\rhandling. Eleven bliver introduceret til begrebet om Unit testing og vi dokumenterer\rmed almindelige flowcharts.",
+      "internship_desc": "Har eleven i sin praktiktid haft mulighed for at arbejde med programmeringsopgaver,\rvil dette være en fordel for elevens mulighed for at fordybe\rsig i emnet på skolen. Kendskab til omfanget af og arbejdsopgaver med\rprogrammering på praktikpladsen vil være en fordel for elevens konceptforståelse\rgenerelt og kan ligeledes være medvirkende til at eleven opnår\rmere læring under fagets afholdelse."
+    },
+    {
+      "course_no": "16472",
+      "name": "Objektorienteret programmering",
+      "school_attendance_desc": "Faget falder naturligt i forlængelse af faget Grundlæggende programmering.\rFaget introducerer eleven til konceptet Objektorienteret programmering\rog med inddragelse af faget Versionering og dokumentation,\rarbejder vi med design af egne klasser via UML dokumentation. Der\rarbejdes objektorienteret med konsolapplikationer i sproget C#, sproget\rer sekundært i forhold til fagets mål. Eleven lærer om klassens bestanddele,\rherunder: Constructors/Destructors, Fields, Properties, Methods, Access\rmodifiers.\rEleven vil blive indført i begreberne om indkapsling, polymorfi, nedarvning\rog objekters relationer og hierarki. Interfaces, abstrakte klasser,\rintroduceres og eleven arbejder med en større opgave, hvor alle principper overholdes.",
+      "internship_desc": "Har eleven i sin praktiktid haft mulighed for at arbejde med programmeringsopgaver\rvil dette være en fordel for elevens mulighed for at fordybe\rsig i emnet på skolen. Kendskab til omfanget af og arbejdsopgaver med\rprogrammering på praktikpladsen vil være en fordel for elevens konceptforståelse\rgenerelt og kan ligeledes være medvirkende til at eleven opnår\rmere læring under fagets afholdelse.\rDesuden vil det være en fordel hvis eleven kender til praktikvirksomhedens\rfremgangsmetoder ved programmeringsopgaver, f.eks. hvis UML\rnotation anvendes til design af klasser og praktikpladsen benytter en\robjektorienteret tilgang til programmeringsopgaver kan det være en fordel\rat eleven har fået indsigt i dette før fagets afholdelse."
+    },
+    {
+      "course_no": "16476",
+      "name": "Clientside programmering",
+      "school_attendance_desc": "Faget introducerer eleven for grundlæggende webprogrammering med\rHTLM og CSS, samt JavaScript.\rDer arbejdes med opbygningen af en hjemmeside, og dette fag bliver\rbundet sammen med både faget Databaseprogrammering og Serversideprogrammering.",
+      "internship_desc": "Har eleven i sin praktiktid haft mulighed for at arbejde med webprogrammeringsopgaver\rvil dette være en fordel for elevens mulighed for at\rfordybe sig i emnet på skolen. Kendskab til webprogrammering på praktikpladsen\rvil være en fordel for elevens konceptforståelse generelt og kan\rligeledes være medvirkende til at eleven opnår mere læring under fagets\rafholdelse."
+    },
+    {
+      "course_no": "16474",
+      "name": "Database programmering",
+      "school_attendance_desc": "I dette fag skal eleven udarbejde et avanceret databasedesign, hvor vi\rinden implementeringen af databasen kommer ind omkring normalisering,\rog SQL sproget. Eleven får kendskab til hvordan man opretter, indsætter\rog redigere i en database, samt bruger stored procedure og views.\rEleven skal lære at administrere indexes for at opnå optimal performance,\rsamt kigge på SQL injekction, så de rette forholdsregler kan tages.\rEleven skal oprette en domain-model og lade ORM (Object Relationel\rMapping) genere denne.\rEleven får en generel viden om mulige sikkerhedsproblematikker omkring\rdatabaser, og kan tage højde for dem i forbindelse med opbyggelsen\raf en database, her f.eks. krypteringen af data og password-beskyttelse\raf adgangen til databasen.",
+      "internship_desc": "Har eleven haft mulighed for at arbejde med databasedesign, herunder\rnormalisering, E/R-diagram og SQL sproget, samt ovenstående punkter,\rvil dette helt klart være en fordel, og kan være medvirkende til at eleven\ropnår mere læring under fagets afholdelse."
+    },
+    {
+      "course_no": "16483",
+      "name": "Versionering og dokumentation",
+      "school_attendance_desc": "Fagets mål om dokumentation inddrages i faget Objektorienteret programmering\rog emnet versionering introduceres. Som versionsstyringsværktøj\rarbejder eleven med GIT via kommandoer i konsollen/terminalen. Eleven\rvil anvende GIT baserede cloud-tjenester som GitHub eller lign. Eleven\rindføres i formålet med udarbejdelse af dokumentation og fordelene ved\rat versionsstyre sine projektor.",
+      "internship_desc": "Det vil være en fordel hvis eleven kender til praktikvirksomhedens fremgangsmetoder\rved programmeringsopgaver, f.eks. hvis UML notation anvendes\rtil design af klasser og praktikpladsen benytter en objektorienteret\rtilgang til programmeringsopgaver kan det være en fordel at eleven har\rfået indsigt i dette før fagets afholdelse.\rHvis eleven har mulighed for at versionere udviklingsprojektor i praktikvirksomheden\rog gerne med værktøjer inden for Distributed eller Centralized\rVersion Control Systems (GIT, SVN, CVS eller lign.)."
+    },
+    {
+      "course_no": "6223",
+      "name": "Netværk I",
+      "school_attendance_desc": "Faget har fokus på teori og praksis af netværk med både routere og switche.\rPå switche lærer eleven at konfigurere VLAN og opsætte inter-VLAN\rrouting på routere, samt opsætning af Single-Area OSPF på Cisco baserede\rnetværk.\rDesuden lærer eleven at opsætte filtre på Cisco udstyr (ACL.) Fagets\rindhold svarer til indholdet af CCNA Routing and Switching: Routing and\rSwitching Essentials.",
+      "internship_desc": "Det er en forudsætning at have kendskab til Cisco Netværksteori svarende\rtil modul 1 af CCNA og eller praktisk erfaring med opsætning af Cisco\rnetværksudstyr via Kommando linje interface (CLI.)\rDer er meget læsestof i Netværksfagene. Har eleven brug for ekstra tid\rtil at læse op/fordybelse i faget, foreslår vi at eleven tager kontakt med\rskolen (virksomhedskontaktlæreren) og udtrykker ønske om at få åbnet for\rmodulet før tid, så eleven har tid til at læse op inden skoleperioden starter."
+    },
+    {
+      "course_no": "6222",
+      "name": "Operativsystemer I",
+      "school_attendance_desc": "Disse fag ligger sig op af fagindholdet til Microsoft server certificeringer.\rOperativsystemer I har fokus på arbejde med Active Directory (Group Policy,\rusers and Groups, Trust, Sites, Global Catalog, Backup, CA server.)\rMens Serverteknologi I har fokus på infrastrukturen (DHCP, DNS, DFS,\rWSUS, RRAS, IP Sec og VPN.)",
+      "internship_desc": "Det vil være en god ide hvis eleven som minimum får indblik i praktikpladsens\rbrug/konstellation af servere. Så eleven har en forståelse af hvordan\r”setuppet” er på praktikpladsen.\rHvis virksomheden benytter en database i retning af Active Directory\rville det være en fordel hvis eleven har kendskab til hvordan arbejdet med\rdatabasen foregår/hvad består arbejdet af, som f.eks. administration af\rbrugerkonti og ressourcetilgang baseret på gruppepolitikker.\rDet ville specielt være fint hvis eleven har haft mulighed for at øve sig i\rbrugen af active directory og i særdeleshed oprettelse af brugere og grupper,\rOrganizational Units, samt gruppe politikker."
+    },
+    {
+      "course_no": "6225",
+      "name": "Computerteknologi",
+      "school_attendance_desc": "I dette fag arbejder eleverne med opsætning af et system (server med raid\ropsætning samt server-software.) Under arbejdet med opsætning fører eleverne\rdokumentation for arbejdet (UML orienteret.) Eleverne skal designe\rog benytte: User Story, arbejdslog, fejlformular, konfigurationsdokumentation,\rog Accept test. Faget omhandler i dette henseende træning i forståelse\rog benyttelse af brugbar dokumentation i arbejdssituationen.",
+      "internship_desc": "Kendskab til benyttelse af og forståelse for hvad brugbar dokumentation er\rpå arbejdspladsen, vil give eleven en fordel i faget."
+    },
+    {
+      "course_no": "6226",
+      "name": "Serverteknologi I",
+      "school_attendance_desc": "Disse fag ligger sig op af fagindholdet til Microsoft server certificeringer.\rOperativsystemer I har fokus på arbejde med Active Directory (Group Policy,\rusers and Groups, Trust, Sites, Global Catalog, Backup, CA server.)\rMens Serverteknologi I har fokus på infrastrukturen (DHCP, DNS, DFS,\rWSUS, RRAS, IP Sec og VPN.)",
+      "internship_desc": "Det vil være en god ide hvis eleven som minimum får indblik i praktikpladsens\rbrug/konstellation af servere. Så eleven har en forståelse af hvordan\r”setuppet” er på praktikpladsen.\rHvis virksomheden benytter en database i retning af Active Directory\rville det være en fordel hvis eleven har kendskab til hvordan arbejdet med\rdatabasen foregår/hvad består arbejdet af, som f.eks. administration af\rbrugerkonti og ressourcetilgang baseret på gruppepolitikker.\rDet ville specielt være fint hvis eleven har haft mulighed for at øve sig i\rbrugen af active directory og i særdeleshed oprettelse af brugere og grupper,\rOrganizational Units, samt gruppe politikker."
+    },
+    {
+      "course_no": "6230",
+      "name": "Database server",
+      "school_attendance_desc": "Eleverne installerer en Microsoft SQL Server. På serveren arbejder eleverne\rmed oprettelse og administration af databaser (både via GUI og\rSQL scripts.) Udarbejdelse af scripts til at fylde data i tabeller, opretning\rog fejlfinding vha. stored procedures. Brugeropretning til databaserne\rindeholdende flere authentication modes, login, og brugerrettigheder.\rPlanlægning af backup strategi. Sletning og gendannelse af en database.\rOvervågning af performance og eventuel optimering via indeksering.\rFlytte data til og fra SQL serveren via Server Integration Services.",
+      "internship_desc": "Kendskab til praktikpladsens udnyttelse af database servere og/eller erfaring\rmed brug og administration af database servere og databaser generelt\rpå praktikpladsen, vil hjælpe eleven med forståelse af fagets indhold."
+    },
+    {
+      "course_no": "16475",
+      "name": "GUI programmering",
+      "school_attendance_desc": "Der arbejdes i faget med grafiske brugergrænseflader (GUI). Eleven skal\rudvikle op mod både klientside-applikationer, og webbaserede applikationer,\rder bygger på en enkeltsidet webapplikation (SPA). I løbet af faget\rarbejder eleven blandt andet med brugergrænseflade design mønstre (UI\rDesign patterns), håndtering af events, udvikle en flertrådet applikation og\rat anvende en simpel anvendeligheds-test.",
+      "internship_desc": "Har eleven i sin praktiktid haft mulighed for at arbejde med GUI-programmeringsopgaver\rvil dette være en fordel for elevens mulighed for at fordybe\rsig i emnet på skolen. Kendskab til omfanget af og arbejdsopgaver\rmed GUI-programmering på praktikpladsen vil være en fordel for elevens\rkonceptforståelse generelt og kan ligeledes være medvirkende til at eleven\ropnår mere læring under fagets afholdelse.\rDesuden vil det være en fordel, men ikke et decideret krav, hvis praktikvirksomheden\ranvender GUI-programmering rettet mod både klientside-applikationer\rog webbaserede applikationer, der bygger på SPA."
+    },
+    {
+      "course_no": "14170",
+      "name": "IT Servicemanagement I",
+      "school_attendance_desc": "Faget har et fagligt niveau svarende til ITIL Foundation version 3. Eleverne\rarbejder med at beskrive hvad der kræves for at kunne opbygge en optimal\rdrift og service i en IT virksomhed, (Management-procedurer.) På et\rniveau og med et indhold svarende til ITIL Foundation version 3. Eleverne\rskal bl.a. lave en eller flere SLA (Service-Level Agreement), og eventuelt\rOLA (Operational-Level Agreement.)",
+      "internship_desc": "Har praktikpladsen indført ITIL eller en lignende metode til at beskrive\rstruktur og fremgangsmåder af firmaets drift og service, vil det være en\rfordel at eleven får indblik i hvordan virksomheden har valgt at sætte dette\ri system."
+    },
+    {
+      "course_no": "6234",
+      "name": "Serverteknologi webserver",
+      "school_attendance_desc": "I faget lærer eleven at installere LAMP/WAMP på en server (Windows/Linux,\rApache, MySQL, PHP), og foretage nødvendige justeringer. Eleven lærer at konfigurere\rsikkerhed og brugerspecifikke rettigheder samt at installere supplerende\rplugins på Apache Web server. Eleven lærer at opsætte http og SHTTP, samt opnår\rviden til at kunne redegøre for og opsætte, Forward, Master og Slave DNS.\rEleven lærer også at installere og konfigurere værktøjer til administration af\rhostede løsninger, samt at kunne redegøre for aktiv og passiv FTP, samt at kunne\ropsætte en FTP server med bruger login og anonym login.",
+      "internship_desc": "Viden omkring installation, opsætning og/eller administration af web-servere\rsom f.eks. FTP servere vil gøre fagets indhold nemmere for eleven at\rfordybe sig i, ligeledes kan det hjælpe eleven i faget med viden om hvilke\rhostede løsninger og teknologier praktikpladsen benytter."
+    },
+    {
+      "course_no": "6544",
+      "name": "Sikkerhed II",
+      "school_attendance_desc": "Eleven installerer og konfigurerer Windows servere samt Windows klienter\rmed henblik på at opbygge et godt kendskab til sikkerhed i både arbejdsgrupper\rog domæner. Du lærer om sikkerhed i generelle termer, så du\rkender til de mest almindelige sikkerhedstrusler mod dit netværk og dine\rcomputere.",
+      "internship_desc": "Har eleven haft mulighed for at få indsigt i praktikpladsens serverbaserede\rIT sikkerhed og gerne administrationen af denne, kan eleven benytte sin\rbaggrundsviden til at danne sig en bedre forståelse af serverbaseret IT\rSikkerhed som igen kan give eleven en bedre fordybelse i fagets teori og\rpraktiske opgaver."
+    },
+    {
+      "course_no": "16477",
+      "name": "Serverside programmering",
+      "school_attendance_desc": "Eleven indføres i forskellen på Serverside og Clientside programmering.\rEleven skal arbejde med serverside programmering til levering af Clientside\rweb indhold som HTML og til udarbejdelse af en Web-Api til levering\raf XML og/eller JSON. Eleven indføres i begrebet REST og skal arbejde\rmed routing af RESTful URI’er. Eleven introduceres til serverside validering\raf indhold, samt teknikker til at sikre adgangskontrol af web indhold.\rHerunder arbejdes med Hashing og kryptering af data. I faget undervises\ri PHP, som serverside programmeringssprog.",
+      "internship_desc": "Har eleven i sin praktiktid haft mulighed for at arbejde med programmeringsopgaver\rog webteknologier, vil dette være en fordel for elevens mulighed\rfor at fordybe sig i emnet på skolen. Kendskab til omfanget af og\rarbejdsopgaver med programmering på praktikpladsen vil være en fordel\rfor elevens konceptforståelse generelt og kan ligeledes være medvirkende\rtil at eleven opnår mere læring under fagets afholdelse.\rDesuden vil det være en fordel hvis eleven kender til praktikvirksomhedens\rfremgangsmetoder ved programmeringsopgaver, f.eks. hvis UML\rnotation anvendes til design af klasser og praktikpladsen benytter en\robjektorienteret tilgang til programmeringsopgaver kan det være en fordel\rat eleven har fået indsigt i dette før fagets afholdelse."
+    },
+    {
+      "course_no": "16484",
+      "name": "Softwaretest og sikkerhed",
+      "school_attendance_desc": "Der arbejdes i faget med planlægning, implementering og dokumentation\raf softwaretest. Eleven skal have fokus på funktionalitet, ydelse og sikkerhed.\rI løbet af faget arbejder eleven blandt andet med softwaresikkerhedsstandarder,\rdata-kryptering, kendskab til kendte sikkerhedshuller og værktøjer\rtil softwaretest. Der arbejdes i grupper, som ud fra agile metoder,\reksempelvis Scrum, udarbejder en daglig præsentation, som fremlægges\rfor klassen undervejs.",
+      "internship_desc": "Har praktikpladsen implementeret softwaretest og –sikkerhed som en naturlig\rdel af agile metoder, eksempelvis Scrum, i testarbejdet, vil det være\ren fordel for eleven at kende til disse og meget gerne at have deltaget i\rudviklingsarbejdet. Desuden vil det være en klar fordel, men ikke et decideret\rkrav, at eleven har erfaring, svarende til indholdet af faget Programmeringsmetodik."
+    },
+    {
+      "course_no": "6272",
+      "name": "Embedded controller I",
+      "school_attendance_desc": "Eleven får et fundamentalt indblik i Embedded Controllers og får erfaring\rmed brug af en debugger og grundlæggende funktioner som delay, interrupt,\rtimer, løkker, porte, samt udskrivning til LCD display.",
+      "internship_desc": "Benytter praktikpladsen Embedded Controller systemer, vil det være en\rfordel at eleven har kendskab til hvilke systemer og hvilke opgaver systemerne\rløser."
+    },
+    {
+      "course_no": "6273",
+      "name": "Embedded controller II",
+      "school_attendance_desc": "Eleven udvikler et program som afvikles på et embedded system vha. de\rfærdige moduler som udviklingssystemet (f.eks. Keil.) har indbygget. Eleven\rskal i forbindelse med udviklingen af programmet kunne beskrive de\roverordnede principper som har med analog/digital signalkonvertering\rsamt sampling af data at gøre. Desuden skal eleven kunne programmere\ren controller til kommunikation med perifere enheder og udfærdige struktureret\rprogramdokumentation.",
+      "internship_desc": "Benytter praktikpladsen embedded controller systemer, vil det være en\rfordel at eleven har kendskab til hvilke systemer og hvilke opgaver systemerne\rløser."
+    },
+    {
+      "course_no": "1",
+      "name": "Valgfri specialefag",
+      "school_attendance_desc": "Skolen planlægger hvilke fag der afholdes i hvilket kvartal.\r Forhør Jer gerne hos kontaktlæreren.",
+      "internship_desc": ""
+    },
+    {
+      "course_no": "11189",
+      "name": "Faglig kommunikation",
+      "school_attendance_desc": "Faget har til formål at forbedre elevernes skrevne og talte tekniske engelsk.\rVi afholder primært faget i sammenhæng med faget Netværk I, da dette\rfag har den største mængde fagtekst på engelsk på H1. Eleverne bliver\rbedt om at vælge et emne fra fagets fagindhold, som eleven skal sætte sig\rind i og undervejs udarbejde og afholde en præsentation samt aflevere en\rrapport om emnet, som begge indeholder korrekte og relevante tekniske\rudtryk.",
+      "internship_desc": "Vi ser en fordel ved at eleven via sit daglige arbejde i organisationen får\rlært og benyttet teknisk relevante udtryk på engelsk i skrift og tale."
+    },
+    {
+      "course_no": "16478",
+      "name": "App programmering I",
+      "school_attendance_desc": "Der arbejdes i faget med en simpel app løsning til en mobil enhed. Eleven\rskal udvikle på en cross platform med Xamarin, hvor kun brugergrænsefladen\rer native. Faget er dog ikke låst til et bestemt udviklingsværktøj eller\rsprog, såsom Visual Studio og Xamarin. Man kan således også kode i\rXcode og Swift på Mac eller eksempelvis MonoDevelop og C# på Linux.\rDet er dog et valg, der kræver at man fortrinsvis kan arbejde selvstændigt.\rI løbet af faget arbejder eleven blandt andet med brugergrænseflade,\revents samt online og offline scenarier.",
+      "internship_desc": "Har eleven i sin praktiktid haft mulighed for at arbejde med mobile app\rprogrammeringsopgaver vil dette være en fordel for elevens mulighed for\rat fordybe sig i emnet på skolen. Kendskab til omfanget af og arbejdsopgaver\rmed app programmering på praktikpladsen vil være en fordel for\relevens konceptforståelse generelt og kan ligeledes være medvirkende til\rat eleven opnår mere læring under fagets afholdelse.\rDesuden vil det være en fordel, men ikke et decideret krav, hvis praktikvirksomheden\ranvender app-programmering rettet mod flere platforme."
+    },
+    {
+      "course_no": "16479",
+      "name": "App programmering II",
+      "school_attendance_desc": "Der arbejdes i faget med en app løsning til en mobil enhed. Eleven skal\rudvikle på en cross platform med Xamarin, hvor kun brugergrænsefladen\rer native. App løsningen skal omfatte enhedens sensorer, eksempelvis\rgyroskopet, en responsiv brugerflade, asynkrone kald og web API. Faget\rer dog ikke låst til et bestemt udviklingsværktøj eller sprog, såsom Visual\rStudio og Xamarin. Man kan således også kode i Xcode og Swift på Mac\reller eksempelvis MonoDevelop og C# på Linux. Det er dog et valg, der\rkræver at man fortrinsvis kan arbejde selvstændigt. Eleven kommer til at\rarbejde med Repository Pattern og Dependency Injection.",
+      "internship_desc": "Har eleven i sin praktiktid haft mulighed for at arbejde mobile app programmeringsopgaver\rvil dette være en fordel for elevens mulighed for at\rfordybe sig i emnet på skolen. Kendskab til omfanget af og arbejdsopgaver\rmed app programmering på praktikpladsen vil være en fordel for\relevens konceptforståelse generelt og kan ligeledes være medvirkende til\rat eleven opnår mere læring under fagets afholdelse.\rDesuden vil det være en fordel, men ikke et decideret krav, hvis praktikvirksomheden\ranvender app-programmering rettet mod flere platforme."
+    },
+    {
+      "course_no": "6278",
+      "name": "Programmerings metodik",
+      "school_attendance_desc": "Faget omhandler Agile metoder og principper samt Scrum værktøjer og\rExtreme Programming. Eleven lærer om indholdet af Agile, Scrum og XP\rved at skulle beskrive et udviklingsscenarie som gør brug af de nævnte\rmetoder og principper.",
+      "internship_desc": "Kendskab til hvilke metoder og principper arbejdspladsen benytter til\rudviklingsopgaver, og gerne erfaring med udviklingsopgaver indenfor\rprogrammering kan hjælpe eleven til en dybere læring i faget på skolen."
+    },
+    {
+      "course_no": "6239",
+      "name": "IT-kravspecifikation",
+      "school_attendance_desc": "I dette fag benyttes UML notation til at lære eleven at omsætte en ide’\rsom skal leve op til virksomheden, brugerne og kundens krav til design og\rprodukt via en iterativ proces. Under opgavearbejdet kommer eleven til at\rarbejde med udvikling og design af Use Case, Prototyping, Kravsspecifikation,\raccepttest.",
+      "internship_desc": "Benytter praktikpladsen UML, eller tilsvarende, til beskrivelse af udviklingsopgaver,\rkan viden om dette være medvirkende til en bedre konceptforståelse\rhos eleven ved fagets gennemførelse."
+    },
+    {
+      "course_no": "2",
+      "name": "Valgfag",
+      "school_attendance_desc": "Skolen planlægger hvilke fag der afholdes i hvilket kvartal. Forhør Jer\rgerne hos kontaktlæreren.",
+      "internship_desc": ""
+    },
+    {
+      "course_no": "16480",
+      "name": "App programmering III",
+      "school_attendance_desc": "Der arbejdes i faget med en kompleks app løsning til en mobil enhed. Eleven\rskal udvikle på en cross platform med Xamarin, hvor kun brugergrænsefladen\rer native. App løsningen skal omfatte manipulering af eksterne\rdata, fjernstyring af enheder over netværk/Internettet og appen skal huske\ropsætninger imellem flere udførsler af den pågældende app.\rFaget er dog ikke låst til et bestemt udviklingsværktøj eller sprog, såsom\rVisual Studio og Xamarin. Man kan således også kode i Xcode og Swift\rpå Mac eller eksempelvis MonoDevelop og C# på Linux. Det er dog et\rvalg, der kræver at man fortrinsvis kan arbejde selvstændigt.\rI faget indgår flertrådede løsninger, kommunikation med eksterne datakilder,\rweb API, kommunikation med andre apps på enheden, kryptering,\ranvendelse af GPS data og optimering af kode.",
+      "internship_desc": "Har eleven i sin praktiktid haft mulighed for at arbejde med mobile app\rprogrammeringsopgaver vil dette være en fordel for elevens mulighed for\rat fordybe sig i emnet på skolen. Kendskab til omfanget af og arbejdsopgaver\rmed app programmering på praktikpladsen vil være en fordel for\relevens konceptforståelse generelt og kan ligeledes være medvirkende til\rat eleven opnår mere læring under fagets afholdelse.\rDesuden vil det være en fordel, men ikke et decideret krav, hvis praktikvirksomheden\ranvender app-programmering rettet mod flere platforme."
+    },
+    {
+      "course_no": "16481",
+      "name": "Linux rettet mod server og embedded",
+      "school_attendance_desc": "Der arbejdes i faget med Linux shell, kommandoer, distributioner og open\rsource miljøet.\rEleven skal kunne opbygge og dokumentere en Linux baseret løsning. I\rfaget arbejder eleven med Linux programmeringsmiljøet og skal kunne\ranvende værktøjer og programmeringsmodellen til forskellige Linux varianter,\rherunder Linux server og embedded Linux. Eleven skal kunne opnå en\rgrundlæggende viden om Linux opbygning og Linux kernen med fokus på\rskalerbarhed, sikkerhed, ydelse, stabilitet og open source miljø.",
+      "internship_desc": "Har eleven i sin praktiktid haft mulighed for at arbejde med Linux programmeringsmiljøet\rvil dette være en fordel for elevens mulighed for at fordybe\rsig i emnet på skolen. Kendskab til Linux i arbejdsopgaver på praktikpladsen\rvil være en fordel for elevens konceptforståelse generelt og kan\rligeledes være medvirkende til at eleven opnår mere læring under fagets\rafholdelse.\rDet vil være en fordel, men ikke et decideret krav, hvis praktikvirksomheden\rallerede anvender Linux."
+    },
+    {
+      "course_no": "8606",
+      "name": "Service",
+      "school_attendance_desc": "Eleven får indsigt i tilrettelæggelse af service og i vurdering af servicekvalitet.\rEleven får indsigt i at strukturere service. Eleven får indsigt i at finde\rinformationer om god service og lærer at dokumentere og lave kvalitetsvurdering\raf service. Faget Service køres primært sammen med faget\rTeknisk Innovation som omhandler øvelse i den innovative proces med\rfokus på at udvikle nye eller forbedre bestående serviceydelser.",
+      "internship_desc": "Elevens arbejde med service i praktiktiden kan være medvirkende til at\releven kan bruge sin erfaring i faget, som er planlagt som gruppearbejde."
+    },
+    {
+      "course_no": "6275",
+      "name": "Embedded controller III",
+      "school_attendance_desc": "Deltagelse i faget kræver erfaring med embedded systems svarende til\rindholdet af Embedded Controller I og II. I faget arbejder eleven med opsætning\rog fejlfinding af en embedded controller med fokus på netværkskommunikation\rtil en server og perifere enheder vha. TCP/IP protokollen,\rog får i den forbindelse erfaring med at udføre modulstruktureret programdokumentation.",
+      "internship_desc": "Benytter praktikpladsen embedded controller systemer, vil det være en fordel\rat eleven har kendskab til hvilke systemer og hvilke opgaver systemerne\rløser, og meget gerne praktisk erfaring med opsætning og fejlfinding."
+    },
+    {
+      "course_no": "6277",
+      "name": "Projektstyring",
+      "school_attendance_desc": "Eleven skal i faget arbejde med projektstyringsmetoden PRINCE2 og gennemføre\ret projekt som bygger på dele af PRINCE2 metoden. I forbindelse\rmed evalueringen skal eleven beskrive det overordnede formål med metoden,\rsamt formål og hovedindhold af alle roller, de 8 komponenter samt\rhovedindholdet af de 8 processor og underprocessor. Eleven skal endvidere\rkunne beskrive formål og hovedindhold af projektstyringsteknikkerne\rog hvilke ledelsesprodukter der er input/output fra i de 8 processor og\rendeligt skal eleven kunne beskrive forholdene mellem processor, leverancer,\rroller og ledelsesaspekter ved et projekt.",
+      "internship_desc": "Har praktikpladsen indført en systematisk tilgang til projektarbejde og\rkender eleven til disse arbejdsmetoder kan dette være medvirkende til at\rskabe bedre mulighed for fordybelse og læring i skoleperioden."
+    },
+    {
+      "course_no": "6243",
+      "name": "Systemudvikling og projektstyring",
+      "school_attendance_desc": "I faget arbejder eleverne med planlægning, opbygning, og idriftsættelse\raf et IT-System ud fra en Kravsspecifikation. I faget arbejdes der i små\rgrupper og faget omhandler en præsentationsdel hvor IT-Systemet præsenteres\rfor klassen. I faget er der under arbejdet med IT-Systemet fokus på\rprojektstyring med opstilling af hoved og delmål, tidsestimering, udledning\raf ressourceforbrug, samt afrapporteringer undervejs.",
+      "internship_desc": "Har praktikpladsen implementeret fremgangsmetoder ved projektarbejde,\rvil det være en fordel for eleven at kende til disse, og meget gerne have\rdeltaget i udviklingsarbejde. Desuden vil det være en klar fordel men ikke\ret decideret krav at eleven har erfaring svarende til indholdet af faget\rProjektstyring."
+    },
+    {
+      "course_no": "8607",
+      "name": "Udvikling",
+      "school_attendance_desc": "I faget lærer eleven at redegøre for teknologiske udviklingstrends indenfor\rIT-området, samt at anvende strukturerede teknikker til at planlægge og\rgennemføre udvikling og opbygning af IT-systemer, og lærer at vurdere\rslutresultatets kvalitet i forhold til gældende krav, standarder og normer.\rEleven får endvidere erfaring med at anvende IT-systemer til planlægning,\rgennemførelse og dokumentation af udviklings og opbygningsopgaver\ri fagets afholdelse.",
+      "internship_desc": "Kendskab til hvilke IT-systemer praktikpladsen benytter til at løse virksomhedens\rbehov, og gerne kendskab til hvordan virksomhedens behov kan\rpåregnes at ændre sig, i forhold til nuværende løsninger, kan være med til\rat eleven har bedre forståelse for fagets indhold og kan lede til at eleven\rer med til at udvikle bedre løsninger under fagets afholdelse."
+    },
+    {
+      "course_no": "6279",
+      "name": "Svendeprøveprojekt",
+      "school_attendance_desc": "Faget er det afsluttende fag for Datatekniker Programmering og det er et\rkrav for deltagelse at der er opnået karakter eller merit i alle øvrige fag i\ruddannelsen. I faget skal eleven i samarbejde med andre elever udarbejde\ren problemformulering med tilhørende kravsspecifikation baseret på en\rcase beskrivelse og et projektoplæg. Dette skaber basis for arbejdet med\rplanlægning, opbygning, og idriftsættelse af et avanceret produkt.\rEleverne skal også udarbejde en produkt -og procesrapport som\rbeskriver system og proces. En del af fagets fokus er i gruppearbejdet at\rudvise konstruktiv kommunikation i gruppearbejdet. Faget afsluttes med en\rpræsentation af produktet.",
+      "internship_desc": "Har eleven i løbet af sin praktiktid haft mulighed for at deltage i projektarbejde,\rgerne i forbindelse med udviklingen af programmeringsrelaterede\rprodukter, vil det være en fordel for elevens præsentation."
+    },
+    {
+      "course_no": "6229",
+      "name": "Serverteknologi Linux",
+      "school_attendance_desc": "Eleverne arbejder med installation og opsætning af en Linux Fedora Server\nmed RAID 5 samt en klient maskine med Ubuntu. På Serveren opsættes\nen Linux Firewall samt Netværksservices som NAT, DHCP, SSH med Telnet,\nWeb/FTP Server. Eleverne opsætter også en proxy server (Squid), samt arbejder\nmed IPTables (Firewall filtrering.), samt lærer at benytte Shell scripts\ntil oprettelse af brugere.",
+      "internship_desc": "Opsætning af Linux servere samt arbejde med Linux terminalen og øve sig\nmed basic kommandoer før deltagelse i faget vil hjælpe til med at gøre det\nnemmere for eleven at dygtiggøre sig på skolen under fagets afholdelse."
+    },
+    {
+      "course_no": "6231",
+      "name": "Script programmering",
+      "school_attendance_desc": "Eleverne arbejder med forståelse og benyttelse af scripts til administration\npå en windows-baseret PC. Eleverne kommer også ind på en grundlæggende\nforståelse af databasehåndtering, tabeller og data. Eleverne\narbejder med scriptsprogets muligheder: variabler, løkker, forgreninger,\nI/O til skærm og filer. Samt scriptsprogets tilknyttede objekter, funktioner,\nkonstanter, subrutiner og egne fremstillede funktioner. Arbejdet foregår\nhovedsageligt i WMI og SQL.",
+      "internship_desc": "Benytter praktikpladsen allerede scripts til nogle arbejdsopgaver, og har\neleven kendskab til hvorfor/hvordan de bruges, vil det være en fordel for\neleven ved gennemførelse af faget."
+    },
+    {
+      "course_no": "9592",
+      "name": "Teknisk innovation",
+      "school_attendance_desc": "Teknisk innovation indebærer idégenerering og idéudvælgelse, omverdens\nanalyse, samt arbejde med planlægning og udvælgelse af rentable indsatsområder.\nFaget handler om at få erfaring med detaljeret planlægning\nog gennemførsel af en innovationsproces, eventuelt med flere iterationer\nog om udvikling af en prototype (en service/teknisk løsning) og om at\nkunne formidle innovative ideer.\nFaget afholdes i forbindelse med servicefaget hvor eleverne lærer at udvikle\nnye serviceydelser, forbedre, eller opfinde helt nye tekniske løsninger.",
+      "internship_desc": "Har eleven kendskab til omfanget af praktikpladsens projektorienterede\nudviklingsarbejde og/eller koncepter for service kan det være en fordel for\nelevens udbytte af fagene Service og Teknisk Innovation."
+    },
+    {
+      "course_no": "6227",
+      "name": "Netværk II",
+      "school_attendance_desc": "Indholdet svarer til CCNA Routing & Switching: Scaling Networks. Modulets\nindhold har fokus på teori om og opsætning af mindre netværk (både\nswitchede og routede netværk.) Modulet kommer blandt andet omkring\nSpanning-Tree, Etherchannel, trådløst LAN, Single –og Multi-area OSPF,\nEIGRP og IOS.",
+      "internship_desc": "Der er meget læsestof i Netværksfagene. Har eleven ønske om fordybelse/\nbrug for ekstra tid til at læse op foreslår vi at eleven tager kontakt med\nskolen (virksomhedskontaktlæreren) og efterspørger at få åbnet for modulet\nfør tid. Har eleven kendskab opbygningen af praktikpladsens netværk og/\neller kendskab til arbejdsopgaver med driften af netværket kan dette være\nmed til at skabe bedre forståelse for ibrugtagning af de forskellige netværksteknologier\nsom der læres om i modulet."
+    },
+    {
+      "course_no": "2734",
+      "name": "Netværk III",
+      "school_attendance_desc": "Indholdet svarer til CCNA Routing & Switching: Connecting Networks.\nModulets indhold har focus på teori om og opsætning af WAN netværk.\nModulet kommer omkring WAN teknologier som PPP, Frame-Relay, ATM,\nMPLS, Ethernet WAN, ISDN, DSL o.l. Samt VPN, GRE-tunnel, IP sec, Syslog,\nSNMP, Netflow og systematisk tilgang til fejlfinding.",
+      "internship_desc": "Der er meget læsestof i Netværksfagene. Har eleven ønske om fordybelse/\nbrug for ekstra tid til at læse op foreslår vi at eleven tager kontakt med\nskolen (virksomhedskontaktlæreren) og efterspørger at få åbnet for modulet\nfør tid. Har eleven kendskab opbygningen af praktikpladsens netværk og/\neller kendskab til arbejdsopgaver med driften af netværket, og ikke mindst\nhvis virksomheden benytter sig af WAN teknologier? -det kunne være viden\nom hvilken type forbindelse firmaet har til internettet/andre branches.\nDette kan være med til at skabe bedre forståelse for ibrugtagning af de\nforskellige WAN teknologier som der læres om i modulet."
+    },
+    {
+      "course_no": "6238",
+      "name": "Databaser",
+      "school_attendance_desc": "I faget installeres en Microsoft SQL server hvorpå eleven skal løse en række\nscriptbaserede opgaver som igennem faget lærer eleven at anvende\nSQL sproget til at udvikle databaser og anvende avancerede SQL kommandoer,\nforespørgsler og datamanipulation. I faget arbejder eleven med\nat oprette, modificere og slette tabeller, at oprette unikke IDs og Views\nsamt forskellige typer af indexes.\nEleven lærer at udføre enkle SQL dataforespørgsler og at indsætte, opdatere\nog slette data med SQL kommandoer. Med forespørgsler benytter\neleven Single Row Functions og Group Functions. Eleven får endvidere\nerfaring i at anvende Triggers og Stored Procedures samt at oprette Constraints\ni tabeller. Eleven opnår igennem faget en generel indsigt i Database\nManagement Systems og i at foretage SQL kommando optimering\nmed eksempelvis Join Algoritmer. Eleven lærer at definere integritetsregler\nved brug af Domain, Triggere og Stored Procedures samt opnår viden om\nAlgebra mulighederne i SQL.",
+      "internship_desc": "Det vil være en fordel for eleven at kende til praktikpladsens brug af Databasemiljø\nog hvilke opgaver virksomheden løser med scripts."
+    },
+    {
+      "course_no": "6240",
+      "name": "Mobile og trådløse systemer",
+      "school_attendance_desc": "Eleven lærer om mobile og trådløse systemer i både teori og praksis.\nEleven konfigurerer trådløse enheder, og programmerer applikationer til\nbrug på nettet. Faget afholdes som gruppearbejde og indeholder både en\nteoretisk og en praktisk del.",
+      "internship_desc": "Har praktikpladsen arbejde som indebærer programmering og brug af\nmobil-apps vil det være en fordel for elevens forståelse af fagets teori og\nikke mindst det praktiske arbejde med udvikling af en mobil-app og kan\nvære medvirkende til at eleven bedre kan fordybe sig i fagets indhold."
+    },
+    {
+      "course_no": "1578",
+      "name": "Backupteknologi I",
+      "school_attendance_desc": "I faget installerer eleven et virtuelt miljø med Windows servere og klienter\nhvorpå der skal foretages normal daglig backup og planlagt trinvis\nbackup samt almindelig og disaster recovery. Eleven skal endvidere\nredegøre for en fornuftig backupstrategi (f.eks. med udgangspunkt i\npraktikpladsen.) med overvejelser indenfor dataværdisætning, ændringshyppighed,\nmediekapacitet og medieperformance, samt portability og\navailability.",
+      "internship_desc": "Kender eleven til hvordan, hvor ofte og på hvilke medier praktikpladsen\nkører backup kan det hjælpe eleven til bedre at fordybe sig i faget på\nskolen."
+    },
+    {
+      "course_no": "1588",
+      "name": "Backupteknologi II",
+      "school_attendance_desc": "I dette fag får eleven erfaring med server-klient backup og arbejder med\niSCSI teknologien. Eleven skal vha. et andet backup program end det\nindbyggede Windows Server Backup foretage backup af alle data på en\niSCSI Server (adgangskontrol til denne server skal styres via en windows\nserver med MS iSCSI-Initiator. Der skal også installeres en klient maskine\nsom får sine klient data på serveren backet up (opgaven må gerne udbygges\nyderligere.). Via et valgfrit backup program skal der således planlægges\n1 ugentlig full backup og 1 daglig incremental backup. Backuppen\nskal placeres på et separat iSCSI-LUN.\nDesuden skal eleven aflevere en kort rapport som beskriver hvordan\niSCSI fungerer og er opbygget, samt lave en Total Cost of Ownership\nberegning opsætningen af serverne fra indkøb til bortskaffelse.",
+      "internship_desc": "Erfaring med backupteknologi svarende til indholdet af Backupteknologi\nI er en fordel, desuden vil viden om hvordan, og gerne erfaring med,\nbackupløsningen fra praktikpladsen være medvirkende til at skabe dybere\nlæring hos eleven."
+    },
+    {
+      "course_no": "6289",
+      "name": "Sikkerhed III",
+      "school_attendance_desc": "Fagets fokus er indholdet af CCNA Security og omhandler en teoretisk\nog en praktisk del. Erfaring med Cisco netværksudstyr og netværksteori\nsvarende til Netværk I, II og III er en forudsætning for at deltage i faget.\nI faget skal eleven arbejde med opsætning og indstilling af sikkerheden:\nAuthentication, Authorization og Accounting, IPSec med VPN, samt indstilling\naf et Network-Based Intrusion Prevention System og grundlæggende\nnetværkssikkerhed via Firewall på et firmanetværk.\nI den teoretiske del skal eleven tage en teoretisk eksamen i fagets praktiske\nog teoretiske indhold, som også omhandler offentlige sikkerhedsregler\nog standarder for IT-Sikkerhed.",
+      "internship_desc": "Har eleven indblik, og gerne erfaring med Netværkssikkerheden på\npraktikpladsen, herunder viden om hvilke systemer der benyttes til at skabe\nsikkerhed, vil eleven være bedre rustet til at fordybe sig i faget og kan relatere\nCiscos netværkssikkerhedsløsninger/teori til de løsninger som praktikpladsen\nhar etableret."
+    },
+    {
+      "course_no": "3",
+      "name": "Specialefag",
+      "school_attendance_desc": "",
+      "internship_desc": "Skolen planlægger hvilke fag der afholdes i hvilket kvartal. Forhør Jer\ngerne hos kontaktlæreren."
+    },
+    {
+      "course_no": "6233",
+      "name": "IT-Supporter Svendeprøveprojekt",
+      "school_attendance_desc": "Eleverne arbejder med forståelse og benyttelse af scripts til administration\npå en windows-baseret PC. Eleverne kommer også ind på en grundlæggende\nforståelse af databasehåndtering, tabeller og data. Eleverne\narbejder med scriptsprogets muligheder: variabler, løkker, forgreninger,\nI/O til skærm og filer. Samt scriptsprogets tilknyttede objekter, funktioner,\nkonstanter, subrutiner og egne fremstillede funktioner. Arbejdet foregår\nhovedsageligt i WMI og SQL.",
+      "internship_desc": "Benytter praktikpladsen allerede scripts til nogle arbejdsopgaver, og har\neleven kendskab til hvorfor/hvordan de bruges, vil det være en fordel for\neleven ved gennemførelse af faget."
+    },
+    {
+      "course_no": "6244",
+      "name": "Netværksteknologi I",
+      "school_attendance_desc": "Dette fag er en overbygning til den viden eleven har tilegnet sig i løbet af\nNetværk I, II og III. I dette fag lærer eleven at benytte statisk og dynamisk\nrouting med OSPF, EIGRP og BGP routingsprotokollerne til at konfigurere\nog implementere routing i komplekse Enterprise netværk bestående af\nflere lokationer og får erfaring med at optimere routingsopdateringer og\nanvende distribueringslister.\nEleven får endvidere erfaring med at konfigurere IPv6 adressering,\nrouting, tunneller og IP Multicasting, samt opnår indsigt i IPv6 således at\neleven kan redegøre for fordele og ulemper. Eleven får endvidere erfaring\nmed at udarbejde en implementeringsplan for router services og\nimplementering af Path Control, samt anvende Offsets-lists, IP SLA og PBR.\nEleven lærer at kunne redegøre for grundlæggende udstyrs –og opsætningsbehov\nfor implementeringen af WAN og mobile lokationer.",
+      "internship_desc": "Indsigt i praktikpladsens netværksopsætning, herunder udstyr, protokoller\nog netværk services der er i brug, gerne for fjernforbindelser også, kan\nhjælpe til med at eleven nemmere kan fordybe sig i faget på skolen som\nbåde indeholder en teoretisk og en praktisk del."
+    },
+    {
+      "course_no": "6248",
+      "name": "Netværksteknologi II",
+      "school_attendance_desc": "Faget kræver viden svarende til Netværk I, II og III. I dette fag fordyber\neleven sig i Cisco baserede switchede netværk. Indholdet har fokus på opsætning\naf multiplayerswitche og i løbet af faget får eleven erfaring med\nat installere, konfigurere, administrere og opdatere multiplayerswitche i et\nnetværk. Eleven lærer endvidere at kunne redegøre for den overordnede\narkitektur i et Campus netværksdesign, hvor multiplayerswitche indgår i.\nI faget kommer eleven omkring VLAN, VTP, DTP, Link Aggregation\n(Etherchannel), DHCP, CEF. Eleven lærer at optimere netværkstrafikken\nog implementere QoS på et switchet netværk. Eleven får erfaring med at\nopsætte et multilayer switched netværk som leverer høj tilgængelighed\nog redundans. I faget kommer eleven også omkring sikkerhedsaspektet i\net switchet netværk, herunder forskellige trusler og angreb, samt mulige\nsikkerhedsløsninger til beskyttelse imod disse, eleven lærer endvidere at\ninstallere og konfigurere sikkerhedsløsninger/netværksovervågning.\nEleven får erfaring med at implementere IOS Server Load Balancing. Endeligt\nlærer eleven at planlægge og klargøre til integration af avancerede\nservies i et Campus netværk, som Converged Traffic, IP-multicast, Wireless\nAccess, Voice og Video (QoS).",
+      "internship_desc": "Det være en fordel at eleven har kendskab til i hvilket omfang praktikpladsen\nhar implementeret multilayerswitche i firmanetværket, samt viden\nom i hvilket omfang firmaet har implementeret QoS, og hvilke sikkerhedsforanstaltninger\npraktikpladsen benytter til beskyttelse og overvågning af\nnetværket. En forhåndsviden om dette kan give eleven en bedre forståelse\nfor indholdet af faget, og gøre det nemmere for eleven at fordybe sig\nunder fagets afholdelse."
+    },
+    {
+      "course_no": "6256",
+      "name": "IT Service-Management II",
+      "school_attendance_desc": "Faget kræver viden svarende til IT Service-Management I og omhandler arbejde\nmed metoder for levering af IT-Service ud fra strukturerede metoder\nsvarende til ITIL Foundation V3, Operational Support and Analysis. I faget\nfor eleven erfaring med at beskrive aktiviteter, metoder og funktioner som\nindgår i de enkelte support og analyseprocesser. Eleven opnår erfaring\nmed at beskrive hvordan drift kan optimeres igennem anvendelsen af operationel\nsupport og analyse, samt hvordan denne optimering kan måles.\nEndvidere lærer eleven om vigtigheden af IT-Sikkerhed og hvordan\ndenne kan understøtte operationel support og analyse. Eleven lærer at\nbeskrive hvilke krav (tekniske og implementeringsmæssige) der kan være\ni forbindelse med implementering af ITIL og hvilke udfordringer, kritiske\nsucces faktorer og risici forbundet med implementering.",
+      "internship_desc": "Kendskab til praktikpladsens strukturerede metoder for levering af IT-Service\nog analyse vil give eleven en forståelse af hvordan disse opgaver\nløses på arbejdspladsen og kan være med til at eleven bedre kan relatere\nfagets indhold til den virkelige verden og kan igen hjælpe til med at eleven\nkan udarbejde bedre løsningsforslag og beskrivelser i fagets afholdelse."
+    },
+    {
+      "course_no": "6250",
+      "name": "Netværksteknologi III",
+      "school_attendance_desc": "Faget kræver viden svarende til fagene Netværksteknologi I og II. Fagets\nindhold er overordnet Troubleshooting på et Enterprise netværk. Eleven får\ni faget erfaring med at kunne planlægge og beskrive procedurer for drift\nog vedligeholdelse, samt implementering af procedurer for fejlfinding og\nretning af disse, i et komplekst Enterprise netværk. Herunder at udvælge\nværktøjer, fremgangsmåder til fejlfinding/retning/netværksdiagnosticering.\nDette kan være protokolanalysatorer, administrationsværktøj,\nnetværksapplikationer og dokumentationsværktøj.",
+      "internship_desc": "Som i de øvrige Netværksfag vil det være en fordel at kende til opsætningen\naf firmanetværket. Specielt for dette fag vil erfaring med, eller\nkendskab til, arbejde med netværksdiagnosticering, fejlfinding/retning\nfra praktikpladsen kunne give eleven bedre forståelse for de teknologier\nsom er indeholdt i faget, og kan lede til at eleven lærer mere under fagets\nafholdelse."
+    },
+    {
+      "course_no": "6252",
+      "name": "Netværksdesign I",
+      "school_attendance_desc": "Fagets indhold kræver viden svarende til Netværk I, II og III. I dette fag får\neleven erfaring med at kunne analysere et bestående firmanetværk og ud\nfra nuværende og fremtidige behov for performance, sikkerhed, kapacitet\nog skalerbarhed at kunne producere en netværksløsning som kan fremlægges\ntil virksomhedens ledelse. Eleven lærer at designe et firmanetværk\nbestående af både LAN og WAN ud fra en hierarkisk netværksmodel som\nindeholder implementering af netværksservicer som DHCP, NAT, DNS,\nPROXY, Remote access/Remote authentication, Dial-in User Service, valg\naf routingsprotokol, Voice.\nEleven lærer at udarbejde dokumentation af netværket til brug for fremvisning\ntil beslutningstagere, som indeholder en Network Management\nstrategi.",
+      "internship_desc": "Viden om praktikpladsens netværksopbygning og nuværende/fremtidige\nbehov kan gøre det nemmere for eleven at relatere fagets indhold til den\nvirkelige verden. Viden som hvilke netværksenheder virksomheden har\nimplementeret og om virksomhedsnetværkets performance kan give eleven\nen forståelse for netværksdesign, hvor det handler om at løse opgaverne\npå netværket mest optimalt i forhold til nuværende og fremtidige behov.\nDet økonomiske aspekt som altid vil kunne begrænse mulighederne i\nden virkelige verden, spiller ikke en større rolle i faget end at eleven får\ntildelt et fiktivt budget som den mest optimale netværksløsning skal udarbejdes\nindenfor."
+    },
+    {
+      "course_no": "6228",
+      "name": "IP Telefoni",
+      "school_attendance_desc": "Du kommer til at arbejde med opsætning af Cisco udstyr, bl.a. Cisco IP telefoner\nog Cisco CCME Router opsætning, samt Softphones. Faget veksler\nimellem teori og lærerstyrede opgaver, og projektarbejde i små grupper.\nTeorien tages hovedsageligt på klassen, styret af læreren, medens gruppen\nfår tid til at løse en problemorienteret opgave i løbet af faget. Det er\nogså muligt at løse opgaven i et andet miljø som f.eks. Microsoft Lync og\nlignende, dette skal dog godkendes af lærerne for at sikre at løsningen\nlever op til fagets målpinde.",
+      "internship_desc": "Hvis eleven under praktiktiden har haft mulighed for at stifte bekendtskab\nmed den løsning virksomheden har valgt til telefoni og hvis muligt opsætning,\nadministration og brug af PBX/Softphones/Hardphones vil eleven\nvære godt klædt på til løsning af den praktiske opgave i faget."
+    },
+    {
+      "course_no": "6236",
+      "name": "Programming I (Java/C#)",
+      "school_attendance_desc": "Faget giver en grundlæggende indføring i programmeringssproget C#\ngennem programmeringsmiljøet Microsoft Visual Studio. Eleven introduceres\ntil de grundlæggende elementer i sproget. Der stiftes bekendtskab med\nvariabler, datatyper, operatorer, løkker og forgreninger. Eleven introduceres\nendvidere til objektorienteret programmering og lærer at fremstille\negne klasser og metoder samt at håndtere Access Control til disse, derudover\nlærer eleven om nedarvning af klasser.",
+      "internship_desc": "Har eleven i sin praktiktid haft mulighed for at arbejde med programmeringsopgaver\nvil dette være en fordel for elevens mulighed for at fordybe\nsig i emnet på skolen. Kendskab til omfanget af og arbejdsopgaver med\nprogrammering på praktikpladsen vil være en fordel for elevens konceptforståelse\ngenerelt og kan ligeledes være medvirkende til at eleven opnår\nmere læring under fagets afholdelse."
+    },
+    {
+      "course_no": "6237",
+      "name": "Programmering II (C#)",
+      "school_attendance_desc": "Eleven arbejder på et fagligt niveau svarende til MCP Programmering\nwith C# samt MCP developing and implementing Web applications with\nMicrosoft Visual C# og MCP Programming with Microsoft ADO.NET .NET\nmed udvikling af en struktureret software opgave. Det er en forudsætning\nat eleven har grundlæggende programmeringserfaring svarende til\nindholdet af opgaverne i faget Programmering I da der i faget arbejdes\nvidere med den grundlæggende viden og erfaring eleven tilegnede sig\nmed programmeringssprogets datatyper, operatorer og kontrolstrukturer\nsamt den strukturerede tilgang fra Programmering I. Der arbejdes i faget\nendvidere med nedarvning, undtagelser og eleven skal kunne definere og\nanvende delegater, Event specifikationer, Properties, Indexers, præ-definerede\nattributter. Eleven lærer at konstruere komponenter i C# samt arbejde\nmed ASP.NET og lærer at tilføje brugere og server controls til en ASP.NET\nwebform, samt fremstille og befolke en ASP.NET webform.\nEleven lærer at bruge udviklingsmiljøets trace og debug objekter samt\nat validere brugerinput. Eleven lærer at anvende Microsoft ADO.NET til at\ntilgå data i en ASP.NET applikation. Eleven arbejder endvidere med XML,\nherunder indlæsning og kald til XML Web services fra en ASP.NET applikation,\ndatasets og table mapping, samt udarbejdelse af XSD skemaer.",
+      "internship_desc": "Har eleven i sin praktiktid haft mulighed for at arbejde med programmeringsopgaver\nvil dette være en fordel for elevens mulighed for at fordybe\nsig i emnet på skolen. Kendskab til omfanget af og arbejdsopgaver med\nprogrammering på praktikpladsen vil være en fordel for elevens konceptforståelse\ngenerelt og kan ligeledes være medvirkende til at eleven opnår\nmere læring under fagets afholdelse.\nDesuden vil det være en fordel hvis eleven kender til praktikvirksomhedens\nfremgangsmetoder ved programmeringsopgaver, f.eks. hvis UML\nnotation anvendes til design af klasser og praktikpladsen benytter en\nobjektorienteret tilgang til programmeringsopgaver kan det være en fordel\nat eleven har fået indsigt i dette før fagets afholdelse."
+    },
+    {
+      "course_no": "1586",
+      "name": "Serverteknologi II, Clusterteknologi",
+      "school_attendance_desc": "I dette fag får eleven erfaring med at planlægge, installere, vedligeholde\nog troubleshoote server clustre. Eleven kommer i faget til at arbejde med\nopsætning af både Linux og Windows baserede servere, herunder webapplikations\nog beregnings clustre, Network Load Balancing cluster, samt\nforetage oprettelse af cluster ressourcer.",
+      "internship_desc": "Har virksomheden implementeret server clustre, vil eleven kunne drage\nnytte af at kende til hvilke typer clustre der er sat op og hvilke formål de\ntjener."
+    },
+    {
+      "course_no": "1587",
+      "name": "Serverteknologi II, Blandede miljøer",
+      "school_attendance_desc": "I faget arbejder eleven med at opsætte en Samba filserver i et Microsoft\nnetværk. På serveren lærer eleven at opsætte en printer, og opnår erfaring\nmed at konfigurere en Samba server i et multibruger miljø bestående af\nMicrosoft Windows operativsystemer kombineret med en UNIX baseret\nserver.",
+      "internship_desc": "Erfaring med UNIX vil gøre det nemmere for eleven at fordybe sig i faget,\nligeledes vil viden om og gerne erfaring med de blandede servermiljøer\npraktikpladsen eventuelt benytter kunne hjælpe til med at eleven opnår\nmere indsigt i fagets indhold."
+    },
+    {
+      "course_no": "6259",
+      "name": "Svendeprøveprojekt",
+      "school_attendance_desc": "Faget er det afsluttende fag for Datatekniker Infrastruktur og det er et\nkrav for deltagelse at der er opnået karakter eller merit i alle øvrige fag i\nuddannelsen. I faget skal eleven i samarbejde med andre elever udarbejde\nen problemformulering med tilhørende kravspecifikation baseret på en\ncase beskrivelse og et projektoplæg. Dette skaber basis for arbejdet med\nplanlægning, opbygning, og idriftsættelse af et avanceret system. Eleverne\nskal også udarbejde en produkt- og procesrapport som beskriver system\nog proces. En del af fagets fokus er i gruppearbejdet at udvise konstruktiv\nkommunikation i gruppearbejdet. Faget afsluttes med en præsentation af\nsystemet.",
+      "internship_desc": "Har eleven i løbet af sin praktiktid haft mulighed for at deltage i projektarbejde,\ngerne i forbindelse med opsætning af et firmanetværk med\ntilhørende servere, sikkerhed og backup vil det være en fordel for elevens\nfordybelse i faget."
+    }
+  ]
+}

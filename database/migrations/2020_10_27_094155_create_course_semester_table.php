@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEducationTable extends Migration
+class CreateCourseSemesterTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,20 @@ class CreateEducationTable extends Migration
      */
     public function up()
     {
-        Schema::create('education', function (Blueprint $table) {
+        Schema::create('course_semester', function (Blueprint $table) {
             $table->uuid('id')->primary();
 
-            $table->text('title');
-            $table->text('slug')->unique();
+            $table->uuid('course_id');
+            $table->foreign('course_id')
+                ->references('id')->on('courses')
+                ->cascadeOnDelete();
 
-            $table->text('overview')->nullable();
-            $table->text('about')->nullable();
+            $table->uuid('semester_id')->nullable();
+            $table->foreign('semester_id')
+                ->references('id')->on('semesters')
+                ->nullOnDelete();
 
-            $table->text('version');
+            $table->bigInteger('duration');
 
             $table->uuid('user_id')->nullable();
             $table->foreign('user_id')
@@ -30,10 +34,8 @@ class CreateEducationTable extends Migration
                 ->nullOnDelete();
 
             $table->timestampsTz();
-
-            $table->unique(['title', 'version']);
         });
-        autogen_uuidv4('education');
+        autogen_uuidv4('course_semester');
     }
 
     /**
@@ -43,6 +45,6 @@ class CreateEducationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('education');
+        Schema::dropIfExists('course_semester');
     }
 }

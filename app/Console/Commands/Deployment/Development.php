@@ -41,6 +41,12 @@ class Development extends Command
 
         $this->info('Test user: u=martin@juul.xyz p=secret');
 
+        $this->info('Seeding');
+
+        $this->call('db:seed', [
+            '--class' => 'DevDatabaseSeeder',
+        ]);
+
         return 0;
     }
 }
