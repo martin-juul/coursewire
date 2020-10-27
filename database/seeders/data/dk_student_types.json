@@ -1,0 +1,29 @@
+{
+    "RECORDS": [
+        {
+            "title": "EUD",
+            "overview": "En elev under 25 år",
+            "description": "Varighed\n\nIt supporter 2 år + grundforløbet 25 ugers skoleundervisning fordelt på 3 skoleperioder.\n\nInfrastruktur 4,5 år + grundforløbet 55 ugers skoleundervisning fordelt på 6-7 skoleperioder.\n\nProgrammering 4,5 år 0 grundforløbet 55 ugers skoleundervisning fordelt på 6 skoleperioder."
+        },
+        {
+            "title": "EUX",
+            "overview": "Alle elever uanset alder.",
+            "description": "En kombination af en gymnasial uddannelse og en datatekniker (kan ikke tages som it-supporter).\n\n\n5 år + grundforløb - skoleophold 88,7 uger fordelt på 5 skoleperioder."
+        },
+        {
+            "title": "EUV 1",
+            "overview": "Elev over 25 år med to års relevant erhverserfaring.\n\nIngen grundforløb.\n\nIngen praktikperioder.",
+            "description": "Skoleophold\n\nIt-supporter 22,5 uger så vidt muligt i et forløb.\n\nInfrastruktur 49,5 uger så vidt muligt i et forløb.\n\nProgrammering 49,5 uger så vidt muligt i et forløb.\n\nHvis eleven er anset på en virksomhed - kan man aftale ophold mellem skoleperioderne.\n\nElever uden virksomhed kan få SU."
+        },
+        {
+            "title": "EUV 2",
+            "overview": "Elev over 25 år med tidligere uddannelse.",
+            "description": "Varighed\n\nIt-supporter 1 år og 11 mdr. + grundforløb - 22,5 ugers skoleundervisning fordelt på 3 hovedforløb.\n\nInfrastruktur 2 år og 11 mdr. + grundforløb - 49,5 ugers skoleundervisning fordelt på 6-7 hovedforløb.\n\nProgrammering 2 år og 11 mdr. + grundforløb 49,5 ugers skoleundervisning fordelt på 6 skoleophold."
+        },
+        {
+            "title": "EUV 3",
+            "overview": "En elev over 25 år uden tidligere uddannelse",
+            "description": "Varighed\n\nDen samme som EUD."
+        }
+    ]
+}

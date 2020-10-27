@@ -35,6 +35,11 @@ class Course extends Resource
 
     public static $preventFormAbandonment = true;
 
+    public static function label()
+    {
+        return 'Fag';
+    }
+
     /**
      * Get the fields displayed by the resource.
      *

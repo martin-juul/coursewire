@@ -11,11 +11,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *
  * @property string $id
  * @property string $course_no
- * @property string $user_id
  * @property string $title
  * @property string $slug
  * @property string|null $overview
  * @property string|null $about
+ * @property string|null $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\User $createdBy
@@ -36,7 +36,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  */
 class Course extends AbstractModel
 {
-    use HasFactory, Sluggable, SluggableScopeHelpers;
+    use HasCreatedBy, HasFactory, Sluggable, SluggableScopeHelpers;
 
     protected $fillable = [
         'title',
@@ -52,10 +52,5 @@ class Course extends AbstractModel
                 'source' => ['title', 'course_no'],
             ],
         ];
-    }
-
-    public function createdBy()
-    {
-        return $this->belongsTo(User::class);
     }
 }

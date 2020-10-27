@@ -26,10 +26,10 @@ class CreateEducationStudentTypeTable extends Migration
                 ->references('id')->on('student_types')
                 ->cascadeOnDelete();
 
-            $table->uuid('user_id');
+            $table->uuid('user_id')->nullable();
             $table->foreign('user_id')
                 ->references('id')->on('users')
-                ->cascadeOnDelete();
+                ->nullOnDelete();
 
             $table->timestampsTz();
         });

@@ -19,17 +19,19 @@ class CreateEducationTable extends Migration
             $table->text('title');
             $table->text('slug')->unique();
 
-            $table->uuid('user_id');
-            $table->foreign('user_id')
-                ->references('id')->on('users')
-                ->cascadeOnDelete();
-
             $table->text('overview')->nullable();
             $table->text('about')->nullable();
 
             $table->text('version');
 
+            $table->uuid('user_id')->nullable();
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->nullOnDelete();
+
             $table->timestampsTz();
+
+            $table->unique(['title', 'version']);
         });
         autogen_uuidv4('education');
     }

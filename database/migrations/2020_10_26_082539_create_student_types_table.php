@@ -16,10 +16,16 @@ class CreateStudentTypesTable extends Migration
         Schema::create('student_types', function (Blueprint $table) {
             $table->uuid('id')->primary();
 
-            $table->uuid('user_id');
+            $table->text('title');
+            $table->text('slug')->unique();
+
+            $table->text('overview')->nullable();
+            $table->text('description')->nullable();
+
+            $table->uuid('user_id')->nullable();
             $table->foreign('user_id')
                 ->references('id')->on('users')
-                ->cascadeOnDelete();
+                ->nullOnDelete();
 
             $table->timestampsTz();
         });
