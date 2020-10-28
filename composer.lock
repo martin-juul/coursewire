@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "abbccfa16553a673143a89ab4898c2a8",
+    "content-hash": "c5c3da455dfacebaa61a4eb33c195284",
     "packages": [
+        {
+            "name": "armincms/many-to-many",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/armincms/many-to-many.git",
+                "reference": "583fab8e2edc4a1937a726c3ca69550fe4a0a20f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/armincms/many-to-many/zipball/583fab8e2edc4a1937a726c3ca69550fe4a0a20f",
+                "reference": "583fab8e2edc4a1937a726c3ca69550fe4a0a20f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Armincms\\Fields\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Armincms\\Fields\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "armincms",
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/armincms/many-to-many/issues",
+                "source": "https://github.com/armincms/many-to-many/tree/master"
+            },
+            "time": "2020-04-04T04:52:46+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.0.1",

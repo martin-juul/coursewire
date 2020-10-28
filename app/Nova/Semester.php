@@ -2,14 +2,11 @@
 
 namespace App\Nova;
 
+use Armincms\Fields\BelongsToMany;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\BelongsToMany;
-use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Semester extends Resource
 {
@@ -46,9 +43,18 @@ class Semester extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make(__('Semester'), 'semester')->sortable(),
             BelongsTo::make('Education'),
+
+            Text::make(__('Semester'), 'semester')->sortable(),
             BelongsTo::make('StudentType'),
+
+            BelongsToMany::make(__('Fag'), 'courses', 'App\Nova\Course')
+                ->fields(function () {
+                    return [
+                        Number::make('duration')
+                            ->rules('required', 'numeric'),
+                    ];
+                })->pivots(),
         ];
     }
 
