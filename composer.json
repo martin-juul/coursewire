@@ -18,6 +18,8 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
+        "league/flysystem-aws-s3-v3": "^1.0",
+        "league/flysystem-cached-adapter": "^1.1",
         "sentry/sentry-laravel": "^2.1",
         "spatie/nova-tail-tool": "^3.0",
         "tightenco/ziggy": "^0.9.4",
