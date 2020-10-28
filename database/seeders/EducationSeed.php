@@ -22,7 +22,7 @@ class EducationSeed extends Seeder
         ];
 
         foreach ($educations as $edu) {
-            Education::make(['title' => $edu['title'], 'version' => '9.1']);
+            Education::create(['title' => $edu['title'], 'version' => '9.1']);
         }
     }
 }
