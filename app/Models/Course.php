@@ -19,6 +19,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\User $createdBy
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Semester[] $semesters
+ * @property-read int|null $semesters_count
  * @method static \Illuminate\Database\Eloquent\Builder|Course findSimilarSlugs($attribute, $config, $slug)
  * @method static \Illuminate\Database\Eloquent\Builder|Course newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Course newQuery()
@@ -36,7 +38,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  */
 class Course extends AbstractModel
 {
-    use HasCreatedBy, HasFactory, Sluggable, SluggableScopeHelpers;
+    use HasFactory, Sluggable, SluggableScopeHelpers;
 
     protected $fillable = [
         'title',
@@ -52,5 +54,12 @@ class Course extends AbstractModel
                 'source' => ['title', 'course_no'],
             ],
         ];
+    }
+
+    public function semesters()
+    {
+        return $this->belongsToMany(Semester::class, 'course_semester')
+            ->using(CourseSemester::class)
+            ->withPivot(['duration']);
     }
 }

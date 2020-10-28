@@ -18,12 +18,6 @@ class EducationObserver
         //
     }
 
-    public function creating(Education $education) {
-        if (!$education->user_id) {
-            $education->user_id = Auth::user()->id;
-        }
-    }
-
     /**
      * Handle the education "updated" event.
      *

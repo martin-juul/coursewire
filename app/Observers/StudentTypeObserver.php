@@ -18,13 +18,6 @@ class StudentTypeObserver
         //
     }
 
-    public function creating(StudentType $studentType)
-    {
-        if (!$studentType->user_id) {
-            $studentType->user_id = Auth::user()->id;
-        }
-    }
-
     /**
      * Handle the student type "updated" event.
      *

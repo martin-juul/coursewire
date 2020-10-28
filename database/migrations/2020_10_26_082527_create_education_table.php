@@ -24,11 +24,6 @@ class CreateEducationTable extends Migration
 
             $table->text('version');
 
-            $table->uuid('user_id')->nullable();
-            $table->foreign('user_id')
-                ->references('id')->on('users')
-                ->nullOnDelete();
-
             $table->timestampsTz();
 
             $table->unique(['title', 'version']);

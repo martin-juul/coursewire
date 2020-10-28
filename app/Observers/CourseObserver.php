@@ -19,13 +19,6 @@ class CourseObserver
         //
     }
 
-    public function creating(Course $course)
-    {
-        if (!$course->user_id) {
-            $course->user_id = Auth::user()->id;
-        }
-    }
-
     /**
      * Handle the course "updated" event.
      *

@@ -18,13 +18,6 @@ class EducationStudentTypeObserver
         //
     }
 
-    public function creating(EducationStudentType $educationStudentType)
-    {
-        if (!$educationStudentType->user_id) {
-            $educationStudentType->user_id = Auth::user()->id;
-        }
-    }
-
     /**
      * Handle the education student type "updated" event.
      *

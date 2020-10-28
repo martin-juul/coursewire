@@ -34,7 +34,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  */
 class StudentType extends AbstractModel
 {
-    use HasCreatedBy, HasFactory, Sluggable, SluggableScopeHelpers;
+    use HasFactory, Sluggable, SluggableScopeHelpers;
 
     protected $fillable = [
         'title',

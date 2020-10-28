@@ -18,13 +18,6 @@ class CourseSemesterObserver
         //
     }
 
-    public function creating(CourseSemester $courseSemester)
-    {
-        if (!$courseSemester->user_id) {
-            $courseSemester->user_id = Auth::user()->id;
-        }
-    }
-
     /**
      * Handle the course semester "updated" event.
      *

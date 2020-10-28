@@ -21,12 +21,8 @@ class EducationSeed extends Seeder
             ['title' => 'IT-Supporter'],
         ];
 
-        $user = User::firstOrFail();
-
         foreach ($educations as $edu) {
-            $education = Education::make(['title' => $edu['title'], 'version' => '9.1']);
-            $education->user_id = $user->id;
-            $education->saveOrFail();
+            Education::make(['title' => $edu['title'], 'version' => '9.1']);
         }
     }
 }

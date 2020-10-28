@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string|null $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Course[] $courses
+ * @property-read int|null $courses_count
  * @property-read \App\Models\User $createdBy
  * @property-read \App\Models\Education $education
  * @property-read \App\Models\StudentType $studentType
@@ -31,10 +33,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  */
 class Semester extends AbstractModel
 {
-    use HasCreatedBy, HasFactory;
+    use HasFactory;
 
     protected $fillable = [
-        'semester'
+        'semester',
     ];
 
     public function education()
@@ -45,5 +47,12 @@ class Semester extends AbstractModel
     public function studentType()
     {
         return $this->belongsTo(StudentType::class);
+    }
+
+    public function courses()
+    {
+        return $this->belongsToMany(Course::class, 'course_semester')
+            ->using(CourseSemester::class)
+            ->withPivot(['duration']);
     }
 }

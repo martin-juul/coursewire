@@ -27,15 +27,15 @@ namespace App\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|CourseSemester whereUserId($value)
  * @mixin \Eloquent
  */
-class CourseSemester extends AbstractModel
+class CourseSemester extends AbstractPivot
 {
-    use HasCreatedBy;
-
     protected $table = 'course_semester';
 
     protected $fillable = [
         'duration',
     ];
+
+    public $incrementing = true;
 
     public function course()
     {

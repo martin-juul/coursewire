@@ -17,7 +17,6 @@ class StudentTypeSeed extends Seeder
      */
     public function run()
     {
-        $user = User::firstOrFail();
         $data = json_decode(File::get(base_path('database/seeders/data/dk_student_types.json')), true, 512, JSON_THROW_ON_ERROR);
 
         $studentTypes = [];
@@ -28,7 +27,6 @@ class StudentTypeSeed extends Seeder
                 'overview'    => $studentType['overview'],
                 'description' => $studentType['description'],
             ]);
-            $studentType->user_id = $user->id;
             $studentTypes[] = $studentType;
         }
 

@@ -28,11 +28,6 @@ class CreateSemestersTable extends Migration
 
             $table->bigInteger('semester');
 
-            $table->uuid('user_id')->nullable();
-            $table->foreign('user_id')
-                ->references('id')->on('users')
-                ->nullOnDelete();
-
             $table->timestampsTz();
 
             $table->unique(['education_id', 'student_type_id', 'semester']);

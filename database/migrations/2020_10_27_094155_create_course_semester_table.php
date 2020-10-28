@@ -28,11 +28,6 @@ class CreateCourseSemesterTable extends Migration
 
             $table->bigInteger('duration');
 
-            $table->uuid('user_id')->nullable();
-            $table->foreign('user_id')
-                ->references('id')->on('users')
-                ->nullOnDelete();
-
             $table->timestampsTz();
         });
         autogen_uuidv4('course_semester');

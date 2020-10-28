@@ -17,7 +17,6 @@ class CourseSeed extends Seeder
      */
     public function run()
     {
-        $user = User::firstOrFail();
         $data = json_decode(File::get(base_path('database/seeders/data/dk_courses.json')), true, 512, JSON_THROW_ON_ERROR);
 
         $courses = [];
@@ -29,7 +28,6 @@ class CourseSeed extends Seeder
                 'overview'  => $course['internship_desc'],
                 'about'     => $course['school_attendance_desc'],
             ]);
-            $course->user_id = $user->id;
             $courses[] = $course;
         }
 
