@@ -26,7 +26,7 @@ return [
      * want to make sure your slugs aren't too long.
      */
 
-    'maxLength' => null,
+    'maxLength' => 260,
 
     /**
      * If you are setting a maximum length on your slugs, you may not want the
@@ -87,7 +87,7 @@ return [
      * "similar" slugs.  The closure should return the new unique
      * suffix to append to the slug.
      */
-    
+
     'uniqueSuffix' => null,
 
     /**
@@ -97,7 +97,7 @@ return [
      * If set to "true", then uniqueness is enforced across trashed and existing models.
      */
 
-    'includeTrashed' => false,
+    'includeTrashed' => true,
 
     /**
      * An array of slug names that can never be used for this model,
@@ -123,7 +123,14 @@ return [
      * and continue from there.
      */
 
-    'reserved' => null,
+    'reserved' => [
+        'create',
+        'update',
+        'delete',
+        'dashboard',
+        'admin',
+        'horizon',
+    ],
 
     /**
      * Whether to update the slug value when a model is being
@@ -135,7 +142,7 @@ return [
      * is probably not a good idea from an SEO point of view.
      * Only set this to true if you understand the possible consequences.
      */
-    
-    'onUpdate' => false,
+
+    'onUpdate' => true,
 
 ];
