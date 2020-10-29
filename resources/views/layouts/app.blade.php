@@ -27,13 +27,13 @@
 <div id="app">
     <v-app>
 
-        <masthead></masthead>
+        <wire-masthead></wire-masthead>
 
         <v-main>
             @yield('content')
         </v-main>
 
-        <impressum></impressum>
+        <wire-impressum></wire-impressum>
     </v-app>
 </div>
 

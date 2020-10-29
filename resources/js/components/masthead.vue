@@ -1,7 +1,7 @@
 <template>
-  <v-app-bar app flat>
+  <v-app-bar app flat color="primary">
 
-    <v-tabs centered color="grey darken-1">
+    <v-tabs centered color="white darken-1">
       <v-tab href="/">Hjem</v-tab>
       <v-tab href="#">Uddannelserne</v-tab>
       <v-tab href="#">SDE</v-tab>

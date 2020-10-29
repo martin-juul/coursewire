@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import vuetify from './plugins/vuetify';
-import * as Sentry from "@sentry/browser";
-import {Vue as VueIntegration} from "@sentry/integrations";
-import {Integrations} from "@sentry/tracing";
+import * as Sentry from '@sentry/browser';
+import { Vue as VueIntegration } from '@sentry/integrations';
+import { Integrations } from '@sentry/tracing';
 
 const sentryDsn = process.env.MIX_SENTRY_DSN;
 let tracesSampleRate = process.env.MIX_SENTRY_TRACES_SAMPLE_RATE;
@@ -34,9 +34,18 @@ if (sentryDsn && sentryDsn !== '') {
 Vue.config.devtools = isProduction;
 Vue.config.performance = isProduction;
 
-Vue.component('masthead', require('./components/masthead').default)
-Vue.component('impressum', require('./components/impressum').default)
+/**
+ * Use the prefix wire-
+ * This prevents clashing with other components.
+ */
 
-const app = new Vue({
+// Components
+Vue.component('wire-masthead', require('./components/masthead').default);
+Vue.component('wire-impressum', require('./components/impressum').default);
+
+// Pages
+Vue.component('wire-home', require('./Pages/Home').default);
+
+new Vue({
   vuetify,
-}).$mount('#app')
+}).$mount('#app');

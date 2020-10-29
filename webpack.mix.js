@@ -1,20 +1,20 @@
 const mix = require('laravel-mix');
+require('vuetifyjs-mix-extension');
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
+const options = {progressiveImages: true};
 
 mix.js('resources/js/app.js', 'public/js')
   .copy('resources/branding', 'public/branding')
   .sass('resources/sass/app.scss', 'public/css')
-  .extract(['axios', 'vue', 'vuetify'])
+  .vuetify(options)
+  .extract([
+    'axios',
+    'vue',
+    'vuetify',
+    '@sentry/browser',
+    '@sentry/integrations',
+    '@sentry/tracing',
+  ])
   .version();
 
 mix.disableNotifications();
