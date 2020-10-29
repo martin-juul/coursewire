@@ -7,7 +7,9 @@
         "watch-poll": "yarn run watch --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "yarn run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "build-belongs-to-many-field": "cd nova-components/BelongsToManyField && yarn run dev",
+        "build-belongs-to-many-field-prod": "cd nova-components/BelongsToManyField && yarn run prod"
     },
     "devDependencies": {
         "axios": "^0.21.0",
@@ -20,6 +22,9 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@sentry/browser": "^5.27.1",
+        "@sentry/integrations": "^5.27.1",
+        "@sentry/tracing": "^5.27.1",
         "vuetify": "^2.3.15"
     }
 }
