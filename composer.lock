@@ -4,54 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5c3da455dfacebaa61a4eb33c195284",
+    "content-hash": "042787d7b6b6e77618cb7a86b2ac5edb",
     "packages": [
-        {
-            "name": "armincms/many-to-many",
-            "version": "0.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/armincms/many-to-many.git",
-                "reference": "583fab8e2edc4a1937a726c3ca69550fe4a0a20f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/armincms/many-to-many/zipball/583fab8e2edc4a1937a726c3ca69550fe4a0a20f",
-                "reference": "583fab8e2edc4a1937a726c3ca69550fe4a0a20f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Armincms\\Fields\\FieldServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Armincms\\Fields\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A Laravel Nova field.",
-            "keywords": [
-                "armincms",
-                "laravel",
-                "nova"
-            ],
-            "support": {
-                "issues": "https://github.com/armincms/many-to-many/issues",
-                "source": "https://github.com/armincms/many-to-many/tree/master"
-            },
-            "time": "2020-04-04T04:52:46+00:00"
-        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.0.1",
@@ -110,16 +64,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.158.15",
+            "version": "3.158.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "8580352f6d8f8a6adfd786b18545258de4d25222"
+                "reference": "6e8fc20ff7bc21b28e80815a9818b6ca7928ae3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/8580352f6d8f8a6adfd786b18545258de4d25222",
-                "reference": "8580352f6d8f8a6adfd786b18545258de4d25222",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6e8fc20ff7bc21b28e80815a9818b6ca7928ae3a",
+                "reference": "6e8fc20ff7bc21b28e80815a9818b6ca7928ae3a",
                 "shasum": ""
             },
             "require": {
@@ -194,9 +148,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.158.15"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.158.16"
             },
-            "time": "2020-10-27T18:17:26+00:00"
+            "time": "2020-10-28T20:19:05+00:00"
         },
         {
             "name": "brick/math",
@@ -2620,6 +2574,59 @@
                 }
             ],
             "time": "2020-10-18T11:50:25+00:00"
+        },
+        {
+            "name": "martinjuul/many-to-many",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/martin-juul/many-to-many.git",
+                "reference": "34e20cc91ff873e06dbcc1021f22cb42ad40230f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/martin-juul/many-to-many/zipball/34e20cc91ff873e06dbcc1021f22cb42ad40230f",
+                "reference": "34e20cc91ff873e06dbcc1021f22cb42ad40230f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Juul\\Fields\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Juul\\Fields\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Juul",
+                    "homepage": "https://juul.xyz"
+                }
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "martin-juul",
+                "martinjuul",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/martin-juul/many-to-many/issues",
+                "source": "https://github.com/martin-juul/many-to-many/tree/1.0.0"
+            },
+            "time": "2020-10-29T10:16:58+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -7998,16 +8005,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "74e8c71026edba786290047199619ac6b6490094"
+                "reference": "f7eebdd092873f5d63929f21183e69ec9f5e83cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/74e8c71026edba786290047199619ac6b6490094",
-                "reference": "74e8c71026edba786290047199619ac6b6490094",
+                "url": "https://api.github.com/repos/composer/composer/zipball/f7eebdd092873f5d63929f21183e69ec9f5e83cd",
+                "reference": "f7eebdd092873f5d63929f21183e69ec9f5e83cd",
                 "shasum": ""
             },
             "require": {
@@ -8075,7 +8082,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.0.2"
+                "source": "https://github.com/composer/composer/tree/2.0.3"
             },
             "funding": [
                 {
@@ -8091,7 +8098,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-25T22:03:59+00:00"
+            "time": "2020-10-28T14:50:56+00:00"
         },
         {
             "name": "composer/semver",
