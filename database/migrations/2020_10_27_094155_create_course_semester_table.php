@@ -24,11 +24,13 @@ class CreateCourseSemesterTable extends Migration
             $table->uuid('semester_id')->nullable();
             $table->foreign('semester_id')
                 ->references('id')->on('semesters')
-                ->nullOnDelete();
+                ->cascadeOnDelete();
 
-            $table->bigInteger('duration');
+            $table->decimal('duration', 2, 1);
 
             $table->timestampsTz();
+
+            $table->unique(['course_id', 'semester_id']);
         });
         autogen_uuidv4('course_semester');
     }
