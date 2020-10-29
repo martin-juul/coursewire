@@ -14,10 +14,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string $slug
  * @property string|null $overview
  * @property string|null $description
- * @property string|null $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\User $createdBy
  * @method static \Illuminate\Database\Eloquent\Builder|StudentType findSimilarSlugs($attribute, $config, $slug)
  * @method static \Illuminate\Database\Eloquent\Builder|StudentType newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|StudentType newQuery()
@@ -29,7 +27,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @method static \Illuminate\Database\Eloquent\Builder|StudentType whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|StudentType whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|StudentType whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|StudentType whereUserId($value)
  * @mixin \Eloquent
  */
 class StudentType extends AbstractModel

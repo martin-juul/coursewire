@@ -15,10 +15,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string|null $overview
  * @property string|null $about
  * @property string $version
- * @property string|null $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\User $createdBy
  * @method static \Illuminate\Database\Eloquent\Builder|Education findSimilarSlugs($attribute, $config, $slug)
  * @method static \Illuminate\Database\Eloquent\Builder|Education newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Education newQuery()
@@ -30,7 +28,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @method static \Illuminate\Database\Eloquent\Builder|Education whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Education whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Education whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Education whereUserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Education whereVersion($value)
  * @mixin \Eloquent
  */

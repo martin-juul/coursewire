@@ -15,10 +15,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string $slug
  * @property string|null $overview
  * @property string|null $about
- * @property string|null $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\User $createdBy
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Semester[] $semesters
  * @property-read int|null $semesters_count
  * @method static \Illuminate\Database\Eloquent\Builder|Course findSimilarSlugs($attribute, $config, $slug)
@@ -33,7 +31,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Course whereUserId($value)
  * @mixin \Eloquent
  */
 class Course extends AbstractModel
@@ -47,6 +44,8 @@ class Course extends AbstractModel
         'about',
     ];
 
+    protected $primaryKey = 'id';
+
     public function sluggable(): array
     {
         return [
@@ -58,7 +57,7 @@ class Course extends AbstractModel
 
     public function semesters()
     {
-        return $this->belongsToMany(Semester::class, 'course_semester')
+        return $this->belongsToMany(Semester::class)
             ->using(CourseSemester::class)
             ->withPivot(['duration']);
     }

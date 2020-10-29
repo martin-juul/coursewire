@@ -8,7 +8,6 @@ namespace App\Models;
  * @property string $id
  * @property string $education_id
  * @property string $student_type_id
- * @property string|null $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\User $createdBy
@@ -22,7 +21,6 @@ namespace App\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|EducationStudentType whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationStudentType whereStudentTypeId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationStudentType whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|EducationStudentType whereUserId($value)
  * @mixin \Eloquent
  */
 class EducationStudentType extends AbstractPivot

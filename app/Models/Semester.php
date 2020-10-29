@@ -11,12 +11,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string $education_id
  * @property string $student_type_id
  * @property int $semester
- * @property string|null $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Course[] $courses
  * @property-read int|null $courses_count
- * @property-read \App\Models\User $createdBy
  * @property-read \App\Models\Education $education
  * @property-read \App\Models\StudentType $studentType
  * @method static \Illuminate\Database\Eloquent\Builder|Semester newModelQuery()
@@ -28,7 +26,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @method static \Illuminate\Database\Eloquent\Builder|Semester whereSemester($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Semester whereStudentTypeId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Semester whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Semester whereUserId($value)
  * @mixin \Eloquent
  */
 class Semester extends AbstractModel
@@ -51,7 +48,7 @@ class Semester extends AbstractModel
 
     public function courses()
     {
-        return $this->belongsToMany(Course::class, 'course_semester')
+        return $this->belongsToMany(Course::class)
             ->using(CourseSemester::class)
             ->withPivot(['duration']);
     }

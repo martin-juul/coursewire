@@ -9,11 +9,9 @@ namespace App\Models;
  * @property string $course_id
  * @property string|null $semester_id
  * @property int $duration
- * @property string|null $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Course $course
- * @property-read \App\Models\User $createdBy
  * @property-read \App\Models\Semester|null $semester
  * @method static \Illuminate\Database\Eloquent\Builder|CourseSemester newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CourseSemester newQuery()
@@ -24,7 +22,6 @@ namespace App\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|CourseSemester whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CourseSemester whereSemesterId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CourseSemester whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CourseSemester whereUserId($value)
  * @mixin \Eloquent
  */
 class CourseSemester extends AbstractPivot
@@ -35,16 +32,14 @@ class CourseSemester extends AbstractPivot
         'duration',
     ];
 
-    public $incrementing = true;
-
     public function course()
     {
-        return $this->belongsTo(Course::class);
+        return $this->hasMany(Course::class);
     }
 
     public function semester()
     {
-        return $this->belongsTo(Semester::class);
+        return $this->hasMany(Semester::class);
     }
 
 }
