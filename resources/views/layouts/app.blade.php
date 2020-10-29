@@ -36,5 +36,7 @@
         <impressum></impressum>
     </v-app>
 </div>
+
+@include('cookieConsent::index')
 </body>
 </html>

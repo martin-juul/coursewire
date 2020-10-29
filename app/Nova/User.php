@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Enums\ResourceGroup;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -22,6 +23,8 @@ class User extends Resource
      * @var string
      */
     public static $title = 'name';
+
+    public static $group = ResourceGroup::SYSTEM;
 
     /**
      * Indicates whether Nova should prevent the user from leaving an unsaved form, losing their data.

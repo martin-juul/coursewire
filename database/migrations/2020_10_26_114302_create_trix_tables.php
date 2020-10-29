@@ -15,19 +15,19 @@ class CreateTrixTables extends Migration
     {
         Schema::create('nova_pending_trix_attachments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('draft_id')->index();
-            $table->string('attachment');
-            $table->string('disk');
+            $table->text('draft_id')->index();
+            $table->text('attachment');
+            $table->text('disk');
             $table->timestampsTz();
         });
 
         Schema::create('nova_trix_attachments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('attachable_type');
-            $table->unsignedInteger('attachable_id');
-            $table->string('attachment');
-            $table->string('disk');
-            $table->string('url')->index();
+            $table->text('attachable_type');
+            $table->uuid('attachable_id');
+            $table->text('attachment');
+            $table->text('disk');
+            $table->text('url')->index();
             $table->timestampsTz();
 
             $table->index(['attachable_type', 'attachable_id']);

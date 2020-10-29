@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Enums\ResourceGroup;
 use Illuminate\Http\Request;
 use Juul\Fields\BelongsToMany;
 use Laravel\Nova\Fields\{BelongsTo, Number, Text};
@@ -28,6 +29,8 @@ class Semester extends Resource
      * @var bool
      */
     public static $preventFormAbandonment = true;
+
+    public static $group = ResourceGroup::EDUCATION;
 
     /**
      * The columns that should be searched.

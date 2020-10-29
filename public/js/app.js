@@ -12507,6 +12507,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     goToSde: function goToSde() {
@@ -16122,10 +16131,58 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("v-card-text", { staticClass: "py-2 white--text text-center" }, [
-            _vm._v("\n      " + _vm._s(new Date().getFullYear()) + " — "),
-            _c("strong", [_vm._v("Martin Juul")])
-          ])
+          _c(
+            "v-card-text",
+            {
+              staticClass: "py-2 white--text text-center d-flex",
+              staticStyle: { "justify-content": "space-evenly" }
+            },
+            [
+              _c("div", [
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href:
+                        "https://www.facebook.com/Syddansk-Erhvervsskole-156366231072108/",
+                      target: "_blank"
+                    }
+                  },
+                  [_c("v-icon", [_vm._v("mdi-facebook")])],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href:
+                        "https://www.youtube.com/channel/UCHGaVnmT1LL9fkcIu_sTrnA"
+                    }
+                  },
+                  [_c("v-icon", [_vm._v("mdi-youtube")])],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href:
+                        "https://www.linkedin.com/school/syddanskerhvervsskole/"
+                    }
+                  },
+                  [_c("v-icon", [_vm._v("mdi-linkedin")])],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _vm._v("\n       " + _vm._s(new Date().getFullYear()) + " — "),
+                _c("strong", [_vm._v("Martin Juul")])
+              ])
+            ]
+          )
         ],
         1
       )

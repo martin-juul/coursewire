@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Enums\ResourceGroup;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -23,6 +24,8 @@ class Education extends Resource
      * @var bool
      */
     public static $preventFormAbandonment = true;
+
+    public static $group = ResourceGroup::EDUCATION;
 
     public function title()
     {
@@ -54,9 +57,9 @@ class Education extends Resource
     {
         return [
             Text::make(__('Titel'), 'title')->sortable(),
-            Text::make(__('Overblik'), 'overview'),
+            Text::make(__('Overblik'), 'overview')->hideFromIndex(),
             Text::make(__('Version'), 'version')->sortable(),
-            Trix::make(__('Beskrivelse'), 'about'),
+            Trix::make(__('Beskrivelse'), 'about')->hideFromIndex(),
         ];
     }
 

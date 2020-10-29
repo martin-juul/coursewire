@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Enums\ResourceGroup;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -29,6 +30,8 @@ class StudentType extends Resource
      * @var bool
      */
     public static $preventFormAbandonment = true;
+
+    public static $group = ResourceGroup::EDUCATION;
 
     /**
      * The columns that should be searched.

@@ -39,13 +39,14 @@ class Education extends AbstractModel
         'title',
         'overview',
         'about',
+        'version'
     ];
 
     public function sluggable(): array
     {
         return [
             'slug' => [
-                'source' => ['title'],
+                'source' => ['title', 'version'],
             ],
         ];
     }

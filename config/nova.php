@@ -1,10 +1,12 @@
 <?php
 
-use Laravel\Nova\Actions\ActionResource;
-use Laravel\Nova\Http\Middleware\Authenticate;
-use Laravel\Nova\Http\Middleware\Authorize;
-use Laravel\Nova\Http\Middleware\BootTools;
-use Laravel\Nova\Http\Middleware\DispatchServingNovaEvent;
+use App\Nova\ActionEvent;
+use Laravel\Nova\Http\Middleware\{
+    Authenticate,
+    Authorize,
+    BootTools,
+    DispatchServingNovaEvent
+};
 
 return [
 
@@ -71,7 +73,7 @@ return [
     |
     */
 
-    'guard' => env('NOVA_GUARD', null),
+    'guard' => env('NOVA_GUARD', 'web'),
 
     /*
     |--------------------------------------------------------------------------
@@ -130,7 +132,7 @@ return [
     */
 
     'actions' => [
-        'resource' => ActionResource::class,
+        'resource' => ActionEvent::class,
     ],
 
     /*

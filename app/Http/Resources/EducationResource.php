@@ -20,10 +20,10 @@ class EducationResource extends JsonResource
     {
         return [
             'title'    => $this->title,
+            'slug'     => $this->slug,
+            'version'  => $this->version,
             'overview' => $this->overview,
             'about'    => $this->about,
-            'created'  => $this->created_at,
-            'updated'  => $this->updated_at,
         ];
     }
 }

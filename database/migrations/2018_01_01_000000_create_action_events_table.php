@@ -15,16 +15,23 @@ class CreateActionEventsTable extends Migration
     {
         Schema::create('action_events', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->text('batch_id');
-            $table->uuid('user_id')->index();
+            $table->uuid('batch_id');
+            $table->uuid('user_id')->nullable()->index();
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->nullOnDelete();
 
             $table->text('name');
+
             $table->text('actionable_type');
             $table->uuid('actionable_id');
+
             $table->text('target_type');
             $table->uuid('target_id');
+
             $table->text('model_type');
             $table->uuid('model_id')->nullable();
+
             $table->text('fields');
             $table->text('status')->default('running');
             $table->text('exception');

@@ -18,8 +18,17 @@
           src="/branding/sde/sde-logo-large.png"></v-img>
       </v-card-title>
 
-      <v-card-text class="py-2 white--text text-center">
-        {{ new Date().getFullYear() }} — <strong>Martin Juul</strong>
+      <v-card-text class="py-2 white--text text-center d-flex" style="justify-content: space-evenly">
+
+        <div>
+          <a href="https://www.facebook.com/Syddansk-Erhvervsskole-156366231072108/" target="_blank"><v-icon>mdi-facebook</v-icon></a>
+          <a href="https://www.youtube.com/channel/UCHGaVnmT1LL9fkcIu_sTrnA"> <v-icon>mdi-youtube</v-icon></a>
+          <a href="https://www.linkedin.com/school/syddanskerhvervsskole/"><v-icon>mdi-linkedin</v-icon></a>
+        </div>
+
+       <div>
+         {{ new Date().getFullYear() }} — <strong>Martin Juul</strong>
+       </div>
       </v-card-text>
     </v-card>
   </v-footer>

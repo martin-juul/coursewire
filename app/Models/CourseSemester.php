@@ -11,8 +11,10 @@ namespace App\Models;
  * @property int $duration
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Course $course
- * @property-read \App\Models\Semester|null $semester
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Course[] $course
+ * @property-read int|null $course_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Semester[] $semester
+ * @property-read int|null $semester_count
  * @method static \Illuminate\Database\Eloquent\Builder|CourseSemester newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CourseSemester newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CourseSemester query()

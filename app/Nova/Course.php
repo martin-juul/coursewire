@@ -2,6 +2,8 @@
 
 namespace App\Nova;
 
+use App\Nova\Enums\ResourceGroup;
+use App\Nova\Lenses\CourseLens;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
@@ -28,6 +30,8 @@ class Course extends Resource
      * @var bool
      */
     public static $preventFormAbandonment = true;
+
+    public static $group = ResourceGroup::EDUCATION;
 
     /**
      * The columns that should be searched.
@@ -56,8 +60,8 @@ class Course extends Resource
         return [
             Text::make(__('Fag Nr'), 'course_no')->sortable(),
             Text::make(__('Titel'), 'title'),
-            Text::make(__('Oversigt'), 'overview'),
-            Trix::make(__('Beskrivelse'), 'about'),
+            Text::make(__('Oversigt'), 'overview')->hideFromIndex(),
+            Trix::make(__('Beskrivelse'), 'about')->hideFromIndex(),
         ];
     }
 
@@ -94,7 +98,9 @@ class Course extends Resource
      */
     public function lenses(Request $request)
     {
-        return [];
+        return [
+            CourseLens::make(),
+        ];
     }
 
     /**
