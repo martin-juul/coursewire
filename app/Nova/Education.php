@@ -18,11 +18,16 @@ class Education extends Resource
     public static $model = \App\Models\Education::class;
 
     /**
-     * The single value that should be used to represent the resource when being displayed.
+     * Indicates whether Nova should prevent the user from leaving an unsaved form, losing their data.
      *
-     * @var string
+     * @var bool
      */
-    public static $title = 'title';
+    public static $preventFormAbandonment = true;
+
+    public function title()
+    {
+        return $this->title . ' | v' . $this->version;
+    }
 
     /**
      * The columns that should be searched.

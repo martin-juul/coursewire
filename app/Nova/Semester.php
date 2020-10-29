@@ -4,10 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Juul\Fields\BelongsToMany;
-use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\{BelongsTo, Number, Text};
 
 class Semester extends Resource
 {
@@ -26,6 +23,13 @@ class Semester extends Resource
     public static $title = 'semester';
 
     /**
+     * Indicates whether Nova should prevent the user from leaving an unsaved form, losing their data.
+     *
+     * @var bool
+     */
+    public static $preventFormAbandonment = true;
+
+    /**
      * The columns that should be searched.
      *
      * @var array
@@ -33,6 +37,7 @@ class Semester extends Resource
     public static $search = [
         'semester',
     ];
+
 
     /**
      * Get the fields displayed by the resource.

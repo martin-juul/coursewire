@@ -24,6 +24,13 @@ class User extends Resource
     public static $title = 'name';
 
     /**
+     * Indicates whether Nova should prevent the user from leaving an unsaved form, losing their data.
+     *
+     * @var bool
+     */
+    public static $preventFormAbandonment = true;
+
+    /**
      * The columns that should be searched.
      *
      * @var array

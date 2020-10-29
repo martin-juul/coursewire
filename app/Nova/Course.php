@@ -23,6 +23,13 @@ class Course extends Resource
     public static $title = 'course_no';
 
     /**
+     * Indicates whether Nova should prevent the user from leaving an unsaved form, losing their data.
+     *
+     * @var bool
+     */
+    public static $preventFormAbandonment = true;
+
+    /**
      * The columns that should be searched.
      *
      * @var array
@@ -31,8 +38,6 @@ class Course extends Resource
         'course_no',
         'title',
     ];
-
-    public static $preventFormAbandonment = true;
 
     public static function label()
     {
