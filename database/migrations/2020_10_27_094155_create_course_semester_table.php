@@ -26,7 +26,7 @@ class CreateCourseSemesterTable extends Migration
                 ->references('id')->on('semesters')
                 ->cascadeOnDelete();
 
-            $table->decimal('duration', 2, 1);
+            $table->integer('duration');
 
             $table->timestampsTz();
 
