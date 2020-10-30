@@ -4,20 +4,25 @@ namespace App\Nova;
 
 use App\Nova\Enums\ResourceGroup;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Education extends Resource
+class EducationType extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Education::class;
+    public static $model = \App\Models\EducationType::class;
+
+    /**
+     * The single value that should be used to represent the resource when being displayed.
+     *
+     * @var string
+     */
+    public static $title = 'title';
 
     /**
      * Indicates whether Nova should prevent the user from leaving an unsaved form, losing their data.
@@ -27,7 +32,6 @@ class Education extends Resource
     public static $preventFormAbandonment = true;
 
     public static $group = ResourceGroup::EDUCATION;
-
 
     /**
      * The columns that should be searched.
@@ -40,7 +44,7 @@ class Education extends Resource
 
     public static function label()
     {
-        return 'Uddannelse';
+        return 'Uddannelses type';
     }
 
     /**
@@ -53,10 +57,8 @@ class Education extends Resource
     public function fields(Request $request)
     {
         return [
-            BelongsTo::make('EducationType')->sortable(),
-            Text::make(__('Overblik'), 'overview')->hideFromIndex(),
-            Text::make(__('Version'), 'version')->required()->sortable(),
-            Trix::make(__('Beskrivelse'), 'about')->hideFromIndex(),
+            Text::make(__('Titel'), 'title'),
+            Text::make(__('Kort navn'), 'short_name'),
         ];
     }
 

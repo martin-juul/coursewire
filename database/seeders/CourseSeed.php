@@ -17,6 +17,10 @@ class CourseSeed extends Seeder
      */
     public function run()
     {
+        if (Course::count() > 0) {
+            return;
+        }
+
         $data = json_decode(File::get(base_path('database/seeders/data/dk_courses.json')), true, 512, JSON_THROW_ON_ERROR);
 
         $courses = [];

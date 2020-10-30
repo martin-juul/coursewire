@@ -17,6 +17,10 @@ class StudentTypeSeed extends Seeder
      */
     public function run()
     {
+        if (StudentType::count() > 0) {
+            return;
+        }
+
         $data = json_decode(File::get(base_path('database/seeders/data/dk_student_types.json')), true, 512, JSON_THROW_ON_ERROR);
 
         $studentTypes = [];

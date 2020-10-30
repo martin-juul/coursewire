@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Education;
+use App\Models\EducationType;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -12,17 +13,20 @@ class EducationSeed extends Seeder
      * Run the database seeds.
      *
      * @return void
+     * @throws \Throwable
      */
     public function run()
     {
-        $educations = [
-            ['title' => 'Datatekniker med speciale i Programmering'],
-            ['title' => 'Datatekniker med speciale i Infrastruktur'],
-            ['title' => 'IT-Supporter'],
-        ];
+        if (Education::count() > 0) {
+            return;
+        }
 
-        foreach ($educations as $edu) {
-            Education::create(['title' => $edu['title'], 'version' => '9.1']);
+        $educationTypes = EducationType::all();
+
+        foreach ($educationTypes as $type) {
+            $education = Education::make(['version' => '9.1']);
+            $education->educationType()->associate($type);
+            $education->saveOrFail();
         }
     }
 }

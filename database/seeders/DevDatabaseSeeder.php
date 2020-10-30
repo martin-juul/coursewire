@@ -16,6 +16,7 @@ class DevDatabaseSeeder extends Seeder
         $this->call([
             CourseSeed::class,
             StudentTypeSeed::class,
+            EducationTypeSeed::class,
             EducationSeed::class,
         ]);
     }

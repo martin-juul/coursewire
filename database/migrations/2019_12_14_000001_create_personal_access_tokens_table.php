@@ -14,7 +14,7 @@ class CreatePersonalAccessTokensTable extends Migration
     public function up()
     {
         Schema::create('personal_access_tokens', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->uuidMorphs('tokenable');
             $table->text('name');
             $table->text('token')->unique();
@@ -22,6 +22,7 @@ class CreatePersonalAccessTokensTable extends Migration
             $table->timestampTz('last_used_at')->nullable();
             $table->timestampsTz();
         });
+        autogen_uuidv4('personal_access_tokens');
     }
 
     /**
