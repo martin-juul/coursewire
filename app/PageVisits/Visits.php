@@ -101,8 +101,8 @@ class Visits
     protected function determineConnection($name)
     {
         $connections = [
-            'redis'    => \Awssat\Visits\DataEngines\RedisEngine::class,
-            'eloquent' => \Awssat\Visits\DataEngines\EloquentEngine::class,
+            'redis'    => \App\PageVisits\DataEngines\RedisEngine::class,
+            'eloquent' => \App\PageVisits\DataEngines\EloquentEngine::class,
         ];
 
         if (!array_key_exists($name, $connections)) {
@@ -134,7 +134,7 @@ class Visits
      * @param $method
      * @param string $args
      *
-     * @return \Awssat\Visits\Reset
+     * @return \App\PageVisits\Reset
      */
     public function reset($method = 'visits', $args = '')
     {
