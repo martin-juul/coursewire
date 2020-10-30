@@ -1,4 +1,4 @@
-const {description} = require('../../package')
+const {description} = require('../../package');
 
 module.exports = {
   /**
@@ -18,7 +18,7 @@ module.exports = {
   head: [
     ['meta', {name: 'theme-color', content: '#c87f2f'}],
     ['meta', {name: 'apple-mobile-web-app-capable', content: 'yes'}],
-    ['meta', {name: 'apple-mobile-web-app-status-bar-style', content: 'black'}]
+    ['meta', {name: 'apple-mobile-web-app-status-bar-style', content: 'black'}],
   ],
 
   /**
@@ -43,8 +43,12 @@ module.exports = {
       },
       {
         text: 'Nova',
-        link: '/nova/'
-      }
+        link: '/nova/',
+      },
+      {
+        text: 'Forge',
+        link: '/forge/',
+      },
     ],
     sidebar: {
       '/setup/': [
@@ -54,8 +58,8 @@ module.exports = {
           children: [
             '',
             'laravel-valet',
-          ]
-        }
+          ],
+        },
       ],
       '/style-guide/': [
         {
@@ -63,9 +67,9 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            'guides/git'
+            'guides/git',
           ],
-        }
+        },
       ],
       '/nova/': [
         {
@@ -107,10 +111,19 @@ module.exports = {
             'search/global-search',
             'search/scout-integration',
             'installation',
-          ]
-        }
+          ],
+        },
       ],
-    }
+      '/forge/': [
+        {
+          title: 'Forge',
+          collapsable: false,
+          children: [
+            '',
+          ],
+        },
+      ],
+    },
   },
 
   /**
@@ -121,11 +134,11 @@ module.exports = {
     '@vuepress/plugin-medium-zoom',
     '@vuepress/active-header-links', {
       sidebarLinkSelector: '.sidebar-link',
-      headerAnchorSelector: '.header-anchor'
-    }
+      headerAnchorSelector: '.header-anchor',
+    },
   ],
 
   // This will disable ES5 transpilation and polyfills for IE,
   // and result in faster builds and smaller files.
   evergreen: true,
-}
+};
