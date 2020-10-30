@@ -2,6 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\User;
+use App\PageVisits\Pages\HomePage;
+use Coroowicaksono\ChartJsIntegration\AreaChart;
+use Coroowicaksono\ChartJsIntegration\StackedChart;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
@@ -44,9 +49,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function gate()
     {
         Gate::define('viewNova', function ($user) {
-            return in_array($user->email, [
-                'martin@juul.test',
-            ]);
+            return $user instanceof User;
         });
     }
 
@@ -57,8 +60,28 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function cards()
     {
+        $visits = visits(HomePage::class)->period('year')->top(10);
+        if ($visits instanceof Collection) {
+            $visits = $visits->toArray();
+        }
+
         return [
-            new Help,
+            (new AreaChart())
+                ->title('Besøg')
+                ->animations([
+                    'enabled' => true,
+                    'easing'  => 'easeinout',
+                ])->series([
+                    [
+                        'label'           => 'HomePage',
+                        'backgroundColor' => '#f7a35c',
+                        'data'            => $visits,
+                    ],
+                ])->options([
+                    'xaxis' => [
+                        'categories' => ['Jan', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                    ],
+                ])->width('2/3'),
         ];
     }
 
