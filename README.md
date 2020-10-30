@@ -10,6 +10,12 @@ Go to the `/docs` folder
 
 Serve it with `yarn dev`
 
+### API
+
+Use [Insomnia](https://insomnia.rest) to open the [insomnia.json](/insomnia.json) file.
+
+It's kinda like postman, but better (in my holy opinion).
+
 ## Digitalocean
 
 Everything must be created in the `ams3` zone!
