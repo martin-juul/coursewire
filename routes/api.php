@@ -1,5 +1,11 @@
 <?php
 
+Route::get('courses', 'CourseController@index')
+    ->name('api.courses.index');
+
+Route::get('courses/{courseNo}', 'CourseController@show')
+    ->name('api.courses.show');
+
 Route::get('educations', 'EducationController@index')
     ->name('api.education.index');
 

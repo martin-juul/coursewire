@@ -12,4 +12,9 @@ class UiController extends Controller
 
         return view('home');
     }
+
+    public function courses()
+    {
+        return view('home');
+    }
 }

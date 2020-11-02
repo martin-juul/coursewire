@@ -1,6 +1,19 @@
 import axios from './axios';
 
 class ApiService {
+  static courses(page = 1, perPage = 25) {
+    return axios.get('/api/courses', {
+      params: {
+        page,
+        perPage,
+      },
+    });
+  }
+
+  static course(courseNo) {
+    return axios.get(`/api/courses/${courseNo}`);
+  }
+
   static educationTypes() {
     return axios.get('/api/educations');
   }
