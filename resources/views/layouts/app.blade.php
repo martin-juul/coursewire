@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>
         @if(View::hasSection('title'))
@@ -14,10 +13,17 @@
     </title>
 
     @yield('meta_tags')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="copyright" content="Martin Juul">
+    <meta name="author" content="{{ config('app.customer') }}">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
+    <script>
+        window.__COURSEWIRE_CONFIG__ = "{!! addslashes(json_encode($config, JSON_THROW_ON_ERROR)) !!}"
+    </script>
 
     <script src="{{ mix('js/manifest.js') }}"></script>
     <script src="{{ mix('js/vendor.js') }}" defer></script>
@@ -30,7 +36,7 @@
         <wire-masthead></wire-masthead>
 
         <v-main>
-            @yield('content')
+            <router-view></router-view>
         </v-main>
 
         <wire-impressum></wire-impressum>

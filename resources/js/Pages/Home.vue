@@ -6,7 +6,9 @@
 
     <v-spacer class="mb-4"></v-spacer>
 
-    <v-stepper v-model="e1">
+    <div v-if="loading">Loading..</div>
+
+    <v-stepper v-model="e1" v-if="educationTypes.length > 0">
       <v-stepper-header>
         <v-stepper-step
           :complete="e1 > 1"
@@ -41,26 +43,10 @@
               elevation="2"
               rounded
               x-large
-              @click="e1 = 2"
-            >Datatekniker / Programmering
-            </v-btn>
-
-            <v-btn
-              color="primary"
-              elevation="2"
-              rounded
-              x-large
-              @click="e1 = 2"
-            >Datatekniker / Infrastruktur
-            </v-btn>
-
-            <v-btn
-              color="primary"
-              elevation="2"
-              rounded
-              x-large
-              @click="e1 = 2"
-            >IT-Supporter
+              v-for="educationType in educationTypes"
+              v-bind:key="educationType.short_name"
+              @click="onEducationType(educationType)"
+            >{{ educationType.short_name }}
             </v-btn>
 
           </v-card>
@@ -75,9 +61,10 @@
               elevation="2"
               rounded
               x-large
-              @click="e1 = 3"
-              v-for="type in studentTypes"
-            >{{ type }}
+              v-for="studentType in studentTypes"
+              v-bind:key="studentType.slug"
+              @click="onStudentType(studentType)"
+            >{{ studentType.title }}
             </v-btn>
 
           </v-card>
@@ -87,13 +74,19 @@
     </v-stepper>
 
     <template v-if="e1 === 3">
-      <SemesterTimeline></SemesterTimeline>
+      <SemesterTimeline
+        v-for="semester in semesters"
+        v-bind:key="semester.semester"
+        :semester="semester.semester"
+        :courses="semester.courses"
+      ></SemesterTimeline>
     </template>
   </v-container>
 </template>
 
 <script>
 import SemesterTimeline from '../components/semester-timeline';
+import ApiService from '../services/api-service';
 
 export default {
   components: {
@@ -103,14 +96,95 @@ export default {
   data() {
     return {
       e1: 1,
-      studentTypes: [
-        'EUD',
-        'EUX',
-        'EUV 1',
-        'EUV 2',
-        'EUV 3',
-      ],
+
+      loading: true,
+
+      educationTypes: [],
+      selectedEducationType: null,
+
+      studentTypes: [],
+      selectedStudentType: null,
+
+      semesters: [],
     };
+  },
+
+  mounted() {
+    const vm = this;
+
+    Promise.all([ApiService.educationTypes()
+      .then((res) => {
+        vm.educationTypes = res.data.data;
+      }),
+      ApiService.studentTypes()
+        .then((res) => {
+          vm.studentTypes = res.data.data;
+          vm.loading = false;
+        })]).then(() => this.whenHasParams());
+  },
+
+  methods: {
+    whenHasParams() {
+      if (this.$route.query['educationType']) {
+        const educationType = this.educationTypes.filter(x => x.slug === this.$route.query.educationType)[0];
+        if (educationType) {
+          this.onEducationType(educationType, true);
+
+          if (this.$route.query['studentType']) {
+            const studentType = this.studentTypes.filter(x => x.slug === this.$route.query.studentType)[0];
+            if (studentType) {
+              this.onStudentType(studentType);
+            }
+          }
+        }
+      }
+    },
+
+    onEducationType(educationType, hasQueryParam = false) {
+      this.selectedEducationType = educationType;
+
+      if (this.$route.query['educationType']) {
+        this.e1 = 2;
+        return;
+      }
+
+      if (!hasQueryParam) {
+        this.$router.push({
+          query: Object.assign({}, this.$route.query, {educationType: educationType.slug}),
+        });
+      }
+    },
+
+    onStudentType(studentType) {
+      this.selectedStudentType = studentType;
+
+      if (this.$route.query['studentType']) {
+        this.getSemesters()
+          .then(() => this.e1 = 3);
+      } else {
+        this.$router.push({
+          query: Object.assign({}, this.$route.query, {studentType: studentType.slug}),
+        });
+
+        this.getSemesters()
+          .then(() => this.e1 = 3);
+      }
+    },
+
+    getSemesters() {
+      return new Promise((resolve, reject) => {
+        const vm = this;
+        ApiService.educationVersion(this.selectedEducationType.slug)
+          .then((res) => {
+            const educationSlug = res.data.data.slug;
+            ApiService.semesters(educationSlug, this.selectedStudentType.slug)
+              .then((res) => {
+                vm.semesters = res.data.data;
+                resolve();
+              }).catch(reject);
+          }).catch(reject);
+      });
+    },
   },
 };
 </script>

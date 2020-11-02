@@ -1,40 +1,45 @@
 <template>
-  <v-timeline
-    align-top
-    :dense="$vuetify.breakpoint.smAndDown"
-  >
-    <v-timeline-item
-      v-for="(item, i) in items"
-      :key="i"
-      :color="item.color"
-      fill-dot
-      small
+  <v-container>
+
+    <v-sheet style="text-align: center; font-size: 1.6rem;">Hovedforløb {{ semester }}</v-sheet>
+
+    <v-timeline
+      align-top
+      :dense="$vuetify.breakpoint.smAndDown"
     >
-      <v-card
-        :color="item.color"
-        dark
+      <v-timeline-item
+        v-for="course in courses"
+        :key="course.course_no"
+        fill-dot
+        small
       >
-        <v-card-title class="title">
-          Grundlæggende programmering
-        </v-card-title>
-        <v-card-text class="white text--primary">
-          <p class="py-2">Der arbejdes med konsol-applikationsopgaver i programmeringssproget C#. Programmeringssproget er underordnet, idet der lægges vægt på metodikker, fagtermer og grundlæggende forståelse.</p>
-          <v-btn
-            :color="item.color"
-            class="mx-0"
-            outlined
-          >
-            Læs mere
-          </v-btn>
-        </v-card-text>
-      </v-card>
-    </v-timeline-item>
-  </v-timeline>
+        <v-card
+          dark
+        >
+          <v-card-title class="title">
+            {{ course.title }}
+          </v-card-title>
+          <v-card-text class="white text--primary">
+            <p class="py-2">{{ course.overview }}</p>
+          </v-card-text>
+
+          <v-card-actions>
+            <v-btn
+              class="mx-0"
+              outlined
+            >
+              Læs mere
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-timeline-item>
+    </v-timeline>
+  </v-container>
 </template>
 
 <script>
 export default {
-  props: [],
+  props: ['semester', 'courses'],
 
   data: () => ({
     items: [

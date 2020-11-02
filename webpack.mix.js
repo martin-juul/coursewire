@@ -10,6 +10,7 @@ mix.js('resources/js/app.js', 'public/js')
   .extract([
     'axios',
     'vue',
+    'vue-router',
     'vuetify',
     '@sentry/browser',
     '@sentry/integrations',

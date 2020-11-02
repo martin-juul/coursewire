@@ -26,6 +26,10 @@
           <a href="https://www.linkedin.com/school/syddanskerhvervsskole/"><v-icon>mdi-linkedin</v-icon></a>
         </div>
 
+        <div>
+          <a href=""
+        </div>
+
        <div>
          {{ new Date().getFullYear() }} — <strong>Martin Juul</strong>
        </div>

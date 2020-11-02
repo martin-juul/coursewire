@@ -27,6 +27,7 @@
         "@sentry/browser": "^5.27.1",
         "@sentry/integrations": "^5.27.1",
         "@sentry/tracing": "^5.27.1",
+        "vue-router": "^3.4.8",
         "vuetify": "^2.3.16"
     }
 }

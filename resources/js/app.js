@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import vuetify from './plugins/vuetify';
+import router from './plugins/router';
 import * as Sentry from '@sentry/browser';
 import { Vue as VueIntegration } from '@sentry/integrations';
 import { Integrations } from '@sentry/tracing';
@@ -44,8 +45,9 @@ Vue.component('wire-masthead', require('./components/masthead').default);
 Vue.component('wire-impressum', require('./components/impressum').default);
 
 // Pages
-Vue.component('wire-home', require('./Pages/Home').default);
+// Vue.component('wire-home', require('./Pages/Home').default);
 
 new Vue({
+  router,
   vuetify,
 }).$mount('#app');
