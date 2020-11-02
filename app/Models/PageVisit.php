@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * App\Models\PageVisit
  *
- * @property string $id
+ * @property int $id
  * @property string $primary_key
  * @property string|null $secondary_key
  * @property int $score
@@ -31,6 +31,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class PageVisit extends AbstractModel
 {
     use HasFactory;
+
+    protected $keyType = 'int';
 
     protected $guarded = [];
     protected $casts = ['list' => 'array'];

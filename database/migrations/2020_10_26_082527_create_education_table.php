@@ -18,9 +18,6 @@ class CreateEducationTable extends Migration
 
             $table->text('slug')->unique();
 
-            $table->text('overview')->nullable();
-            $table->text('about')->nullable();
-
             $table->text('version');
 
             $table->timestampsTz();

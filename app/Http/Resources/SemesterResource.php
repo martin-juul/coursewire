@@ -5,9 +5,9 @@ namespace App\Http\Resources;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
- * @mixin \App\Models\Education
+ * @mixin \App\Models\Semester
  */
-class EducationResource extends JsonResource
+class SemesterResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -19,8 +19,8 @@ class EducationResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'slug'     => $this->slug,
-            'version'  => $this->version,
+            'semester' => $this->semester,
+            'courses'  => CourseResource::collection($this->whenLoaded('courses')),
         ];
     }
 }

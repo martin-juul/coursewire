@@ -41,6 +41,10 @@ class Semester extends Resource
         'semester',
     ];
 
+    public static function label()
+    {
+        return 'Hovedforløb';
+    }
 
     /**
      * Get the fields displayed by the resource.
@@ -52,15 +56,15 @@ class Semester extends Resource
     public function fields(Request $request)
     {
         return [
-            BelongsTo::make('Education'),
+            BelongsTo::make('Uddannelse', 'education', 'App\Nova\Education'),
 
-            Text::make(__('Semester'), 'semester')->sortable()->required(),
-            BelongsTo::make('StudentType')->required(),
+            Text::make(__('Hovedforløb'), 'semester')->sortable()->required(),
+            BelongsTo::make('Elev Type', 'studentType', 'App\Nova\StudentType')->required(),
 
             BelongsToMany::make(__('Fag'), 'courses', 'App\Nova\Course')
                 ->fields(function () {
                     return [
-                        Number::make(__('Dage'), 'duration')
+                        Number::make(__('Days'), 'duration')
                             ->rules('required', 'numeric'),
                     ];
                 })->pivots(),

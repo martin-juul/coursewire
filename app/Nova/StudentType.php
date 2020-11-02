@@ -42,6 +42,11 @@ class StudentType extends Resource
         'title',
     ];
 
+    public static function label()
+    {
+        return __('Student Type');
+    }
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -53,8 +58,8 @@ class StudentType extends Resource
     {
         return [
             Text::make(__('Titel'), 'title')->sortable(),
-            Text::make(__('Leder'), 'overview')->onlyOnForms()->onlyOnDetail(),
-            Text::make(__('Beskrivelse'), 'description')->onlyOnForms()->onlyOnDetail(),
+            Text::make(__('Overview'), 'overview')->onlyOnForms()->onlyOnDetail(),
+            Text::make(__('Description'), 'description')->onlyOnForms()->onlyOnDetail(),
         ];
     }
 

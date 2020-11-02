@@ -408,6 +408,7 @@
     "This file field is read-only.": "This file field is read-only.",
     "No additional information...": "No additional information...",
     "ID": "ID",
+    "Days": "Dage",
     "30 Days": "30 Dage",
     "60 Days": "60 Dage",
     "90 Days": "90 Dage",
@@ -421,6 +422,10 @@
     ":resource Details: :title": ":resource Detaljer: :title",
     "Courses": "Fag",
     "Course": "fag",
+    "Description": "Beskrivelse",
+    "Overview": "Oversigt",
     "Education": "Uddannelse",
-    "education": "uddannelse"
+    "education": "uddannelse",
+    "Semester": "Hovedforløb",
+    "Student Type": "Elev type"
 }

@@ -35,8 +35,13 @@ class Education extends Resource
      * @var array
      */
     public static $search = [
-        'title',
+
     ];
+
+    public function title()
+    {
+        return $this->educationType->title . ' | ' . $this->version;
+    }
 
     public static function label()
     {
@@ -54,9 +59,7 @@ class Education extends Resource
     {
         return [
             BelongsTo::make('EducationType')->sortable(),
-            Text::make(__('Overblik'), 'overview')->hideFromIndex(),
             Text::make(__('Version'), 'version')->required()->sortable(),
-            Trix::make(__('Beskrivelse'), 'about')->hideFromIndex(),
         ];
     }
 

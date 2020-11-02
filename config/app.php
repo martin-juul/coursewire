@@ -15,6 +15,10 @@ return [
 
     'name' => env('APP_NAME', 'IT & Data'),
 
+    'customer'         => env('APP_CUSTOMER', 'Syddansk Erhvervsskole'),
+    'customer_acronym' => env('APP_CUSTOMER_ACRONYM', 'SDE'),
+    'customer_url'     => env('APP_CUSTOMER_URL', 'https://www.sde.dk'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -179,6 +183,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ModelObserverProvider::class,
         App\Providers\PageVisitsServiceProvider::class,
+        App\Providers\ViewServiceProvider::class,
 
     ],
 

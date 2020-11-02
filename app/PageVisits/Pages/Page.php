@@ -2,50 +2,33 @@
 
 namespace App\PageVisits\Pages;
 
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
-
-class Page extends Model
+class Page
 {
-    protected $guarded = [];
+    protected $attributes = [];
 
     public function __construct(int $id, string $name)
     {
-        parent::__construct(['id' => $id, 'name' => $name]);
+        $this->attributes['id'] = $id;
+        $this->attributes['name'] = $name;
     }
 
-    protected function performInsert(Builder $query)
+    public function getKeyName(): string
     {
-        return null;
+        return 'id';
     }
 
-    protected function performUpdate(Builder $query)
+    public function __get($name)
     {
-        return null;
+        return $this->attributes[$name] ?? null;
     }
 
-    protected function performDeleteOnModel()
+    public function &__set($name, $value)
     {
-       return null;
+        $this->attributes[$name] = $value;
     }
 
-    public function update(array $attributes = [], array $options = [])
+    public function __isset($name)
     {
-        return null;
-    }
-
-    public function save(array $options = [])
-    {
-        return null;
-    }
-
-    public function saveOrFail(array $options = [])
-    {
-        return null;
-    }
-
-    public function saveQuietly(array $options = [])
-    {
-        return null;
+        return array_key_exists($name, $this->attributes);
     }
 }
