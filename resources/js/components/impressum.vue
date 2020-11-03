@@ -8,31 +8,26 @@
       flat
       tile
     >
-      <v-card-title class="white">
-        <v-img
-          aria-label="Link til Syddansk Erhversskole"
-          @click="goToSde"
-          style="cursor: pointer;"
-          :contain="true"
-          max-height="48px"
-          src="/branding/sde/sde-logo-large.png"></v-img>
-      </v-card-title>
-
       <v-card-text class="py-2 white--text text-center d-flex" style="justify-content: space-evenly">
 
         <div>
-          <a href="https://www.facebook.com/Syddansk-Erhvervsskole-156366231072108/" target="_blank"><v-icon>mdi-facebook</v-icon></a>
-          <a href="https://www.youtube.com/channel/UCHGaVnmT1LL9fkcIu_sTrnA"> <v-icon>mdi-youtube</v-icon></a>
-          <a href="https://www.linkedin.com/school/syddanskerhvervsskole/"><v-icon>mdi-linkedin</v-icon></a>
+          <a href="https://www.facebook.com/Syddansk-Erhvervsskole-156366231072108/" rel="nofollow" target="_blank">
+            <v-icon>mdi-facebook</v-icon>
+          </a>
+          <a href="https://www.youtube.com/channel/UCHGaVnmT1LL9fkcIu_sTrnA" rel="nofollow" target="_blank">
+            <v-icon>mdi-youtube</v-icon>
+          </a>
+          <a href="https://www.linkedin.com/school/syddanskerhvervsskole/" rel="nofollow" target="_blank">
+            <v-icon>mdi-linkedin</v-icon>
+          </a>
+          <a :href="customerUrl" rel="nofollow" target="_blank">
+            <v-icon>mdi-earth</v-icon>
+          </a>
         </div>
 
         <div>
-          <a href=""
+          {{ new Date().getFullYear() }} — <strong>Martin Juul</strong>
         </div>
-
-       <div>
-         {{ new Date().getFullYear() }} — <strong>Martin Juul</strong>
-       </div>
       </v-card-text>
     </v-card>
   </v-footer>
@@ -40,11 +35,13 @@
 
 
 <script>
+import config from '../config';
+
 export default {
-  methods: {
-    goToSde() {
-      window.open('https://www.sde.dk/', '_blank');
-    }
-  }
-}
+  data() {
+    return {
+      customerUrl: config.customerUrl,
+    };
+  },
+};
 </script>

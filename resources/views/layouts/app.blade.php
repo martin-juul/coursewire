@@ -12,10 +12,15 @@
         @endif
     </title>
 
+    <link rel="shortcut icon" type="image/x-icon" href="/branding/sde/favicon.png" />
+
     @yield('meta_tags')
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="copyright" content="Martin Juul">
     <meta name="author" content="{{ config('app.customer') }}">
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">

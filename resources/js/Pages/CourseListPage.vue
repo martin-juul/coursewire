@@ -1,5 +1,7 @@
 <template>
   <v-container>
+    <Header title="Fag"></Header>
+
     <v-data-table
       :headers="headers"
       :items="courses"
@@ -35,9 +37,15 @@
 </template>
 
 <script>
+import Header from '../components/header';
+
 import ApiService from '../services/api-service';
 
 export default {
+  components: {
+    Header,
+  },
+
   data() {
     return {
       totalCourses: 0,

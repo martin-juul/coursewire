@@ -27,6 +27,7 @@
             <v-btn
               class="mx-0"
               outlined
+              :to="{name: 'course', params: { courseNo: course.course_no } }"
             >
               Læs mere
             </v-btn>

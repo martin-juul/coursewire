@@ -1,14 +1,10 @@
 <template>
   <v-container>
-    <v-banner>
-      <h1>Data- og kommunikationsuddannelsen</h1>
-    </v-banner>
-
-    <v-spacer class="mb-4"></v-spacer>
+    <Header title="Data- og kommunikationsuddannelsen"></Header>
 
     <div v-if="loading">Loading..</div>
 
-    <v-stepper v-model="e1" v-if="educationTypes.length > 0">
+    <v-stepper v-model="e1" v-if="!loading">
       <v-stepper-header>
         <v-stepper-step
           :complete="e1 > 1"
@@ -86,10 +82,13 @@
 
 <script>
 import SemesterTimeline from '../components/semester-timeline';
+import Header from '../components/header';
+
 import ApiService from '../services/api-service';
 
 export default {
   components: {
+    Header,
     SemesterTimeline,
   },
 
@@ -119,13 +118,13 @@ export default {
       ApiService.studentTypes()
         .then((res) => {
           vm.studentTypes = res.data.data;
-          vm.loading = false;
         })]).then(() => this.whenHasParams());
   },
 
   methods: {
     whenHasParams() {
       if (this.$route.query['educationType']) {
+        this.loading = true;
         const educationType = this.educationTypes.filter(x => x.slug === this.$route.query.educationType)[0];
         if (educationType) {
           this.onEducationType(educationType, true);
@@ -134,25 +133,25 @@ export default {
             const studentType = this.studentTypes.filter(x => x.slug === this.$route.query.studentType)[0];
             if (studentType) {
               this.onStudentType(studentType);
+              this.loading = false;
             }
           }
         }
       }
+
+      this.loading = false;
     },
 
     onEducationType(educationType, hasQueryParam = false) {
       this.selectedEducationType = educationType;
 
-      if (this.$route.query['educationType']) {
-        this.e1 = 2;
-        return;
-      }
-
-      if (!hasQueryParam) {
+      if (!hasQueryParam || !this.$route.query['educationType']) {
         this.$router.push({
           query: Object.assign({}, this.$route.query, {educationType: educationType.slug}),
         });
       }
+
+      this.e1 = 2;
     },
 
     onStudentType(studentType) {
