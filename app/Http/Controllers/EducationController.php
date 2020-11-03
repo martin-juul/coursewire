@@ -16,6 +16,13 @@ class EducationController extends Controller
         return EducationTypeResource::collection($items);
     }
 
+    public function show(Request $request, string $slug)
+    {
+        $item = EducationType::whereSlug($slug)->firstOrFail();
+
+        return new EducationTypeResource($item);
+    }
+
     public function getVersion(Request $request, string $educationTypeSlug)
     {
         $type = EducationType::whereSlug($educationTypeSlug)->firstOrFail();

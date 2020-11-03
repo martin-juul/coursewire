@@ -1,0 +1,54 @@
+<template>
+  <v-main v-if="!loading && !error">
+    <Header class="text-center" style="margin-top: -54px;" :title="education.title"></Header>
+
+    <v-container style="max-width: 868px;" class="pb-4">
+      <v-img
+        :src="education.image"
+        max-height="200"
+        contain
+        class="mb-4"
+      ></v-img>
+
+      <v-spacer class="mt-4"></v-spacer>
+
+      <section v-html="education.about"></section>
+    </v-container>
+  </v-main>
+</template>
+
+<script>
+import Header from '../components/header';
+import ApiService from '../services/api-service';
+
+export default {
+  components: {
+    Header,
+  },
+
+  data() {
+    return {
+      education: null,
+      loading: true,
+      error: false,
+    };
+  },
+
+  created() {
+    this.getEducation();
+  },
+
+  methods: {
+    getEducation() {
+      ApiService.educationType(this.$route.params.slug)
+        .then((res) => {
+          this.education = res.data.data;
+          this.loading = false;
+        }).catch((e) => {
+        this.error = true;
+        this.loading = false;
+      });
+    },
+  },
+};
+</script>

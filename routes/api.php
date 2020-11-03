@@ -9,6 +9,9 @@ Route::get('courses/{courseNo}', 'CourseController@show')
 Route::get('educations', 'EducationController@index')
     ->name('api.education.index');
 
+Route::get('educations/type/{slug}', 'EducationController@show')
+    ->name('api.educations.show');
+
 Route::get('educations/{educationTypeSlug}', 'EducationController@getVersion')
     ->name('api.educations.version');
 

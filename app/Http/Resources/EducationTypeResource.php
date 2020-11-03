@@ -22,6 +22,8 @@ class EducationTypeResource extends JsonResource
             'title'      => $this->title,
             'short_name' => $this->short_name,
             'slug'       => $this->slug,
+            'about'      => $this->about,
+            'image'      => $this->getImageUrl(),
             'created'    => $this->created_at,
             'updated'    => $this->updated_at,
         ];

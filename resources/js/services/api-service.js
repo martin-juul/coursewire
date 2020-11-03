@@ -18,6 +18,10 @@ class ApiService {
     return axios.get('/api/educations');
   }
 
+  static educationType(slug) {
+    return axios.get(`/api/educations/type/${slug}`);
+  }
+
   static educationVersion(educationTypeSlug, version = null) {
     if (!version) {
       return axios.get(`/api/educations/${educationTypeSlug}`);

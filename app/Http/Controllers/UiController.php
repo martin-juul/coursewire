@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\EducationType;
 use App\PageVisits\Pages\HomePage;
 use Illuminate\Http\Request;
 
@@ -29,6 +30,21 @@ class UiController extends Controller
         return view('course-show', [
             'courseTitle' => $item->title,
             'courseNo'    => $item->course_no,
+        ]);
+    }
+
+    public function educations()
+    {
+        return view('educations');
+    }
+
+    public function showEducation(Request $request, string $slug)
+    {
+        $item = EducationType::whereSlug($slug)->firstOrFail();
+
+        return view('education-show', [
+            'title' => $item->title,
+            'slug'  => $item->slug,
         ]);
     }
 }

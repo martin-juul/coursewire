@@ -5,7 +5,9 @@ namespace App\Nova;
 use App\Nova\Enums\ResourceGroup;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class EducationType extends Resource
@@ -44,7 +46,7 @@ class EducationType extends Resource
 
     public static function label()
     {
-        return 'Uddannelses Version';
+        return 'Uddannelse';
     }
 
     /**
@@ -59,6 +61,14 @@ class EducationType extends Resource
         return [
             Text::make(__('Titel'), 'title'),
             Text::make(__('Kort navn'), 'short_name'),
+            Image::make('Billede', 'image_path')
+                ->disk('spaces')
+                ->preview(function ($value, $disk) {
+                    return $value ?
+                        config('app.cdn_url') . '/' . $value
+                        : null;
+                }),
+            Trix::make('Om', 'about'),
         ];
     }
 

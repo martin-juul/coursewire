@@ -6,11 +6,15 @@ Vue.use(VueRouter);
 import HomePage from '../Pages/HomePage';
 import CourseListPage from '../Pages/CourseListPage';
 import CoursePage from '../Pages/CoursePage';
+import EducationsPage from '../Pages/EducationsPage';
+import EducationPage from '../Pages/EducationPage';
 
 const routes = [
   {name: 'home', path: '/', component: HomePage},
   {name: 'courses', path: '/fag',  meta: { scrollToTop: true }, component: CourseListPage},
   {name: 'course', path: '/fag/:courseNo',  meta: { scrollToTop: true }, component: CoursePage},
+  {name: 'educations', path: '/uddannelserne',  meta: { scrollToTop: true }, component: EducationsPage},
+  {name: 'education', path: '/uddannelserne/:slug',  meta: { scrollToTop: true }, component: EducationPage},
 ];
 
 export default new VueRouter({

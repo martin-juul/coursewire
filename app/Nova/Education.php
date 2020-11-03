@@ -45,7 +45,7 @@ class Education extends Resource
 
     public static function label()
     {
-        return 'Uddannelse';
+        return 'Uddannelses Version';
     }
 
     /**
