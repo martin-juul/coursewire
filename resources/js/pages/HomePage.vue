@@ -1,6 +1,6 @@
 <template>
   <v-main>
-    <Header title="Data- og kommunikationsuddannelsen"></Header>
+    <Header title="Data- og kommunikationsuddannelsen" style="margin-top: -54px;"></Header>
 
     <v-container
       class="d-flex justify-center"
