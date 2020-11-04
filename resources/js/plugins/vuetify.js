@@ -16,7 +16,7 @@ export default new Vuetify({
         background: '#fff',
         primary: '#00788a',
         secondary: colors.cyan.lighten2,
-        accent: colors.blue.accent2,
+        accent: '#f6831e',
         error: colors.red.base,
         warning: colors.yellow.base,
         info: colors.blue.lighten2,

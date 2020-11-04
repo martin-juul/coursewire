@@ -3,11 +3,11 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-import HomePage from '../Pages/HomePage';
-import CourseListPage from '../Pages/CourseListPage';
-import CoursePage from '../Pages/CoursePage';
-import EducationsPage from '../Pages/EducationsPage';
-import EducationPage from '../Pages/EducationPage';
+import HomePage from '../pages/HomePage';
+import CourseListPage from '../pages/CourseListPage';
+import CoursePage from '../pages/CoursePage';
+import EducationsPage from '../pages/EducationsPage';
+import EducationPage from '../pages/EducationPage';
 
 const routes = [
   {name: 'home', path: '/', component: HomePage},

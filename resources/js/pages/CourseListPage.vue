@@ -13,23 +13,23 @@
       class="elevation-1">
       <template v-slot:expanded-item="{headers, item}">
         <td :colspan="headers.length">
-         <v-container>
-           <v-card>
-             <v-card-title>Oversigt</v-card-title>
-             <v-card-text>
-               {{ item.overview }}
-             </v-card-text>
-           </v-card>
+          <v-container>
+            <v-card>
+              <v-card-title>Oversigt</v-card-title>
+              <v-card-text>
+                {{ item.overview }}
+              </v-card-text>
+            </v-card>
 
-           <v-spacer></v-spacer>
+            <v-spacer></v-spacer>
 
-           <v-card>
-             <v-card-title>Om</v-card-title>
-             <v-card-text>
-               {{ item.about }}
-             </v-card-text>
-           </v-card>
-         </v-container>
+            <v-card>
+              <v-card-title>Om</v-card-title>
+              <v-card-text>
+                {{ item.about }}
+              </v-card-text>
+            </v-card>
+          </v-container>
         </td>
       </template>
     </v-data-table>
