@@ -10,11 +10,13 @@
       <v-timeline-item
         v-for="course in courses"
         :key="course.course_no"
+        :color="dotColor"
         fill-dot
         small
       >
         <v-card
           dark
+          :color="cardColor"
         >
           <v-card-title class="title">
             {{ course.title }}
@@ -39,24 +41,20 @@
 </template>
 
 <script>
+import ColorWheel from '../mixins/ColorWheel';
+
 export default {
   props: ['semester', 'courses'],
+  mixins: [ColorWheel],
 
   data: () => ({
-    items: [
-      {
-        color: 'red lighten-2',
-      },
-      {
-        color: 'purple darken-1',
-      },
-      {
-        color: 'green lighten-1',
-      },
-      {
-        color: 'indigo',
-      },
-    ],
+    cardColor: '',
+    dotColor: '',
   }),
-}
+
+  created() {
+    this.cardColor = this.getColor('blue');
+    this.dotColor = this.getColor('green');
+  },
+};
 </script>
