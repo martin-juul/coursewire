@@ -4,7 +4,6 @@
     <v-sheet style="text-align: center; font-size: 1.6rem;">Hovedforløb {{ semester }}</v-sheet>
 
     <v-timeline
-      align-top
       :dense="$vuetify.breakpoint.smAndDown"
     >
       <v-timeline-item
@@ -12,8 +11,8 @@
         :key="course.course_no"
         :color="dotColor"
         fill-dot
-        small
       >
+        <span slot="opposite">Dage</span>
         <v-card
           dark
           :color="cardColor"
@@ -21,6 +20,7 @@
           <v-card-title class="title">
             {{ course.title }}
           </v-card-title>
+
           <v-card-text class="white text--primary">
             <p class="py-2">{{ course.overview }}</p>
           </v-card-text>
@@ -35,6 +35,10 @@
             </v-btn>
           </v-card-actions>
         </v-card>
+
+        <template v-slot:icon>
+          <span class="white--text font-weight-bold">{{ course.duration }}</span>
+        </template>
       </v-timeline-item>
     </v-timeline>
   </v-container>
