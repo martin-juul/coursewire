@@ -11,70 +11,79 @@
     </v-container>
 
     <v-container class="pa-4" v-else>
-      <v-stepper v-model="step" v-if="!error">
-        <v-stepper-header>
-          <v-stepper-step
-            :complete="step > 1"
-            :editable="true"
-            step="1"
-          >
-            {{ educationLabel }}
-          </v-stepper-step>
-
-          <v-divider></v-divider>
-
-          <v-stepper-step
-            :complete="step > 2"
-            :editable="true"
-            step="2"
-          >
-            {{ studentTypeLabel }}
-          </v-stepper-step>
-
-          <v-divider></v-divider>
-
-        </v-stepper-header>
-
-        <v-stepper-items>
-          <v-stepper-content step="1">
-            <v-card
-              class="mx-auto d-flex justify-center"
+      <v-card
+        class="mx-auto"
+        v-if="!error"
+        style="border: unset !important; box-shadow: unset !important;"
+      >
+        <v-card-title
+         style="background-color: #006c80; color: #fff;"
+        >Bliv en af danmarks kommende talenter indenfor IT.</v-card-title>
+        <v-stepper v-model="step">
+          <v-stepper-header style="border: unset !important; box-shadow: unset !important;">
+            <v-stepper-step
+              :complete="step > 1"
+              :editable="true"
+              step="1"
             >
+              {{ educationLabel }}
+            </v-stepper-step>
 
-              <v-btn
-                rounded
-                x-large
-                dark
-                v-for="educationType in educationTypes"
-                v-bind:key="educationType.short_name"
-                :color="educationType.color"
-                @click="onEducationType(educationType)"
-              >{{ educationType.short_name }}
-              </v-btn>
+            <v-divider></v-divider>
 
-            </v-card>
-          </v-stepper-content>
-
-          <v-stepper-content step="2">
-            <v-card
-              class="mx-auto d-flex justify-center"
+            <v-stepper-step
+              :complete="step > 2"
+              :editable="true"
+              step="2"
             >
-              <v-btn
-                rounded
-                x-large
-                dark
-                v-for="studentType in studentTypes"
-                v-bind:key="studentType.slug"
-                :color="studentType.color"
-                @click="onStudentType(studentType)"
-              >{{ studentType.title }}
-              </v-btn>
+              {{ studentTypeLabel }}
+            </v-stepper-step>
 
-            </v-card>
-          </v-stepper-content>
+            <v-divider></v-divider>
 
-        </v-stepper-items>
-      </v-stepper>
+          </v-stepper-header>
+
+          <v-stepper-items>
+            <v-stepper-content step="1">
+              <v-card
+                class="mx-auto d-flex justify-center"
+              >
+
+                <v-btn
+                  rounded
+                  x-large
+                  dark
+                  v-for="educationType in educationTypes"
+                  v-bind:key="educationType.short_name"
+                  :color="educationType.color"
+                  @click="onEducationType(educationType)"
+                >{{ educationType.short_name }}
+                </v-btn>
+
+              </v-card>
+            </v-stepper-content>
+
+            <v-stepper-content step="2">
+              <v-card
+                class="mx-auto d-flex justify-center"
+              >
+                <v-btn
+                  rounded
+                  x-large
+                  dark
+                  v-for="studentType in studentTypes"
+                  v-bind:key="studentType.slug"
+                  :color="studentType.color"
+                  @click="onStudentType(studentType)"
+                >{{ studentType.title }}
+                </v-btn>
+
+              </v-card>
+            </v-stepper-content>
+
+          </v-stepper-items>
+        </v-stepper>
+      </v-card>
 
       <v-alert
         type="error"
