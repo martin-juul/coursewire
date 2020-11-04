@@ -1,75 +1,88 @@
 <template>
-  <v-container>
+  <v-main>
     <Header title="Data- og kommunikationsuddannelsen"></Header>
 
-    <div v-if="loading">Loading..</div>
+    <v-container
+      class="d-flex justify-center"
+      v-if="loading">
+      <v-progress-circular
+        indeterminate
+      ></v-progress-circular>
+    </v-container>
 
-    <v-stepper v-model="e1" v-if="!loading">
-      <v-stepper-header>
-        <v-stepper-step
-          :complete="e1 > 1"
-          :editable="true"
-          step="1"
-        >
-          Uddannelse
-        </v-stepper-step>
-
-        <v-divider></v-divider>
-
-        <v-stepper-step
-          :complete="e1 > 2"
-          :editable="true"
-          step="2"
-        >
-          Elev Type
-        </v-stepper-step>
-
-        <v-divider></v-divider>
-
-      </v-stepper-header>
-
-      <v-stepper-items>
-        <v-stepper-content step="1">
-          <v-card
-            class="mx-auto d-flex justify-center"
+    <v-container class="pa-4" v-else>
+      <v-stepper v-model="step" v-if="!error">
+        <v-stepper-header>
+          <v-stepper-step
+            :complete="step > 1"
+            :editable="true"
+            step="1"
           >
+            {{ educationLabel }}
+          </v-stepper-step>
 
-            <v-btn
-              color="primary"
-              elevation="2"
-              rounded
-              x-large
-              v-for="educationType in educationTypes"
-              v-bind:key="educationType.short_name"
-              @click="onEducationType(educationType)"
-            >{{ educationType.short_name }}
-            </v-btn>
+          <v-divider></v-divider>
 
-          </v-card>
-        </v-stepper-content>
-
-        <v-stepper-content step="2">
-          <v-card
-            class="mx-auto d-flex justify-center"
+          <v-stepper-step
+            :complete="step > 2"
+            :editable="true"
+            step="2"
           >
-            <v-btn
-              color="primary"
-              elevation="2"
-              rounded
-              x-large
-              v-for="studentType in studentTypes"
-              v-bind:key="studentType.slug"
-              @click="onStudentType(studentType)"
-            >{{ studentType.title }}
-            </v-btn>
+            {{ studentTypeLabel }}
+          </v-stepper-step>
 
-          </v-card>
-        </v-stepper-content>
+          <v-divider></v-divider>
 
-      </v-stepper-items>
-    </v-stepper>
+        </v-stepper-header>
 
-    <template v-if="e1 === 3">
+        <v-stepper-items>
+          <v-stepper-content step="1">
+            <v-card
+              class="mx-auto d-flex justify-center"
+            >
+
+              <v-btn
+                rounded
+                x-large
+                dark
+                v-for="educationType in educationTypes"
+                v-bind:key="educationType.short_name"
+                :color="educationType.color"
+                @click="onEducationType(educationType)"
+              >{{ educationType.short_name }}
+              </v-btn>
+
+            </v-card>
+          </v-stepper-content>
+
+          <v-stepper-content step="2">
+            <v-card
+              class="mx-auto d-flex justify-center"
+            >
+              <v-btn
+                rounded
+                x-large
+                dark
+                v-for="studentType in studentTypes"
+                v-bind:key="studentType.slug"
+                :color="studentType.color"
+                @click="onStudentType(studentType)"
+              >{{ studentType.title }}
+              </v-btn>
+
+            </v-card>
+          </v-stepper-content>
+
+        </v-stepper-items>
+      </v-stepper>
+
+      <v-alert
+        type="error"
+        v-else>Der skete en fejl
+      </v-alert>
+    </v-container>
+
+    <template v-if="step === 3">
       <SemesterTimeline
         v-for="semester in semesters"
         v-bind:key="semester.semester"
@@ -77,12 +90,13 @@
         :courses="semester.courses"
       ></SemesterTimeline>
     </template>
-  </v-container>
+  </v-main>
 </template>
 
 <script>
 import SemesterTimeline from '../components/semester-timeline';
 import Header from '../components/header';
+import ColorWheel from '../mixins/ColorWheel';
 
 import ApiService from '../services/api-service';
 
@@ -92,11 +106,18 @@ export default {
     SemesterTimeline,
   },
 
+  mixins: [ColorWheel],
+
   data() {
     return {
-      e1: 1,
+      step: 1,
+      colors: ['orange', 'blue', 'green', 'cyan', 'red'],
+
+      educationLabel: 'Uddannelse',
+      studentTypeLabel: 'Elev type',
 
       loading: true,
+      error: false,
 
       educationTypes: [],
       selectedEducationType: null,
@@ -109,19 +130,50 @@ export default {
   },
 
   mounted() {
-    const vm = this;
-
-    Promise.all([ApiService.educationTypes()
-      .then((res) => {
-        vm.educationTypes = res.data.data;
-      }),
-      ApiService.studentTypes()
-        .then((res) => {
-          vm.studentTypes = res.data.data;
-        })]).then(() => this.whenHasParams());
+    Promise.all([
+      this.getEducationTypes(),
+      this.getStudentTypes()])
+      .then(() => this.whenHasParams())
+      .catch((e) => {
+        this.error = true;
+        this.loading = false;
+        throw e;
+      });
   },
 
   methods: {
+    getEducationTypes() {
+      let vm = this;
+      return new Promise(((resolve, reject) => {
+        ApiService.educationTypes()
+          .then((res) => {
+            let educationTypes = res.data.data;
+
+            educationTypes.map((education, i) => education.color = this.getColor(this.colors[i]));
+
+            vm.educationTypes = educationTypes;
+
+            resolve();
+          }).catch(reject);
+      }));
+    },
+
+    getStudentTypes() {
+      let vm = this;
+      return new Promise((resolve, reject) => {
+        ApiService.studentTypes()
+          .then((res) => {
+            let studentTypes = res.data.data;
+
+            studentTypes.map((student, i) => student.color = this.getColor(this.colors[i]));
+
+            vm.studentTypes = studentTypes;
+
+            resolve();
+          }).catch(reject);
+      });
+    },
+
     whenHasParams() {
       if (this.$route.query['educationType']) {
         this.loading = true;
@@ -135,15 +187,20 @@ export default {
               this.onStudentType(studentType);
               this.loading = false;
             }
+          } else {
+            this.loading = false;
           }
+        } else {
+          this.loading = false;
         }
+      } else {
+        this.loading = false;
       }
-
-      this.loading = false;
     },
 
     onEducationType(educationType, hasQueryParam = false) {
       this.selectedEducationType = educationType;
+      this.educationLabel = educationType.short_name;
 
       if (!hasQueryParam || !this.$route.query['educationType']) {
         this.$router.push({
@@ -151,22 +208,32 @@ export default {
         });
       }
 
-      this.e1 = 2;
+      this.step = 2;
     },
 
     onStudentType(studentType) {
       this.selectedStudentType = studentType;
+      this.studentTypeLabel = studentType.title;
+      const vm = this;
+
+      const done = () => {
+        this.getSemesters()
+          .then(() => this.step = 3)
+          .catch((e) => {
+            vm.error = true;
+            vm.loading = false;
+            throw e;
+          });
+      };
 
       if (this.$route.query['studentType']) {
-        this.getSemesters()
-          .then(() => this.e1 = 3);
+        done();
       } else {
         this.$router.push({
           query: Object.assign({}, this.$route.query, {studentType: studentType.slug}),
         });
 
-        this.getSemesters()
-          .then(() => this.e1 = 3);
+        done();
       }
     },
 
