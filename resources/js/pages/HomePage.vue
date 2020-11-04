@@ -48,18 +48,18 @@
               <v-card
                 class="mx-auto d-flex justify-center"
               >
-
-                <v-btn
-                  rounded
-                  x-large
-                  dark
-                  v-for="educationType in educationTypes"
-                  v-bind:key="educationType.short_name"
-                  :color="educationType.color"
-                  @click="onEducationType(educationType)"
-                >{{ educationType.short_name }}
-                </v-btn>
-
+                <v-card-actions>
+                  <v-btn
+                    rounded
+                    x-large
+                    dark
+                    v-for="educationType in educationTypes"
+                    v-bind:key="educationType.short_name"
+                    :color="educationType.color"
+                    @click="onEducationType(educationType)"
+                  >{{ educationType.short_name }}
+                  </v-btn>
+                </v-card-actions>
               </v-card>
             </v-stepper-content>
 
@@ -67,17 +67,18 @@
               <v-card
                 class="mx-auto d-flex justify-center"
               >
-                <v-btn
-                  rounded
-                  x-large
-                  dark
-                  v-for="studentType in studentTypes"
-                  v-bind:key="studentType.slug"
-                  :color="studentType.color"
-                  @click="onStudentType(studentType)"
-                >{{ studentType.title }}
-                </v-btn>
-
+                <v-card-actions>
+                  <v-btn
+                    rounded
+                    x-large
+                    dark
+                    v-for="studentType in studentTypes"
+                    v-bind:key="studentType.slug"
+                    :color="studentType.color"
+                    @click="onStudentType(studentType)"
+                  >{{ studentType.title }}
+                  </v-btn>
+                </v-card-actions>
               </v-card>
             </v-stepper-content>
 
