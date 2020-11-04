@@ -11,13 +11,4 @@ body {
 
 @import 'components';
 
-.footer-branding-link {
-    color: unset;
-    text-decoration: unset;
-    line-height: unset;
-    border-color: unset;
 
-    &:after, &:before {
-        text-decoration: unset;
-    }
-}
