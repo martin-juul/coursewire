@@ -27,7 +27,7 @@
         "spatie/laravel-cookie-consent": "^2.12",
         "spatie/laravel-referer": "^1.7",
         "spatie/nova-tail-tool": "^3.0",
-        "tightenco/ziggy": "^0.9.4",
+        "tightenco/ziggy": "^1.0.0",
         "torann/geoip": "^3.0",
         "whitecube/nova-flexible-content": "^0.2.6"
     },
