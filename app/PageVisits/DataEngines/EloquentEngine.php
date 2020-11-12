@@ -3,6 +3,7 @@
 namespace App\PageVisits\DataEngines;
 
 use App\Models\PageVisit as Model;
+use Carbon\Carbon;
 use Illuminate\Database\Query\Builder;
 
 class EloquentEngine implements DataEngine
@@ -34,7 +35,7 @@ class EloquentEngine implements DataEngine
             $row = $this->model->firstOrNew(['primary_key' => $this->prefix . $key, 'secondary_key' => null]);
         }
 
-        if ($row->expired_at !== null && \Carbon\Carbon::now()->gt($row->expired_at)) {
+        if ($row->expired_at !== null && Carbon::now()->gt($row->expired_at)) {
             $row->score = $value;
             $row->expired_at = null;
         } else {
@@ -68,17 +69,14 @@ class EloquentEngine implements DataEngine
     public function get(string $key, $member = null)
     {
         if (!empty($member) || is_numeric($member)) {
-            return $this->model->where(['primary_key' => $this->prefix . $key, 'secondary_key' => $member])
-                ->where(function ($q) {
-                    return $q->where('expired_at', '>', \Carbon\Carbon::now())->orWhereNull('expired_at');
-                })
+            return $this->model
+                ->where(['primary_key' => $this->prefix . $key, 'secondary_key' => $member])
+                ->where(fn($q) => $this->expiredAt($q))
                 ->value('score');
         }
 
         return $this->model->where(['primary_key' => $this->prefix . $key, 'secondary_key' => null])
-            ->where(function ($q) {
-                return $q->where('expired_at', '>', \Carbon\Carbon::now())->orWhereNull('expired_at');
-            })
+            ->where(fn($q) => $this->expiredAt($q))
             ->value('score');
     }
 
@@ -102,21 +100,12 @@ class EloquentEngine implements DataEngine
 
     public function search(string $word, bool $noPrefix = true): array
     {
-        $results = [];
-
         if ($word === '*') {
-            $results = $this->model
-                ->where(function (Builder $q) {
-                    return $q->where('expired_at', '>', \Carbon\Carbon::now())
-                        ->orWhereNull('expired_at');
-                })
+            $results = $this->model->where(fn($q) => $this->expiredAt($q))
                 ->pluck('primary_key');
         } else {
             $results = $this->model->where('primary_key', 'like', $this->prefix . str_replace('*', '%', $word))
-                ->where(function (Builder $q) {
-                    return $q->where('expired_at', '>', \Carbon\Carbon::now())
-                        ->orWhereNull('expired_at');
-                })
+                ->where(fn($q) => $this->expiredAt($q))
                 ->pluck('primary_key');
         }
 
@@ -136,9 +125,7 @@ class EloquentEngine implements DataEngine
     {
         return array_slice(
             $this->model->where(['primary_key' => $this->prefix . $key, 'secondary_key' => null])
-                ->where(function ($q) {
-                    return $q->where('expired_at', '>', \Carbon\Carbon::now())->orWhereNull('expired_at');
-                })
+                ->where(fn($q) => $this->expiredAt($q))
                 ->value('list') ?? [], 0, $limit
         );
     }
@@ -147,7 +134,7 @@ class EloquentEngine implements DataEngine
     {
         $row = $this->model->firstOrNew(['primary_key' => $this->prefix . $key, 'secondary_key' => null]);
 
-        if ($row->expired_at !== null && \Carbon\Carbon::now()->gt($row->expired_at)) {
+        if ($row->expired_at !== null && Carbon::now()->gt($row->expired_at)) {
             $row->list = (array)$value;
             $row->expired_at = null;
         } else {
@@ -163,9 +150,7 @@ class EloquentEngine implements DataEngine
     {
         /** @noinspection ProperNullCoalescingOperatorUsageInspection */
         $rows = $this->model->where('primary_key', $this->prefix . $key)
-                ->where(function (Builder $q) {
-                    return $q->where('expired_at', '>', \Carbon\Carbon::now())->orWhereNull('expired_at');
-                })
+                ->where(fn($q) => $this->expiredAt($q))
                 ->whereNotNull('secondary_key')
                 ->orderBy('score', $orderByAsc ? 'asc' : 'desc')
                 ->when($limit > -1, function (Builder $q) use ($limit) {
@@ -178,9 +163,7 @@ class EloquentEngine implements DataEngine
     public function exists(string $key): bool
     {
         return $this->model->where(['primary_key' => $this->prefix . $key, 'secondary_key' => null])
-            ->where(function ($q) {
-                return $q->where('expired_at', '>', \Carbon\Carbon::now())->orWhereNull('expired_at');
-            })
+            ->where(fn($q) => $this->expiredAt($q))
             ->exists();
     }
 
@@ -192,7 +175,7 @@ class EloquentEngine implements DataEngine
             return -2;
         }
 
-        $ttl = $expired_at->timestamp - \Carbon\Carbon::now()->timestamp;
+        $ttl = $expired_at->timestamp - Carbon::now()->timestamp;
         return $ttl <= 0 ? -1 : $ttl;
     }
 
@@ -200,10 +183,19 @@ class EloquentEngine implements DataEngine
     {
         return $this->model->where(['primary_key' => $this->prefix . $key])
             ->where(function ($q) {
-                return $q->where('expired_at', '>', \Carbon\Carbon::now())->orWhereNull('expired_at');
+                return $q->where('expired_at', '>', Carbon::now())->orWhereNull('expired_at');
             })
             ->update([
-                'expired_at' => \Carbon\Carbon::now()->addSeconds($time),
+                'expired_at' => Carbon::now()->addSeconds($time),
             ]);
     }
+
+    private function expiredAt(Builder $q): callable
+    {
+        return static function () use ($q) {
+            return $q->where('expired_at', '>', Carbon::now())
+                ->orWhereNull('expired_at');
+        };
+    }
+
 }

@@ -2,7 +2,7 @@
 
 namespace App\PageVisits\Pages;
 
-class Page
+abstract class Page
 {
     protected $attributes = [];
 
