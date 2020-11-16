@@ -34,6 +34,9 @@
     - [Password Encryption](#password-encryption)
     - [TLS](#tls)
     - [Output escaping](#output-escaping)
+- [Test Suite](#test-suite)
+  - [Feature Testing](#feature-testing)
+  - [Unit Testing](#unit-testing)
 
 ## Copyright Notice
 
@@ -300,3 +303,10 @@ Where each block of X's represents external links to branding pages (facebook, y
 ### TLS
 
 ### Output escaping
+
+
+## Test Suite
+
+### Feature Testing
+
+### Unit Testing
