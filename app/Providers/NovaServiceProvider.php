@@ -5,10 +5,8 @@ namespace App\Providers;
 use App\Models\User;
 use App\PageVisits\Pages\HomePage;
 use Coroowicaksono\ChartJsIntegration\AreaChart;
-use Coroowicaksono\ChartJsIntegration\StackedChart;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Gate;
-use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
@@ -103,7 +101,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
-            new \Spatie\TailTool\TailTool(),
         ];
     }
 

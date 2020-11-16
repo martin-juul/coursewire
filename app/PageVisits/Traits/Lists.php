@@ -10,7 +10,7 @@ trait Lists
      * Fetch all time trending subjects.
      *
      * @param int $limit
-     * @param bool $orderByAsc
+     * @param array|bool $orderByAsc
      * @param array $constraints optional. filter models by attributes (where=[...])
      *
      * @return \Illuminate\Support\Collection|array

@@ -2,6 +2,7 @@
 
 namespace App\PageVisits;
 
+use App\PageVisits\Pages\Page;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
@@ -25,6 +26,9 @@ class Keys
             $this->instanceOfModel = true;
             $this->modelName = $this->modelName($subject);
             $this->id = $subject->{$subject->getKeyName()};
+        } else if ($subject instanceof Page) {
+            $this->id = $subject->{$subject->getKeyName()};
+            $this->modelName($this->modelName($subject));
         }
     }
 
@@ -75,8 +79,8 @@ class Keys
             return "{$key}:*";
         }
 
-        //it might not be that unique but it does the job since not many lists
-        //will be generated to one key.
+        // it might not be that unique but it does the job since not many lists
+        // will be generated to one key.
         $constraintsPart = count($constraints) ? ':' . substr(sha1(serialize($constraints)), 0, 7) : '';
 
         return "{$key}:" . ($isLow ? 'low' : 'top') . $constraintsPart . $limit;
@@ -95,6 +99,8 @@ class Keys
     }
 
     /**
+     * Adds $id to right side of $relation string
+     *
      * @param string $relation
      * @param string|int $id
      */
@@ -103,12 +109,21 @@ class Keys
         $this->visits .= "_{$relation}_{$id}";
     }
 
+    /**
+     * Strips namespace from subject and converts to lower case.
+     *
+     * @param string $subject
+     *
+     * @return string
+     */
     public function modelName(string $subject): string
     {
         return strtolower(Str::singular(class_basename(get_class($subject))));
     }
 
     /**
+     * Strips namespace from subject, converts to lowercase and pluralizes name.
+     *
      * @param mixed $subject
      *
      * @return string

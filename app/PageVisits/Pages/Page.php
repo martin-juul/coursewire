@@ -2,7 +2,9 @@
 
 namespace App\PageVisits\Pages;
 
-abstract class Page
+use Illuminate\Contracts\Support\Arrayable;
+
+abstract class Page implements Arrayable
 {
     protected $attributes = [];
 
@@ -15,6 +17,11 @@ abstract class Page
     public function getKeyName(): string
     {
         return 'id';
+    }
+
+    public function toArray()
+    {
+        return $this->attributes;
     }
 
     public function __get($name)

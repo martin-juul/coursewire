@@ -43,7 +43,7 @@ class Reset extends Visits
         if ($this->keys->id) {
             $this->connection->delete($this->keys->visits, $this->keys->id);
             foreach (['countries', 'referers', 'OSes', 'languages'] as $item) {
-                $this->connection->delete($this->keys->visits."_{$item}:{$this->keys->id}");
+                $this->connection->delete($this->keys->visits . "_{$item}:{$this->keys->id}");
             }
 
             foreach ($this->periods as $period => $_) {
@@ -53,40 +53,52 @@ class Reset extends Visits
             $this->ips();
         } else {
             $this->connection->delete($this->keys->visits);
-            $this->connection->delete($this->keys->visits.'_total');
+            $this->connection->delete($this->keys->visits . '_total');
         }
     }
 
-    public function allrefs()
+    /**
+     * Delete all referer keys
+     */
+    public function allrefs(): void
     {
-        $cc = $this->connection->search($this->keys->visits.'_referers:*');
+        $cc = $this->connection->search($this->keys->visits . '_referers:*');
 
         if (count($cc)) {
             $this->connection->delete($cc);
         }
     }
 
-    public function allOperatingSystems()
+    /**
+     * Delete all OS keys
+     */
+    public function allOperatingSystems(): void
     {
-        $cc = $this->connection->search($this->keys->visits.'_OSes:*');
+        $cc = $this->connection->search($this->keys->visits . '_OSes:*');
 
         if (count($cc)) {
             $this->connection->delete($cc);
         }
     }
 
-    public function allLanguages()
+    /**
+     * Delete all language keys
+     */
+    public function allLanguages(): void
     {
-        $cc = $this->connection->search($this->keys->visits.'_languages:*');
+        $cc = $this->connection->search($this->keys->visits . '_languages:*');
 
         if (count($cc)) {
             $this->connection->delete($cc);
         }
     }
 
-    public function allcountries()
+    /**
+     * Delete all country keys
+     */
+    public function allcountries(): void
     {
-        $cc = $this->connection->search($this->keys->visits.'_countries:*');
+        $cc = $this->connection->search($this->keys->visits . '_countries:*');
 
         if (count($cc)) {
             $this->connection->delete($cc);
@@ -96,17 +108,18 @@ class Reset extends Visits
     /**
      * reset day,week counters
      */
-    public function periods()
+    public function periods(): void
     {
         foreach ($this->periods as $period => $_) {
             $periodKey = $this->keys->period($period);
             $this->connection->delete($periodKey);
-            $this->connection->delete($periodKey.'_total');
+            $this->connection->delete($periodKey . '_total');
         }
     }
 
     /**
      * reset ips protection
+     *
      * @param string $ips
      */
     public function ips($ips = '*')
@@ -121,7 +134,7 @@ class Reset extends Visits
     /**
      * reset lists top/low
      */
-    public function lists()
+    public function lists(): void
     {
         $lists = $this->connection->search($this->keys->cache());
 

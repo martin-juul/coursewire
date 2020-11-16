@@ -70,8 +70,10 @@ class Visits
     public $config = [];
 
     /**
-     * @param \Illuminate\Database\Eloquent\Model $subject any model
+     * @param mixed $subject model
      * @param string $tag use only if you want to use visits on multiple models
+     *
+     * @throws \Exception
      */
     public function __construct($subject = null, $tag = 'visits')
     {
@@ -98,6 +100,11 @@ class Visits
         }
     }
 
+    /**
+     * @param $name
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|mixed
+     */
     protected function determineConnection($name)
     {
         $connections = [
@@ -106,7 +113,7 @@ class Visits
         ];
 
         if (!array_key_exists($name, $connections)) {
-            throw new \Exception("(Laravel-Visits) The selected engine `{$name}` is not supported! Please correct this issue from config/visits.php.");
+            throw new \RuntimeException("The selected engine `{$name}` is not supported! Please correct this issue from config/visits.php.");
         }
 
         return app($connections[$name]);
@@ -135,6 +142,7 @@ class Visits
      * @param string $args
      *
      * @return \App\PageVisits\Reset
+     * @throws \Exception
      */
     public function reset($method = 'visits', $args = '')
     {
@@ -273,12 +281,12 @@ class Visits
     }
 
     /**
-     * @param $period
+     * @param string|int|float $period
      * @param int $time
      *
      * @return bool
      */
-    public function expireAt($period, $time): bool
+    public function expireAt($period, int $time): bool
     {
         $periodKey = $this->keys->period($period);
         return $this->connection->setExpiration($periodKey, $time);
