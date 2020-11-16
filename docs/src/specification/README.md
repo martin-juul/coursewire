@@ -37,6 +37,7 @@
 - [Test Suite](#test-suite)
   - [Feature Testing](#feature-testing)
   - [Unit Testing](#unit-testing)
+- [Demo](#demo)
 
 ## Copyright Notice
 
@@ -310,3 +311,10 @@ Where each block of X's represents external links to branding pages (facebook, y
 ### Feature Testing
 
 ### Unit Testing
+
+
+## Demo
+
+[cw-dev.endoftheweb.pw](https://cw-dev.endoftheweb.pw)
+
+![qrcode](./qrcode_cw-dev.endoftheweb.pw.png)
