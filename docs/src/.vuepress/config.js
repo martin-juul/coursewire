@@ -34,6 +34,10 @@ module.exports = {
     lastUpdated: false,
     nav: [
       {
+        text: 'Specification',
+        link: '/specification/',
+      },
+      {
         text: 'Setup',
         link: '/setup/',
       },
@@ -68,6 +72,16 @@ module.exports = {
           children: [
             '',
             'guides/git',
+            'guides/php',
+          ],
+        },
+      ],
+      '/specification/': [
+        {
+          title: 'Specification',
+          collapsable: false,
+          children: [
+            '',
           ],
         },
       ],
@@ -136,6 +150,7 @@ module.exports = {
       sidebarLinkSelector: '.sidebar-link',
       headerAnchorSelector: '.header-anchor',
     },
+    'vuepress-plugin-mermaidjs',
   ],
 
   // This will disable ES5 transpilation and polyfills for IE,
