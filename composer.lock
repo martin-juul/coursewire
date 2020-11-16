@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb9ee3ffe43db1265d30c51132093f5b",
+    "content-hash": "556126052fcc19829ba0cf4ba1eac964",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2065,7 +2065,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "4752b6be4c68d97a7a42cb371af7b51d9ade3524"
+                "reference": "2958a886b93007b956517a0cea01e2d287c5c3a5"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -2085,7 +2085,7 @@
                 "laravel/legacy-factories": "^1.0",
                 "laravel/nova-dusk-suite": "dev-master",
                 "mockery/mockery": "^1.0",
-                "orchestra/testbench-dusk": "^6.1",
+                "orchestra/testbench-dusk": "^6.2.1",
                 "phpunit/phpunit": "^8.4",
                 "predis/predis": "^1.1"
             },
@@ -2118,6 +2118,10 @@
                     "./vendor/bin/dusk-updater detect --auto-update",
                     "@php -r \"file_exists('phpunit.dusk.xml') || copy('phpunit.dusk.xml.dist', 'phpunit.dusk.xml'); \"",
                     "@php -r \"if (file_exists('.env.dusk')) { copy('.env.dusk', 'vendor/laravel/nova-dusk-suite/.env'); } else { copy('.env.dusk.example', 'vendor/laravel/nova-dusk-suite/.env'); }\""
+                ],
+                "dusk:assets": [
+                    "yarn run prod",
+                    "./vendor/bin/testbench-dusk nova:publish"
                 ],
                 "dusk:test": [
                     "./vendor/bin/phpunit -c phpunit.dusk.xml"
@@ -4882,79 +4886,6 @@
                 }
             ],
             "time": "2020-09-09T09:14:36+00:00"
-        },
-        {
-            "name": "spatie/nova-tail-tool",
-            "version": "3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/nova-tail-tool.git",
-                "reference": "e448a70f4e4f8e565eb1551e965294911d5b43a2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/nova-tail-tool/zipball/e448a70f4e4f8e565eb1551e965294911d5b43a2",
-                "reference": "e448a70f4e4f8e565eb1551e965294911d5b43a2",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/nova": "^3.0",
-                "php": ">=7.2.0",
-                "symfony/process": "^5.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^5.0|^6.0",
-                "phpunit/phpunit": "^8.0|^9.0",
-                "spatie/phpunit-snapshot-assertions": "^2.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\TailTool\\TailToolServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\TailTool\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Sebastian De Deyne",
-                    "email": "sebastian@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A Laravel Nova tool to display the application log.",
-            "homepage": "https://github.com/spatie/nova-tail-tool",
-            "keywords": [
-                "laravel",
-                "nova"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/nova-tail-tool/issues",
-                "source": "https://github.com/spatie/nova-tail-tool/tree/master"
-            },
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
-            ],
-            "time": "2020-09-09T10:00:18+00:00"
         },
         {
             "name": "spatie/once",
