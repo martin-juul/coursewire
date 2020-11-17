@@ -13,3 +13,5 @@ Route::group(['prefix' => 'uddannelserne'], function () {
     Route::get('', 'UiController@educations')->name('educations');
     Route::get('{slug}', 'UiController@showEducation')->name('educations.show');
 });
+
+Route::get('/elevtyper', 'UiController@studentTypes')->name('student-types');

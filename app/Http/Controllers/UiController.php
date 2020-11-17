@@ -47,4 +47,9 @@ class UiController extends Controller
             'slug'  => $item->slug,
         ]);
     }
+
+    public function studentTypes()
+    {
+        return view('student-types');
+    }
 }

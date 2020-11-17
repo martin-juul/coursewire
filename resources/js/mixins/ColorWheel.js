@@ -1,5 +1,33 @@
 export default {
+  data: function () {
+    return {
+      colorWheelIdx: 0,
+      colorWheelColors: [
+        'blue',
+        'indigo',
+        'purple',
+        'pink',
+        'red',
+        'orange',
+        'yellow',
+        'green',
+        'teal',
+        'cyan',
+      ],
+    }
+  },
+
   methods: {
+    getRandomColor() {
+      if (this.colorWheelIdx > this.colorWheelColors.length - 1) {
+        this.colorWheelIdx = 0;
+      } else {
+        this.colorWheelIdx += 1;
+      }
+
+      return this.getColor(this.colorWheelColors[this.colorWheelIdx]);
+    },
+
     getColor(color) {
       switch (color) {
         case 'blue':
