@@ -17,8 +17,9 @@
         style="border: unset !important; box-shadow: unset !important;"
       >
         <v-card-title
-         style="background-color: #006c80; color: #fff;"
-        >Bliv en af danmarks kommende talenter indenfor IT.</v-card-title>
+          style="background-color: #006c80; color: #fff;"
+        >Bliv en af danmarks kommende talenter indenfor IT.
+        </v-card-title>
         <v-stepper v-model="step">
           <v-stepper-header style="border: unset !important; box-shadow: unset !important;">
             <v-stepper-step
@@ -68,16 +69,33 @@
                 class="mx-auto d-flex justify-center"
               >
                 <v-card-actions>
-                  <v-btn
-                    rounded
-                    x-large
-                    dark
-                    v-for="studentType in studentTypes"
-                    v-bind:key="studentType.slug"
-                    :color="studentType.color"
-                    @click="onStudentType(studentType)"
-                  >{{ studentType.title }}
-                  </v-btn>
+                  <v-flex
+                    style="justify-content: center;"
+                    align-self-center
+                  >
+                    <v-flex
+                      style="justify-content: space-between;"
+                    >
+                      <v-btn
+                        rounded
+                        x-large
+                        dark
+                        v-for="studentType in studentTypes"
+                        v-bind:key="studentType.slug"
+                        :color="studentType.color"
+                        @click="onStudentType(studentType)"
+                      >{{ studentType.title }}
+                      </v-btn>
+                    </v-flex>
+
+                    <v-btn
+                      class="mt-3"
+                      rounded
+                      text
+                      tag="a"
+                      :to="{ name: 'student-types' }"
+                    >Læs mere om elev typer</v-btn>
+                  </v-flex>
                 </v-card-actions>
               </v-card>
             </v-stepper-content>
