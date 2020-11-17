@@ -23,8 +23,8 @@
             >{{ studentType.overview }}</v-card-subtitle>
             <v-card-text
               class="cw-card-text"
-            >{{ studentType.description }}
-            </v-card-text>
+              v-html="studentType.description"
+            ></v-card-text>
           </v-card>
         </v-col>
       </v-row>
