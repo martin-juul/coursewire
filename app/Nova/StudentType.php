@@ -6,6 +6,7 @@ use App\Nova\Enums\ResourceGroup;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class StudentType extends Resource
@@ -58,8 +59,8 @@ class StudentType extends Resource
     {
         return [
             Text::make(__('Titel'), 'title')->sortable(),
-            Text::make(__('Overview'), 'overview')->onlyOnForms()->onlyOnDetail(),
-            Text::make(__('Description'), 'description')->onlyOnForms()->onlyOnDetail(),
+            Text::make(__('Overview'), 'overview')->hideFromIndex(),
+            Trix::make(__('Description'), 'description')->hideFromIndex(),
         ];
     }
 
