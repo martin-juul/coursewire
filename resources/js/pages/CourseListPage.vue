@@ -9,29 +9,15 @@
       :server-items-length="totalCourses"
       :loading="loading"
       item-key="course_no"
-      show-expand
       class="elevation-1">
-      <template v-slot:expanded-item="{headers, item}">
-        <td :colspan="headers.length">
-          <v-container>
-            <v-card>
-              <v-card-title>Oversigt</v-card-title>
-              <v-card-text>
-                {{ item.overview }}
-              </v-card-text>
-            </v-card>
 
-            <v-spacer></v-spacer>
-
-            <v-card>
-              <v-card-title>Om</v-card-title>
-              <v-card-text>
-                {{ item.about }}
-              </v-card-text>
-            </v-card>
-          </v-container>
-        </td>
+      <template v-slot:item="{ item }">
+        <tr @click="navigateToCourse(item.course_no)" style="cursor: pointer;" aria-label="link">
+          <td>{{ item.course_no }}</td>
+          <td>{{ item.title }}</td>
+        </tr>
       </template>
+
     </v-data-table>
   </v-container>
 </template>
@@ -88,6 +74,10 @@ export default {
           this.totalCourses = total;
           this.loading = false;
         });
+    },
+
+    navigateToCourse(courseNo) {
+      this.$router.push({name: 'course', params: {courseNo}});
     },
 
     handleGetCourses() {
