@@ -34,7 +34,7 @@ export default new VueRouter({
           Object.assign(position, savedPosition);
         }
 
-        setTimeout(() => resolve(savedPosition), 1500);
+        setTimeout(() => resolve(savedPosition), 300);
       });
     } else {
       return {x: 0, y: 0};
