@@ -15,3 +15,8 @@ Route::group(['prefix' => 'uddannelserne'], function () {
 });
 
 Route::get('/elevtyper', 'UiController@studentTypes')->name('student-types');
+
+Route::group(['prefix' => 'mailables', 'middleware' => 'auth'], function () {
+   Route::get('', 'EmailController@index')->name('email.index');
+   Route::get('{mailable}', 'EmailController@show')->name('email.show');
+});

@@ -25,7 +25,6 @@ use Laravel\Nova\Actions\ActionEvent as NovaActionEvent;
  * @property array|null $original
  * @property array|null $changes
  * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $target
- * @property-read \App\Models\User|null $user
  * @method static \Illuminate\Database\Eloquent\Builder|ActionEvent newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ActionEvent newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ActionEvent query()
