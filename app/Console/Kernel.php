@@ -31,6 +31,10 @@ class Kernel extends ConsoleKernel
         })->daily();
 
         $schedule->call('pg:vacuum')->dailyAt('02:00');
+
+        $schedule->call('horizon:snapshot')
+            ->everyFiveMinutes()
+            ->onOneServer();
     }
 
     /**
