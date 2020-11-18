@@ -31,6 +31,7 @@
     - [Authentication](#authentication)
   - [Security Measures](#security-measures)
     - [Cross Site Request Forgery (CSRF)](#cross-site-request-forgery-csrf)
+    - [Cross Origin Resource Sharing (CORS)](#cross-origin-resource-sharing-cors)
     - [Password Encryption](#password-encryption)
     - [TLS](#tls)
     - [Output escaping](#output-escaping)
@@ -297,14 +298,57 @@ Where each block of X's represents external links to branding pages (facebook, y
 
 ## Security Measures
 
+Several technologies and web standards are enforced in the application.
+
 ### Cross Site Request Forgery (CSRF)
+
+CSRF attacks happen due to maliciously crafted HTTP POST requests.
+Thereby allowing cookies to be stolen.
+
+Browsers have builtin security to protect against these attacks.
+But are on case-by-case.
+
+![CSRF Overview](./csrf-overview.png)
+
+To protect against these attacks. A token is generated with each request.
+The token is stored in the html body of the page. On each form request, this token is checked and validated.
+
+This prevents these attacks. As the attacker has no way of knowing the value of the token, and is not able to inject
+it in a user context.
+
+### Cross Origin Resource Sharing (CORS)
+
+![Cors Overview](./cors-overview.png)
 
 ### Password Encryption
 
+Argon2 is modern ASIC-resistant and GPU-resistant secure key derivation function.
+It has better password cracking resistance (when configured correctly) than PBKDF2, Bcrypt and Scrypt
+(for similar configuration parameters for CPU and RAM usage).
+
+The Internet Engineering Task Force (IETF) recommends using __Argon2id__ for new applications.
+As described in [draft-irtf-cfrg-argon2-12](https://tools.ietf.org/html/draft-irtf-cfrg-argon2-12)
+
 ### TLS
+
+All versions of SSL and TLS version 1.0 and 1.1 are __NOT__ to be used, when hosting the app.
+
+This is due to these versions have been cracked. At minimum TLS 1.2 should be used,
+and TLS 1.3 once stable.
+
+[GlobalSign Disable TLS and All SSL versions](https://www.globalsign.com/en/blog/disable-tls-10-and-all-ssl-versions)
+
+[PacketLabs TLS 1.1 No Longer Secure](https://www.packetlabs.net/tls-1-1-no-longer-secure/)
 
 ### Output escaping
 
+To prevent mangling input data, a subset of html is allowed. This is escaped during the application output stage.
+This way the users are protected from malicious script injections (XSS).
+
+Removing these during input, would be a bad decision. As the HTML standard evolves, new ways to inject javascript naturally happens.
+And it would encourage a bad practice. Because no matter what, we cannot entirely trust any user generated data.
+
+Not encforcing escaping during output, would potentially expose users to risk. As in that case, the output would be "trusted".
 
 ## Test Suite
 
