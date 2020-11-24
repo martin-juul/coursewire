@@ -38,6 +38,7 @@
 - [Test Suite](#test-suite)
   - [Feature Testing](#feature-testing)
   - [Unit Testing](#unit-testing)
+  - [Browser Testing](#browser-testing)
 - [Demo](#demo)
 
 ## Copyright Notice
@@ -356,6 +357,72 @@ Not encforcing escaping during output, would potentially expose users to risk. A
 
 ### Unit Testing
 
+### Browser Testing
+
+[Laravel Dusk](https://laravel.com/docs/8.x/dusk) is a testing utility built on top of [ChromeDriver](https://chromedriver.chromium.org/)
+and [Selenium](https://www.selenium.dev/)
+
+It allows defining tests in code, that nullifies any reason to spend time on manual testing.
+Instead we write tests for what we would confirm visually.
+
+The HomePage test below is a good example on how easy they are to write.
+
+```php
+<?php
+
+namespace Tests\Browser;
+
+use Laravel\Dusk\Browser;
+use Tests\Browser\Pages\HomePage;
+use Tests\DuskTestCase;
+
+class HomePageTest extends DuskTestCase
+{
+    /**
+     * A Dusk test example.
+     *
+     * @return void
+     * @throws \Throwable
+     */
+    public function testBasicElements(): void
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit(new HomePage)
+                ->assertSee('Bliv en af danmarks kommende talenter indenfor IT.')
+                ->assertSee('IT-SUPPORTER')
+                ->assertSee('DATATEKNIKER / PROGRAMMERING')
+                ->assertSee('DATATEKNIKER / INFRASTRUKTUR');
+        });
+    }
+
+    /**
+     * Test education stepper
+     *
+     * @throws \Throwable
+     */
+    public function testStepper(): void
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit(new HomePage)
+                ->waitForText('IT-SUPPORTER')
+                ->click('@it-supporter')
+                ->waitForText('EUD')
+                ->click('@eud')
+                ->waitForText('Hovedforløb')
+                ->assertSee('Hovedforløb 1')
+                ->assertSee('Objektorienteret programmering')
+                ->assertSee('Serverteknologi webserver')
+                ->assertSee('Linux rettet mod server og embedded')
+                ->assertSee('Script programmering')
+                ->assertSee('Hovedforløb 2')
+                ->assertSee('App programmering II')
+                ->assertSee('Serverteknologi Linux')
+                ->assertSee('IT Service-Management II');
+        });
+    }
+}
+
+```
 
 ## Demo
 
