@@ -34,7 +34,7 @@
     <script src="{{ mix('js/vendor.js') }}" defer></script>
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
-<body class="font-sans antialiased">
+<body class="font-sans antialiased" dusk="{{ request()->route()->getName() }}">
 <div id="app">
     <v-app>
 

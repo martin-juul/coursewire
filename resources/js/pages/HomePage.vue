@@ -58,6 +58,7 @@
                     v-bind:key="educationType.short_name"
                     :color="educationType.color"
                     @click="onEducationType(educationType)"
+                    :dusk="educationType.slug"
                   >{{ educationType.short_name }}
                   </v-btn>
                 </v-card-actions>
@@ -84,6 +85,7 @@
                         v-bind:key="studentType.slug"
                         :color="studentType.color"
                         @click="onStudentType(studentType)"
+                        :dusk="studentType.slug"
                       >{{ studentType.title }}
                       </v-btn>
                     </v-flex>

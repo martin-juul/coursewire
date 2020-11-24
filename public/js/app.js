@@ -6435,6 +6435,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -11655,7 +11657,8 @@ var render = function() {
                                                 rounded: "",
                                                 "x-large": "",
                                                 dark: "",
-                                                color: educationType.color
+                                                color: educationType.color,
+                                                dusk: educationType.slug
                                               },
                                               on: {
                                                 click: function($event) {
@@ -11726,7 +11729,8 @@ var render = function() {
                                                           "x-large": "",
                                                           dark: "",
                                                           color:
-                                                            studentType.color
+                                                            studentType.color,
+                                                          dusk: studentType.slug
                                                         },
                                                         on: {
                                                           click: function(
