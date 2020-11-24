@@ -4,6 +4,7 @@ namespace Tests\Feature\PageVisits;
 
 use App\Providers\PageVisitsServiceProvider;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Schema\Blueprint;
 use Spatie\Referer\CaptureReferer;
 use Spatie\Referer\Referer;
 use Spatie\Referer\RefererServiceProvider;
@@ -29,7 +30,7 @@ abstract class TestCase extends BaseTestCase
     {
         parent::setUp();
 
-        $this->app['config']->set('geoip', array_merge(require __DIR__ . '/../vendor/torann/geoip/config/geoip.php'));
+        $this->app['config']->set('geoip', array_merge(require __DIR__ . '/../../../vendor/torann/geoip/config/geoip.php'));
         $this->app['router']->get('/')->middleware(CaptureReferer::class, function () {
             return response(null, 200);
         });
