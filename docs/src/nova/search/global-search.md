@@ -4,7 +4,7 @@
 
 Nova not only allows you to search within specific resources and relationships, you may also globally search across all your resources using the global search input within the top-navigation bar of the Nova administration panel:
 
-![Global Search](./img/global-search.png)
+![Global Search](img/global-search.png)
 
 :::tip Focusing Global Search
 
@@ -69,7 +69,7 @@ You may also display resource's "avatar" next to the title in the search result 
 
 You may also display a smaller "subtitle" attribute within the global search results. The subtitle will be placed directly under the title attribute. In this screenshot, you can see that the `Post` resource's author is displayed as a subtitle, allowing the quick identification of who wrote the post:
 
-![Global Search](./img/global-search.png)
+![Global Search](img/global-search.png)
 
 To define a resource's subtitle, override the `subtitle` method of the resource:
 

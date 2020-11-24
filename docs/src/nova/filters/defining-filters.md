@@ -4,7 +4,7 @@
 
 Nova filters allow you to scope your Nova index queries with custom conditions. For example, you may wish to define a filter to quickly view "Admin" users within your application:
 
-![Filters](./img/filters.png)
+![Filters](img/filters.png)
 
 ## Select Filters
 
@@ -63,7 +63,7 @@ As you can see in the example above, you may leverage the incoming `$value` to m
 
 Nova also supports "boolean" filters, which allows the user to select multiple filter option using a list of check-boxes.
 
-![Boolean Filter](./img/boolean-filter.png)
+![Boolean Filter](img/boolean-filter.png)
 
 You may generate a boolean filter using the `nova:filter --boolean` Artisan command. By default, Nova will place newly generated filters in the `app/Nova/Filters` directory:
 
@@ -128,7 +128,7 @@ As you can see in the example above, you may leverage the incoming `$value` to m
 
 Nova also supports "date" filters, which allows the user to select the filter's value via a date selection calendar.
 
-![Date Filter](./img/date-filter.png)
+![Date Filter](img/date-filter.png)
 
 You may generate a date filter using the `nova:filter --date` Artisan command. By default, Nova will place newly generated filters in the `app/Nova/Filters` directory:
 

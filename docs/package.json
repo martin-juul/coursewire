@@ -10,14 +10,15 @@
     "private": true,
     "repository": "https://github.com/martin-juul/coursewire",
     "scripts": {
+        "vuepress": "vuepress",
         "dev": "vuepress dev src",
-        "build": "vuepress build src"
+        "build": "vuepress build --no-cache src"
     },
     "license": "proprietary",
     "devDependencies": {
         "@vuepress/plugin-active-header-links": "^1.7.1",
         "@vuepress/plugin-back-to-top": "^1.7.1",
-        "vuepress": "^1.5.3",
+        "vuepress": "^1.7.1",
         "vuepress-plugin-mermaidjs": "^1.8.1"
     }
 }

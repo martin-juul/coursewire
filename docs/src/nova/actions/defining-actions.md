@@ -6,11 +6,11 @@ Nova actions allow you to perform custom tasks on one or more Eloquent models. F
 
 Once an action has been attached to a resource definition, you may initiate it from the resource's index or detail screens:
 
-![Action](./img/action.png)
+![Action](img/action.png)
 
 If an action is enabled for display on the resource's table row, you may initiate it from the resource's action dropdown menu. These are called "Inline Actions":
 
-![Inline Action](./img/inline-actions.png)
+![Inline Action](img/inline-actions.png)
 
 ## Overview
 
@@ -79,7 +79,7 @@ Within the `handle` method, you may perform whatever tasks are necessary to comp
 
 You may designate an action as destructive or dangerous by having your action class inherit from `Laravel\Nova\Actions\DestructiveAction`. This will change the color of the action's confirm button to red:
 
-![Destructive Action](./img/action-destructive.png)
+![Destructive Action](img/action-destructive.png)
 
 ::: warning Destructive Actions & Policies
 
@@ -106,7 +106,7 @@ public function actionClass()
 
 Sometimes you may wish to gather additional information from the user before dispatching an action. For this reason, Nova allows you to attach most of Nova's supported [fields](./../resources/fields.md) directly to an action. When the action is initiated, Nova will prompt the user to provide input for the fields:
 
-![Action Field](./img/action-field.png)
+![Action Field](img/action-field.png)
 
 To add a field to an action, add the field to the array of fields returned by the action's `fields` method:
 
@@ -181,7 +181,7 @@ public function actions(Request $request)
 
 This will customize the modal to look something like this:
 
-![Action Customization](./img/action-customization.png)
+![Action Customization](img/action-customization.png)
 
 ## Action Responses
 
@@ -311,7 +311,7 @@ class User extends Authenticatable
 
 Once the trait has been attached to the model, Nova will automatically begin displaying an action log at the bottom of the resource's detail screen:
 
-![Action Log](./img/action-log.png)
+![Action Log](img/action-log.png)
 
 ### Disabling The Action Log
 

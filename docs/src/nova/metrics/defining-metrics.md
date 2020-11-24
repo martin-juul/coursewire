@@ -10,7 +10,7 @@ Nova offers three types of built-in metrics: value, trend, and partition. We'll 
 
 Value metrics display a single value and, if desired, its change compared to a previous time interval. For example, a value metric might display the total number of users created in the last thirty days compared with the previous thirty days:
 
-![Value Metric](./img/value.png)
+![Value Metric](img/value.png)
 
 Value metrics may be generated using the `nova:value` Artisan command. By default, all new metrics will be placed in the `app/Nova/Metrics` directory:
 
@@ -192,7 +192,7 @@ return $this->result(100)->previous(50);
 
 Trend metrics display values over time via a line chart. For example, a trend metric might display the number of new users created per day over the previous thirty days:
 
-![Trend Metric](./img/trend.png)
+![Trend Metric](img/trend.png)
 
 Trend metrics may be generated using the `nova:trend` Artisan command. By default, all new metrics will be placed in the `app/Nova/Metrics` directory:
 
@@ -377,7 +377,7 @@ return $this->countByDays($request, User::class)
 
 Sometimes, you may wish to emphasize the value for the latest time interval. For example, in this screenshot, six users have been created during the last day:
 
-![Latest Value](./img/latest-value.png)
+![Latest Value](img/latest-value.png)
 
 To accomplish this, you may use the `showLatestValue` method:
 
@@ -411,7 +411,7 @@ return (new TrendResult)->trend([
 
 Partition metrics displays a pie chart of values. For example, a partition metric might display the total number of users for each billing plan offered by your application:
 
-![Partition Metric](./img/partition.png)
+![Partition Metric](img/partition.png)
 
 Partition metrics may be generated using the `nova:partition` Artisan command. By default, all new metrics will be placed in the `app/Nova/Metrics` directory:
 
