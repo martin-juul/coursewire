@@ -66,10 +66,6 @@ export default {
     },
   },
 
-  mounted() {
-    this.getCourses();
-  },
-
   methods: {
     getCourses() {
       this.loading = true;
@@ -93,8 +89,31 @@ export default {
       return new Promise((resolve, reject) => {
         const {sortBy, sortDesc, page, itemsPerPage} = this.options;
 
-        const pageNo = page > 0 ? page : 1;
-        const perPage = itemsPerPage > 0 ? itemsPerPage : 25;
+        let pageNo = page > 0 ? page : 1;
+        let perPage = itemsPerPage > 0 ? itemsPerPage : 25;
+
+
+        if (this.$route.query.page) {
+          const queryPage = Number(this.$route.query.page);
+
+          if (queryPage > pageNo) {
+            this.options.page = queryPage;
+            pageNo = queryPage;
+          }
+        }
+
+        if (this.$route.query.perPage) {
+          const queryPerPage = Number(this.$route.query.perPage);
+
+          if (queryPerPage > perPage) {
+            this.options.itemsPerPage = queryPerPage;
+            perPage = queryPerPage;
+          }
+        }
+
+        this.$router.push({
+          query: Object.assign({}, this.$route.query, {page: pageNo, perPage}),
+        });
 
         ApiService.courses(pageNo, perPage)
           .then((res) => {
