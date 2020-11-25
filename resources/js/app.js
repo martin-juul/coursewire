@@ -43,6 +43,7 @@ Vue.config.performance = isProduction;
 // Components
 Vue.component('wire-masthead', require('./components/masthead').default);
 Vue.component('wire-impressum', require('./components/impressum').default);
+Vue.component('danger', require('./components/errors/danger').default);
 
 // Pages
 // Vue.component('wire-home', require('./Pages/Home').default);

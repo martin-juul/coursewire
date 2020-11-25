@@ -2,23 +2,27 @@
   <v-container>
     <Header title="Fag"></Header>
 
-    <v-data-table
-      :headers="headers"
-      :items="courses"
-      :options.sync="options"
-      :server-items-length="totalCourses"
-      :loading="loading"
-      item-key="course_no"
-      class="elevation-1">
+    <v-container v-if="!error">
+      <v-data-table
+        :headers="headers"
+        :items="courses"
+        :options.sync="options"
+        :server-items-length="totalCourses"
+        :loading="loading"
+        item-key="course_no"
+        class="elevation-1">
 
-      <template v-slot:item="{ item }">
-        <tr @click="navigateToCourse(item.course_no)" style="cursor: pointer;" aria-label="link">
-          <td>{{ item.course_no }}</td>
-          <td>{{ item.title }}</td>
-        </tr>
-      </template>
+        <template v-slot:item="{ item }">
+          <tr @click="navigateToCourse(item.course_no)" style="cursor: pointer;" aria-label="link">
+            <td>{{ item.course_no }}</td>
+            <td>{{ item.title }}</td>
+          </tr>
+        </template>
 
-    </v-data-table>
+      </v-data-table>
+    </v-container>
+
+    <danger v-else></danger>
   </v-container>
 </template>
 
@@ -37,6 +41,7 @@ export default {
       totalCourses: 0,
       courses: [],
       loading: true,
+      error: false,
       options: {},
       headers: [
         {
@@ -73,7 +78,11 @@ export default {
           this.courses = items;
           this.totalCourses = total;
           this.loading = false;
-        });
+          this.error = false;
+        }).catch((e) => {
+          this.error = true;
+          this.loading = false;
+      })
     },
 
     navigateToCourse(courseNo) {
@@ -114,7 +123,7 @@ export default {
               items,
               total,
             });
-          });
+          }).catch(reject);
       });
     },
   },

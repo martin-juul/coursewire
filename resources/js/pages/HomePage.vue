@@ -106,10 +106,7 @@
         </v-stepper>
       </v-card>
 
-      <v-alert
-        type="error"
-        v-else>Der skete en fejl
-      </v-alert>
+      <danger v-else></danger>
     </v-container>
 
     <template v-if="step === 3">

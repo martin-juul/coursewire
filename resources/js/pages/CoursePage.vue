@@ -1,8 +1,10 @@
 <template>
   <v-container>
-    <template v-if="!loading && !notFound">
+    <template v-if="!error">
 
-      <v-container class="pa-4 pa-sm-6 pa-md-8">
+      <v-container
+        v-if="!loading"
+        class="pa-4 pa-sm-6 pa-md-8">
 
         <v-responsive class="mx-auto overflow-visible" style="max-width: 868px;">
           <div class="course-body">
@@ -31,6 +33,8 @@
       </v-container>
 
     </template>
+
+    <danger v-else></danger>
   </v-container>
 </template>
 
@@ -52,7 +56,7 @@ export default {
       about: '',
 
       loading: true,
-      notFound: false,
+      error: false,
     };
   },
 
@@ -68,7 +72,7 @@ export default {
 
         this.loading = false;
       }).catch((e) => {
-      this.notFound = true;
+      this.error = true;
       this.loading = false;
     });
   },

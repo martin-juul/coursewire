@@ -2,7 +2,7 @@
   <v-container>
     <Header title="Uddannelserne"></Header>
 
-    <v-row v-if="!loading && !error && educations.length > 0">
+    <v-row v-if="!error">
       <v-col
         v-for="education in educations"
         v-bind:key="education.slug">
@@ -26,6 +26,8 @@
 
       </v-col>
     </v-row>
+
+    <danger v-else></danger>
   </v-container>
 </template>
 
@@ -42,7 +44,7 @@ export default {
     return {
       educations: [],
       loading: true,
-      error: false,
+      error: true,
     };
   },
 

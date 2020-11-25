@@ -3,7 +3,7 @@
     <Header title="Elev Typer"></Header>
 
     <v-container style="max-width: 960px;">
-      <v-row v-if="!error && !loading">
+      <v-row v-if="!error">
         <v-col
           v-for="studentType in studentTypes"
           :key="studentType.slug"
@@ -14,7 +14,7 @@
         >
           <v-card
             class="cw-rounded cw-card"
-            :color="getRandomColor()"
+            :color="studentType.color"
             dark
           >
             <v-card-title>{{ studentType.title }}</v-card-title>
@@ -28,6 +28,8 @@
           </v-card>
         </v-col>
       </v-row>
+
+      <danger v-show="error"></danger>
     </v-container>
   </v-container>
 </template>
@@ -46,6 +48,7 @@ export default {
 
   data() {
     return {
+      colorWheelIdx: 0,
       studentTypes: [],
       error: false,
       loading: true,
@@ -61,6 +64,7 @@ export default {
       ApiService.studentTypes()
         .then((res) => {
           this.studentTypes = res.data.data;
+          this.studentTypes.map((value, index) => Object.assign(value, {color: this.getRandomColor(index)}));
           this.loading = false;
         })
         .catch((e) => {
@@ -68,6 +72,28 @@ export default {
           this.loading = false;
           throw e;
         });
+    },
+    getRandomColor(index) {
+      const colorWheelColors = [
+        'blue',
+        'indigo',
+        'purple',
+        'pink',
+        'red',
+        'orange',
+        'yellow',
+        'green',
+        'teal',
+        'cyan',
+      ];
+
+      if (index > colorWheelColors.length - 1) {
+        index = 0;
+      } else {
+        index += 1;
+      }
+
+      return this.getColor(colorWheelColors[index]);
     },
   },
 };
