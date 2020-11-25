@@ -44,7 +44,7 @@ export default {
     return {
       educations: [],
       loading: true,
-      error: true,
+      error: false,
     };
   },
 
