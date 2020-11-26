@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Enums\ResourceGroup;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -45,7 +46,7 @@ class User extends Resource
 
     public static function label()
     {
-        return 'Brugere';
+        return 'Bruger';
     }
 
     /**
@@ -58,8 +59,9 @@ class User extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make(__('name'), 'name'),
-            Text::make(__('email'), 'email'),
+            Text::make(__('Name'), 'name'),
+            Text::make(__('Email'), 'email'),
+            Password::make('Password', 'password')->onlyOnForms(),
         ];
     }
 

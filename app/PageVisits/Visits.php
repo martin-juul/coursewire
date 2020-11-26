@@ -223,7 +223,6 @@ class Visits
     public function increment($inc = 1, $force = false, $ignore = []): bool
     {
         if ($force || (!$this->isCrawler() && !$this->recordedIp())) {
-
             $this->connection->increment($this->keys->visits, $inc, $this->keys->id);
             $this->connection->increment($this->keys->visitsTotal(), $inc);
 

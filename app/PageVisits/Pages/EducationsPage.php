@@ -2,10 +2,10 @@
 
 namespace App\PageVisits\Pages;
 
-class HomePage extends Page
+class EducationsPage extends Page
 {
     public function __construct()
     {
-        parent::__construct(5, 'home');
+        parent::__construct(4, 'educations');
     }
 }

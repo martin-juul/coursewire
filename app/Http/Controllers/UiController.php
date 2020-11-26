@@ -11,8 +11,6 @@ class UiController extends Controller
 {
     public function home()
     {
-        visits(HomePage::class)->increment();
-
         return view('home');
     }
 

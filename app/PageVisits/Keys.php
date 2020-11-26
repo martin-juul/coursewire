@@ -81,7 +81,7 @@ class Keys
 
         // it might not be that unique but it does the job since not many lists
         // will be generated to one key.
-        $constraintsPart = count($constraints) ? ':' . substr(sha1(serialize($constraints)), 0, 7) : '';
+        $constraintsPart = count($constraints) ? ':' . md5(serialize($constraints)) : '';
 
         return "{$key}:" . ($isLow ? 'low' : 'top') . $constraintsPart . $limit;
     }
@@ -112,19 +112,19 @@ class Keys
     /**
      * Strips namespace from subject and converts to lower case.
      *
-     * @param string $subject
+     * @param string|object $subject
      *
      * @return string
      */
-    public function modelName(string $subject): string
+    public function modelName($subject): string
     {
-        return strtolower(Str::singular(class_basename(get_class($subject))));
+        return strtolower(Str::singular(class_basename(is_string ($subject) ? $subject : get_class($subject))));
     }
 
     /**
      * Strips namespace from subject, converts to lowercase and pluralizes name.
      *
-     * @param mixed $subject
+     * @param string|object $subject
      *
      * @return string
      */
