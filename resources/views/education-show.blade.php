@@ -6,6 +6,6 @@
 
 @section('meta_tags')
     <meta name="description"
-          content="Fag på data og kommunikationsuddannelsen.">
+          content="Om {{ $title }} uddannelsen.">
     <link rel="canonical" href="{{ @route('educations.show', ['slug' => $slug]) }}"
 @endsection

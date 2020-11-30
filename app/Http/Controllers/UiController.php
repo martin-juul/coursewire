@@ -20,12 +20,13 @@ class UiController extends Controller
     public function showCourse(Request $request, string $courseNo)
     {
         $item = Course::whereCourseNo($courseNo)
-            ->select(['id', 'title', 'course_no'])
+            ->select(['id', 'title', 'course_no', 'overview'])
             ->firstOrFail();
 
         return view('course-show', [
             'courseTitle' => $item->title,
             'courseNo'    => $item->course_no,
+            'overview'    => $item->overview ?? 'Fag på data og kommunikationsuddannelsen.',
         ]);
     }
 
