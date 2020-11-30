@@ -12,13 +12,28 @@ class EmailController extends Controller
         'account.details' => AccountDetailsMail::class,
     ];
 
+    private bool $isDev;
+
+    public function __construct()
+    {
+        $this->isDev = !app()->environment('production');
+    }
+
     public function index()
     {
+        if (!$this->isDev) {
+            abort(404);
+        }
+
         return response()->json(array_keys(static::$mailables));
     }
 
     public function show(Request $request, string $mailable)
     {
+        if (!$this->isDev) {
+            abort(404);
+        }
+
         if (!array_key_exists($mailable, static::$mailables)) {
             return response()->json(['error' => 'not_found'], 404);
         }
