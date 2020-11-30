@@ -1,5 +1,6 @@
 <template>
   <v-footer
+    class="no-print"
     dark
     padless
   >

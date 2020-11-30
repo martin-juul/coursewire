@@ -96,7 +96,8 @@
                       text
                       tag="a"
                       :to="{ name: 'student-types' }"
-                    >Læs mere om elev typer</v-btn>
+                    >Læs mere om elev typer
+                    </v-btn>
                   </v-flex>
                 </v-card-actions>
               </v-card>
@@ -110,6 +111,30 @@
     </v-container>
 
     <template v-if="step === 3">
+      <v-container v-if="educationVersions.length > 1">
+        <v-row align="center">
+          <v-col
+            class="d-flex"
+            cols="12"
+            sm="12"
+            md="3"
+          >
+            <v-select
+              v-model="selectedEducationType"
+              :items="educationVersions"
+              @change="getSemesters"
+              item-text="version"
+              item-value="slug"
+              label="Version"
+              :hint="`Version ${selectedEducationType.version}`"
+              persistent-hint
+              return-object
+              solo
+            ></v-select>
+          </v-col>
+        </v-row>
+      </v-container>
+
       <SemesterTimeline
         v-for="semester in semesters"
         v-bind:key="semester.semester"
@@ -147,6 +172,7 @@ export default {
       error: false,
 
       educationTypes: [],
+      educationVersions: [],
       selectedEducationType: null,
 
       studentTypes: [],
@@ -179,6 +205,31 @@ export default {
             educationTypes.map((education, i) => education.color = this.getColor(this.colors[i]));
 
             vm.educationTypes = educationTypes;
+            vm.educationVersions = [];
+
+            resolve();
+          }).catch(reject);
+      }));
+    },
+
+    getEducationVersions(educationTypeSlug) {
+      let vm = this;
+      this.loading = true;
+      return new Promise(((resolve, reject) => {
+        ApiService.educationVersions(educationTypeSlug)
+          .then((res) => {
+            vm.educationVersions = res.data.data;
+            const sorted = res.data.data.slice().sort((a, b) => {
+              if (Number(a.version) < Number(b.version)) {
+                return 1;
+              }
+              if (Number(a.version) > Number(b.version)) {
+                return -1;
+              }
+              return 0;
+            });
+
+            vm.selectedEducationType = sorted[0];
 
             resolve();
           }).catch(reject);
@@ -206,17 +257,18 @@ export default {
         this.loading = true;
         const educationType = this.educationTypes.filter(x => x.slug === this.$route.query.educationType)[0];
         if (educationType) {
-          this.onEducationType(educationType, true);
-
-          if (this.$route.query['studentType']) {
-            const studentType = this.studentTypes.filter(x => x.slug === this.$route.query.studentType)[0];
-            if (studentType) {
-              this.onStudentType(studentType);
+          this.onEducationType(educationType, true)
+          .then(() => {
+            if (this.$route.query['studentType']) {
+              const studentType = this.studentTypes.filter(x => x.slug === this.$route.query.studentType)[0];
+              if (studentType) {
+                this.onStudentType(studentType);
+                this.loading = false;
+              }
+            } else {
               this.loading = false;
             }
-          } else {
-            this.loading = false;
-          }
+          })
         } else {
           this.loading = false;
         }
@@ -228,6 +280,7 @@ export default {
     onEducationType(educationType, hasQueryParam = false) {
       this.selectedEducationType = educationType;
       this.educationLabel = educationType.short_name;
+      const vm = this;
 
       if (!hasQueryParam || !this.$route.query['educationType']) {
         this.$router.push({
@@ -235,7 +288,18 @@ export default {
         });
       }
 
-      this.step = 2;
+      return new Promise(((resolve, reject) => {
+        this.getEducationVersions(educationType.slug)
+          .then(() => {
+            this.step = 2;
+            this.loading = false;
+            resolve();
+          }).catch((e) => {
+          vm.error = true;
+          vm.loading = false;
+          reject(e);
+        });
+      }))
     },
 
     onStudentType(studentType) {
@@ -267,7 +331,7 @@ export default {
     getSemesters() {
       return new Promise((resolve, reject) => {
         const vm = this;
-        ApiService.educationVersion(this.selectedEducationType.slug)
+        ApiService.educationVersion(this.selectedEducationType.parent, this.selectedEducationType.version)
           .then((res) => {
             const educationSlug = res.data.data.slug;
             ApiService.semesters(educationSlug, this.selectedStudentType.slug)

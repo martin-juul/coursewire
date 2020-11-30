@@ -1,5 +1,6 @@
 <template>
   <v-app-bar
+    class="no-print"
     flat
     app
   >

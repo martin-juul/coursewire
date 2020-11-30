@@ -22,12 +22,12 @@ class ApiService {
     return axios.get(`/api/educations/type/${slug}`);
   }
 
+  static educationVersions(educationTypeSlug) {
+    return axios.get(`/api/educations/${educationTypeSlug}`);
+  }
+
   static educationVersion(educationTypeSlug, version = null) {
-    if (!version) {
-      return axios.get(`/api/educations/${educationTypeSlug}`);
-    } else {
-      return axios.get(`/api/educations/${educationTypeSlug}?version=${version}`);
-    }
+    return axios.get(`/api/educations/${educationTypeSlug}/version?version=${version}`);
   }
 
   static semesters(educationSlug, studentTypeSlug) {

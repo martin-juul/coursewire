@@ -1,7 +1,8 @@
 <template>
   <v-container>
 
-    <v-sheet style="text-align: center; font-size: 1.6rem;">Hovedforløb {{ semester }}</v-sheet>
+    <v-sheet
+      style="text-align: center; font-size: 1.6rem;">Hovedforløb {{ semester }}</v-sheet>
 
     <v-timeline
       :dense="$vuetify.breakpoint.smAndDown"
@@ -21,11 +22,11 @@
             {{ course.title }}
           </v-card-title>
 
-          <v-card-text class="white text--primary">
-            <p class="py-2">{{ course.overview }}</p>
+          <v-card-text class="white text--primary pa-4">
+            <p>{{ course.overview }}</p>
           </v-card-text>
 
-          <v-card-actions>
+          <v-card-actions class="no-print">
             <v-btn
               class="mx-0"
               outlined

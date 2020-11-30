@@ -19,8 +19,13 @@ class EducationResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'slug'     => $this->slug,
-            'version'  => $this->version,
+            $this->mergeWhen('educationType', function () {
+                return [
+                    'parent' => $this->educationType->slug,
+                ];
+            }),
+            'slug'    => $this->slug,
+            'version' => $this->version,
         ];
     }
 }

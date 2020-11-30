@@ -23,6 +23,14 @@ class EducationController extends Controller
         return new EducationTypeResource($item);
     }
 
+    public function getVersions(Request $request, string $educationTypeSlug)
+    {
+        $type = EducationType::whereSlug($educationTypeSlug)->firstOrFail();
+        $educations = $type->educations()->get();
+
+        return EducationResource::collection($educations);
+    }
+
     public function getVersion(Request $request, string $educationTypeSlug)
     {
         $type = EducationType::whereSlug($educationTypeSlug)->firstOrFail();
@@ -30,9 +38,9 @@ class EducationController extends Controller
         $version = $request->query('version');
 
         if ($version) {
-            $education = $type->educations()->where('version', '=', $version);
+            $education = $type->educations()->where('version', '=', $version)->firstOrFail();
         } else {
-            $education = $type->educations()->orderBy('version')->firstOrFail();
+            $education = $type->educations()->orderBy('version', 'desc')->firstOrFail();
         }
 
         return new EducationResource($education);
