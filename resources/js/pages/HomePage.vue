@@ -4,7 +4,7 @@
 
     <v-container
       class="d-flex justify-center"
-      v-if="loading">
+      v-if="loading && !educationTypes">
       <v-progress-circular
         indeterminate
       ></v-progress-circular>
@@ -46,50 +46,51 @@
 
           <v-stepper-items>
             <v-stepper-content step="1">
-              <v-card
-                class="mx-auto d-flex justify-center"
+              <v-row
+                class="mx-auto"
+                align="center"
+                justify="space-around"
               >
-                <v-card-actions>
-                  <v-btn
-                    rounded
-                    x-large
-                    dark
-                    v-for="educationType in educationTypes"
-                    v-bind:key="educationType.short_name"
-                    :color="educationType.color"
-                    @click="onEducationType(educationType)"
-                    :dusk="educationType.slug"
-                  >{{ educationType.short_name }}
-                  </v-btn>
-                </v-card-actions>
-              </v-card>
+                <v-btn
+                  rounded
+                  x-large
+                  dark
+                  style="min-width: 355px;"
+                  v-for="educationType in educationTypes"
+                  v-bind:key="educationType.short_name"
+                  :color="educationType.color"
+                  @click="onEducationType(educationType)"
+                  :dusk="educationType.slug"
+                >{{ educationType.short_name }}
+                </v-btn>
+
+              </v-row>
             </v-stepper-content>
 
             <v-stepper-content step="2">
-              <v-card
-                class="mx-auto d-flex justify-center"
-              >
-                <v-card-actions>
-                  <v-flex
-                    style="justify-content: center;"
-                    align-self-center
-                  >
-                    <v-flex
-                      style="justify-content: space-between;"
-                    >
-                      <v-btn
-                        rounded
-                        x-large
-                        dark
-                        v-for="studentType in studentTypes"
-                        v-bind:key="studentType.slug"
-                        :color="studentType.color"
-                        @click="onStudentType(studentType)"
-                        :dusk="studentType.slug"
-                      >{{ studentType.title }}
-                      </v-btn>
-                    </v-flex>
+              <template v-if="!loading">
+                <v-row
+                  class="mx-auto"
+                  align="center"
+                  justify="space-around"
+                  style="max-width: 760px;"
+                >
+                  <v-btn
+                    style="margin-right: 4px;"
+                    rounded
+                    x-large
+                    dark
+                    v-for="studentType in studentTypes"
+                    v-bind:key="studentType.slug"
+                    :color="studentType.color"
+                    @click="onStudentType(studentType)"
+                    :dusk="studentType.slug"
+                  >{{ studentType.title }}
+                  </v-btn>
+                </v-row>
 
+                <v-row align="end">
+                  <v-col>
                     <v-btn
                       class="mt-3"
                       rounded
@@ -98,9 +99,14 @@
                       :to="{ name: 'student-types' }"
                     >Læs mere om elev typer
                     </v-btn>
-                  </v-flex>
-                </v-card-actions>
-              </v-card>
+                  </v-col>
+                </v-row>
+              </template>
+
+              <v-progress-circular
+                v-else
+                indeterminate
+              ></v-progress-circular>
             </v-stepper-content>
 
           </v-stepper-items>
@@ -112,9 +118,8 @@
 
     <template v-if="step === 3">
       <v-container v-if="educationVersions.length > 1">
-        <v-row align="center">
+        <v-row justify="center">
           <v-col
-            class="d-flex"
             cols="12"
             sm="12"
             md="3"
@@ -129,7 +134,8 @@
               :hint="`Version ${selectedEducationType.version}`"
               persistent-hint
               return-object
-              solo
+              single-line
+              outlined
             ></v-select>
           </v-col>
         </v-row>
@@ -171,7 +177,7 @@ export default {
       loading: true,
       error: false,
 
-      educationTypes: [],
+      educationTypes: null,
       educationVersions: [],
       selectedEducationType: null,
 
