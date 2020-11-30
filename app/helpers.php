@@ -1,15 +1,13 @@
 <?php
 
-if (!function_exists('visits')) {
-    /**
-     * @param $subject
-     * @param string $tag
-     *
-     * @return \App\PageVisits\Visits
-     * @throws \Exception
-     */
-    function visits($subject, $tag = 'visits')
+if (!function_exists('format_log_context')) {
+    function format_log_context(\Throwable $e, array $with = []): array
     {
-        return new \App\PageVisits\Visits($subject, $tag);
+        return array_merge($with, [
+            'e.message' => $e->getMessage(),
+            'e.code'    => $e->getCode(),
+            'e.file'    => $e->getFile(),
+            'e.line'    => $e->getLine(),
+        ]);
     }
 }

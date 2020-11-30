@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
-use App\Models\EducationType;
-use App\PageVisits\Pages\HomePage;
+use App\Models\{Course, EducationType};
 use Illuminate\Http\Request;
 
 class UiController extends Controller

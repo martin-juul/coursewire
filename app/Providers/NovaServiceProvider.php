@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Analytics\Repository;
+use App\Models\Page;
 use App\Models\User;
 use App\PageVisits\Pages\HomePage;
 use Coroowicaksono\ChartJsIntegration\AreaChart;
@@ -58,9 +60,12 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function cards()
     {
-        $visits = visits(HomePage::class)->period('year')->top(10);
-        if ($visits instanceof Collection) {
-            $visits = $visits->toArray();
+        $repository = app(Repository::class);
+        $today = $repository->getToday();
+        $scores = [];
+
+        foreach ($today as $page => $score) {
+            $scores[] = ['label' => ucfirst($page), 'data' => [$score]];
         }
 
         return [
@@ -69,15 +74,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ->animations([
                     'enabled' => true,
                     'easing'  => 'easeinout',
-                ])->series([
-                    [
-                        'label'           => 'HomePage',
-                        'backgroundColor' => '#f7a35c',
-                        'data'            => $visits,
-                    ],
-                ])->options([
+                ])->series($scores)
+                ->options([
                     'xaxis' => [
-                        'categories' => ['Jan', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                        'categories' => ['Visits'],
                     ],
                 ])->width('2/3'),
         ];
