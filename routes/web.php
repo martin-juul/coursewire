@@ -17,6 +17,10 @@ Route::group(['prefix' => 'uddannelserne'], function () {
 Route::get('/elevtyper', 'UiController@studentTypes')->name('student-types');
 
 Route::group(['prefix' => 'mailables', 'middleware' => 'auth'], function () {
-   Route::get('', 'EmailController@index')->name('email.index');
-   Route::get('{mailable}', 'EmailController@show')->name('email.show');
+    Route::get('', 'EmailController@index')->name('email.index');
+    Route::get('{mailable}', 'EmailController@show')->name('email.show');
+});
+
+Route::group(['prefix' => 'asset', 'middleware' => ['enforce.origin']], function () {
+    Route::get('hero/{text}', 'HeroController@show')->name('asset.hero');
 });
