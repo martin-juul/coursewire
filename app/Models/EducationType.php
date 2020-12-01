@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $image_path
  * @property string|null $about
+ * @property string|null $blur_hash
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Education[] $educations
  * @property-read int|null $educations_count
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType findSimilarSlugs($attribute, $config, $slug)
@@ -24,6 +25,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType query()
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereAbout($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereBlurHash($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereImagePath($value)
@@ -42,6 +44,7 @@ class EducationType extends AbstractModel
         'short_name',
         'about',
         'image_path',
+        'blur_hash',
     ];
 
     public function educations()
@@ -52,7 +55,7 @@ class EducationType extends AbstractModel
     public function getImageUrl()
     {
         if (!$this->image_path) {
-            return null;
+            return route('asset.hero', ['text' => $this->title]);
         }
 
         return config('app.cdn_url') . '/' . $this->image_path;

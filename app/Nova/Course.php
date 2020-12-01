@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 
+/**
+ * @mixin \App\Models\Course
+ */
 class Course extends Resource
 {
     /**

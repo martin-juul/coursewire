@@ -1,25 +1,28 @@
 <template>
-    <v-main v-if="!error">
-      <Header class="text-center" style="margin-top: -54px;" :title="education.title"></Header>
+  <v-main v-if="!error">
+    <Header
+      v-if="!loading"
+      class="text-center" style="margin-top: -54px;"
+      :title="education.title"></Header>
 
-      <v-container
-        style="max-width: 868px;" class="pb-4"
-        v-if="!loading"
-      >
-        <v-img
-          :src="education.image"
-          max-height="200"
-          contain
-          class="mb-4"
-        ></v-img>
+    <v-container
+      style="max-width: 868px;" class="pb-4"
+      v-if="!loading"
+    >
+      <v-img
+        :src="education.image"
+        max-height="200"
+        contain
+        class="mb-4"
+      ></v-img>
 
-        <v-spacer class="mt-4"></v-spacer>
+      <v-spacer class="mt-4"></v-spacer>
 
-        <section v-html="education.about"></section>
-      </v-container>
+      <section v-html="education.about"></section>
+    </v-container>
 
-    </v-main>
-    <danger v-else></danger>
+  </v-main>
+  <danger v-else></danger>
 </template>
 
 <script>

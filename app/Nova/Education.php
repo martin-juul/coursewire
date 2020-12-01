@@ -10,6 +10,9 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
+/**
+ * @mixin \App\Models\Education
+ */
 class Education extends Resource
 {
     /**

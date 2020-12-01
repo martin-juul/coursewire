@@ -9,6 +9,7 @@ mix.js('resources/js/app.js', 'public/js')
   .vuetify(options)
   .extract([
     'axios',
+    'blurhash',
     'vue',
     'vue-router',
     'vuetify',

@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Concerns\StoreImageAttachment;
 use App\Nova\Enums\ResourceGroup;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
@@ -10,6 +11,9 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
+/**
+ * @mixin \App\Models\EducationType
+ */
 class EducationType extends Resource
 {
     /**
@@ -63,11 +67,12 @@ class EducationType extends Resource
             Text::make(__('Kort navn'), 'short_name'),
             Image::make('Billede', 'image_path')
                 ->disk('spaces')
+                ->prunable()
                 ->preview(function ($value, $disk) {
                     return $value ?
                         config('app.cdn_url') . '/' . $value
                         : null;
-                }),
+                })->store(new StoreImageAttachment),
             Trix::make('Om', 'about'),
         ];
     }

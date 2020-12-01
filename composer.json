@@ -16,6 +16,7 @@
         "geoip2/geoip2": "^2.11",
         "guzzlehttp/guzzle": "^7.0.1",
         "jaybizzle/crawler-detect": "^1.2",
+        "kornrunner/blurhash": "^1.1",
         "laravel/framework": "^8.0",
         "laravel/horizon": "^5.4",
         "laravel/nova": "*",
@@ -30,7 +31,8 @@
         "spatie/laravel-referer": "^1.7",
         "tightenco/ziggy": "^0.9.4",
         "torann/geoip": "^3.0",
-        "whitecube/nova-flexible-content": "^0.2.6"
+        "whitecube/nova-flexible-content": "^0.2.6",
+        "ext-gd": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

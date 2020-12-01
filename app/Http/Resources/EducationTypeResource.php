@@ -23,6 +23,7 @@ class EducationTypeResource extends JsonResource
             'short_name' => $this->short_name,
             'slug'       => $this->slug,
             'about'      => $this->about,
+            'blur_hash'  => $this->blur_hash,
             'image'      => $this->getImageUrl(),
             'created'    => $this->created_at,
             'updated'    => $this->updated_at,
