@@ -10,9 +10,9 @@ class ConfigComposer implements ViewComposer
     {
         $view->with('config', [
             'appName'         => config('app.name'),
-            'customer'        => config('app.customer'),
-            'customerAcronym' => config('app.customer_acronym'),
-            'customerUrl'     => config('app.customer_url'),
+            'customer'        => config('branding.name'),
+            'customerAcronym' => config('branding.acronym'),
+            'customerUrl'     => config('branding.url'),
             'env'             => config('app.env'),
             'baseUrl'         => config('app.url'),
         ]);

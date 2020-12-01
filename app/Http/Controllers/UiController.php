@@ -24,9 +24,10 @@ class UiController extends Controller
             ->firstOrFail();
 
         return view('course-show', [
-            'courseTitle' => $item->title,
-            'courseNo'    => $item->course_no,
-            'overview'    => $item->overview ?? 'Fag på data og kommunikationsuddannelsen.',
+            'title'     => $item->title,
+            'courseNo'  => $item->course_no,
+            'overview'  => $item->overview ?? 'Fag på data og kommunikationsuddannelsen.',
+            'about'     => $item->about,
         ]);
     }
 
@@ -42,6 +43,7 @@ class UiController extends Controller
         return view('education-show', [
             'title' => $item->title,
             'slug'  => $item->slug,
+            'image' => $item->getImageUrl(),
         ]);
     }
 
