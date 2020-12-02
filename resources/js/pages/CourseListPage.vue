@@ -2,6 +2,11 @@
   <v-container>
     <Header title="Fag"></Header>
 
+    <v-skeleton-loader
+      v-if="loading"
+      type="table-heading, table-tbody, table-tfoot"
+    ></v-skeleton-loader>
+
     <v-container v-if="!error">
       <v-data-table
         :headers="headers"
@@ -10,7 +15,8 @@
         :server-items-length="totalCourses"
         :loading="loading"
         item-key="course_no"
-        class="elevation-1">
+        class="elevation-1"
+      >
 
         <template v-slot:item="{ item }">
           <tr @click="navigateToCourse(item.course_no)" style="cursor: pointer;" aria-label="link">
