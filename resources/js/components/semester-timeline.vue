@@ -63,3 +63,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  .title {
+    word-break: break-word;
+  }
+</style>

@@ -55,7 +55,7 @@
                   rounded
                   x-large
                   dark
-                  style="min-width: 355px;"
+                  class="education-type-btn"
                   v-for="educationType in educationTypes"
                   v-bind:key="educationType.short_name"
                   :color="educationType.color"
@@ -67,7 +67,7 @@
               </v-row>
             </v-stepper-content>
 
-            <v-stepper-content step="2">
+            <v-stepper-content step="2" style="padding: unset;">
               <template v-if="!loading">
                 <v-row
                   class="mx-auto"
@@ -76,7 +76,7 @@
                   style="max-width: 760px;"
                 >
                   <v-btn
-                    style="margin-right: 4px;"
+                    style="margin-right: 4px; margin-top: 4px;"
                     rounded
                     x-large
                     dark
@@ -142,6 +142,7 @@
       </v-container>
 
       <SemesterTimeline
+        class="timeline-container"
         v-for="semester in semesters"
         v-bind:key="semester.semester"
         :semester="semester.semester"
@@ -351,3 +352,22 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+ .education-type-btn {
+   min-width: 355px;
+ }
+
+ @media screen and (max-width: 400px) {
+   .education-type-btn {
+     min-width: unset;
+     padding: unset !important;
+     flex-grow: 1;
+     margin-top: 5px;
+   }
+
+   .timeline-container {
+     padding-left: unset !important;
+   }
+ }
+</style>
