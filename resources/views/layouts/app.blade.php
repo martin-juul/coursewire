@@ -43,6 +43,20 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body class="font-sans antialiased" dusk="{{ request()->route()->getName() }}">
+@section('jsonld')
+<script type="application/ld+json">
+    @yield('jsonld')
+</script>
+@endsection
+
+@if(View::hasSection('jsonld'))
+@yield('jsonld')
+@else
+<script type="application/ld+json">
+    {!! json_encode($ldschema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+</script>
+@endif
+
 <div id="app">
     <v-app>
 

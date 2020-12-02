@@ -9,23 +9,10 @@
     <meta property="og:image" content="{{ route('asset.hero', ['text' => $title]) }}" />
     <meta name="description" content="{{ $overview }}" />
     <link rel="canonical" href="{{ @route('courses.show', ['courseNo' => $courseNo]) }}" />
+@endsection
 
+@section('jsonld')
 <script type="application/ld+json">
-  {
-    "@context": "https://schema.org/",
-    "@type": "Course",
-    "name": "{{ $title }}",
-    "description": "{{ $overview }}",
-    "courseCode": "{{ $courseNo }}",
-    "teaches": "{{ $about }}",
-    "provider": {
-        "name": "{{ config('branding.name') }}",
-        "alternateName": "{{ config('branding.acronym') }}",
-        "email": "{{ config('branding.email') }}",
-        "telephone": "{{ config('branding.phone') }}",
-        "image": "{{ url('/branding/sde/favicon.png') }}",
-        "url": "{{ config('branding.url') }}"
-    }
-  }
+    {!! json_encode($jsonld, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
 </script>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Http\Composers\ConfigComposer;
+use App\Http\Composers\JsonLdComposer;
 use Illuminate\Support\ServiceProvider;
 
 class ViewServiceProvider extends ServiceProvider
