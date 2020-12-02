@@ -14,6 +14,7 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="/branding/sde/favicon.png"/>
 
+
     @if(View::hasSection('og.type'))
         <meta property="og:type" content="@yield('og.type')">
     @else
