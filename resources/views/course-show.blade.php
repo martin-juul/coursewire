@@ -6,9 +6,9 @@
 
 @section('meta_tags')
     <meta property="og:title" content="{{ $title }}" />
-    <meta property="og:image" content="{{ route('asset.hero', ['text' => $title]) }}" />
+    <meta property="og:image" content="{{ route('asset.hero', ['text' => base64_encode($title)]) }}" />
     <meta name="description" content="{{ $overview }}" />
-    <link rel="canonical" href="{{ @route('courses.show', ['courseNo' => $courseNo]) }}" />
+    <link rel="canonical" href="{{ route('courses.show', ['courseNo' => $courseNo]) }}" />
 @endsection
 
 @section('jsonld')

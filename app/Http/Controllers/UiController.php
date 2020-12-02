@@ -29,7 +29,7 @@ class UiController extends Controller
             ->name($item->title)
             ->description(strip_tags($item->overview))
             ->courseCode($item->course_no)
-            ->image(route('asset.hero', ['text' => $item->title]))
+            ->image(route('asset.hero', ['text' => base64_encode($item->title)]))
             ->teaches($item->about)
             ->provider($this->jsonLdOrg());
 
@@ -54,7 +54,7 @@ class UiController extends Controller
         $jsonLd = Schema::educationalOccupationalProgram()
             ->name($item->title)
             ->description(strip_tags($item->about))
-            ->image(route('asset.hero', ['text' => $item->title]))
+            ->image(route('asset.hero', ['text' => base64_encode($item->title)]))
             ->provider($this->jsonLdOrg());
 
         return view('education-show', [

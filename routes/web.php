@@ -21,6 +21,6 @@ Route::group(['prefix' => 'mailables', 'middleware' => 'auth'], function () {
     Route::get('{mailable}', 'EmailController@show')->name('email.show');
 });
 
-Route::group(['prefix' => 'asset', 'middleware' => ['enforce.origin']], function () {
+Route::group(['prefix' => 'asset'], function () {
     Route::get('hero/{text}', 'HeroController@show')->name('asset.hero');
 });

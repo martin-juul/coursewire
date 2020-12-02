@@ -55,7 +55,7 @@ class EducationType extends AbstractModel
     public function getImageUrl()
     {
         if (!$this->image_path) {
-            return route('asset.hero', ['text' => $this->title]);
+            return route('asset.hero', ['text' => base64_encode($this->title)]);
         }
 
         return config('app.cdn_url') . '/' . $this->image_path;
