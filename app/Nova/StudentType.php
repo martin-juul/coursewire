@@ -58,7 +58,7 @@ class StudentType extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make(__('Titel'), 'title')->sortable(),
+            Text::make(__('Titel'), 'title')->required()->sortable(),
             Text::make(__('Overview'), 'overview')->hideFromIndex(),
             Trix::make(__('Description'), 'description')->hideFromIndex(),
         ];

@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string|null $image_path
  * @property string|null $about
  * @property string|null $blur_hash
+ * @property string|null $occupational_category
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Education[] $educations
  * @property-read int|null $educations_count
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType findSimilarSlugs($attribute, $config, $slug)
@@ -29,6 +30,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereImagePath($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereOccupationalCategory($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereShortName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereTitle($value)
@@ -45,6 +47,7 @@ class EducationType extends AbstractModel
         'about',
         'image_path',
         'blur_hash',
+        'occupational_category',
     ];
 
     public function educations()

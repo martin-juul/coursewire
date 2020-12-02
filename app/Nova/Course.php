@@ -61,8 +61,8 @@ class Course extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make(__('Fag Nr'), 'course_no')->sortable(),
-            Text::make(__('Titel'), 'title'),
+            Text::make(__('Fag Nr'), 'course_no')->required()->sortable(),
+            Text::make(__('Titel'), 'title')->required(),
             Text::make(__('Oversigt'), 'overview')->hideFromIndex(),
             Trix::make(__('Beskrivelse'), 'about')->hideFromIndex(),
         ];

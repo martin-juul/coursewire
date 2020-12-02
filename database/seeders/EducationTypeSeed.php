@@ -21,16 +21,20 @@ class EducationTypeSeed extends Seeder
         EducationType::create([
             'title'      => 'IT-Supporter',
             'short_name' => 'IT-Supporter',
+            'occupational_category' => '3512',
+
         ]);
 
         EducationType::create([
             'title'      => 'Datatekniker med speciale i programmering',
             'short_name' => 'Datatekniker / Programmering',
+            'occupational_category' => '2512',
         ]);
 
         EducationType::create([
             'title'      => 'Datatekniker med speciale i infrastruktur',
             'short_name' => 'Datatekniker / Infrastruktur',
+            'occupational_category' => '3513',
         ]);
     }
 }

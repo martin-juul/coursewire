@@ -56,6 +56,7 @@ class UiController extends Controller
             ->description(strip_tags($item->about))
             ->image(route('asset.hero', ['text' => base64_encode($item->title)]))
             ->programType(config('branding.education.programType'))
+            ->occupationalCategory($item->occupational_category)
             ->programPrerequisites(
                 Schema::educationalOccupationalCredential()
                     ->credentialCategory('HighSchool'),

@@ -63,8 +63,11 @@ class EducationType extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make(__('Titel'), 'title'),
-            Text::make(__('Kort navn'), 'short_name'),
+            Text::make(__('Titel'), 'title')->required(),
+            Text::make(__('Kort navn'), 'short_name')->required(),
+            Text::make(__('ISCO-08'), 'occupational_category')
+                ->required()
+                ->help('https://www.ilo.org/public/english/bureau/stat/isco/isco08/'),
             Image::make('Billede', 'image_path')
                 ->disk('spaces')
                 ->prunable()
