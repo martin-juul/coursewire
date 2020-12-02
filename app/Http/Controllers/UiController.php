@@ -51,11 +51,19 @@ class UiController extends Controller
     {
         $item = EducationType::whereSlug($slug)->firstOrFail();
 
-        $jsonLd = Schema::educationalOccupationalProgram()
+        $jsonLd = Schema::workBasedProgram()
             ->name($item->title)
             ->description(strip_tags($item->about))
             ->image(route('asset.hero', ['text' => base64_encode($item->title)]))
-            ->provider($this->jsonLdOrg());
+            ->programType(config('branding.education.programType'))
+            ->programPrerequisites(
+                Schema::educationalOccupationalCredential()
+                    ->credentialCategory('HighSchool'),
+            )
+            ->occupationalCredentialAwarded(
+                Schema::educationalOccupationalCredential()
+                    ->credentialCategory($item->title)
+            )->provider($this->jsonLdOrg());
 
         return view('education-show', [
             'title'  => $item->title,
