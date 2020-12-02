@@ -91,7 +91,7 @@ class UiController extends Controller
                 Schema::postalAddress()
                     ->streetAddress(config('branding.address.street'))
                     ->addressLocality(config('branding.address.locality'))
-                    ->addressCountry(config('branding.address.country'))
+                    ->postalCode(config('branding.address.postal_code'))
                     ->addressCountry(config('branding.address.country'))
             );
     }
