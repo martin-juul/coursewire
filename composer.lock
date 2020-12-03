@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "445270a7a3ba5f23f88509fcd7caf49f",
+    "content-hash": "3587aebc37127fcbba9716cc7a30e1f9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2399,11 +2399,11 @@
         },
         {
             "name": "laravel/nova",
-            "version": "3.15.0",
+            "version": "3.16.0",
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "afac88af5827ecb8cb373fc8791301beb36932bb"
+                "reference": "f4c6189aabbf77c2c4fb377a2f71f9ffc8c474b5"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -2458,6 +2458,7 @@
                     "@php -r \"if (file_exists('.env.dusk')) { copy('.env.dusk', 'vendor/laravel/nova-dusk-suite/.env'); } else { copy('.env.dusk.example', 'vendor/laravel/nova-dusk-suite/.env'); }\""
                 ],
                 "dusk:assets": [
+                    "yarn install",
                     "yarn run prod",
                     "./vendor/bin/testbench-dusk nova:publish"
                 ],
@@ -3143,6 +3144,51 @@
                 "source": "https://github.com/martin-juul/many-to-many/tree/1.0.0"
             },
             "time": "2020-10-29T10:16:58+00:00"
+        },
+        {
+            "name": "mastani/nova-password-reset",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mastani/nova-password-reset.git",
+                "reference": "48f9bb9ccb4103df8ff6b3e40a243ff2afd7a4cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mastani/nova-password-reset/zipball/48f9bb9ccb4103df8ff6b3e40a243ff2afd7a4cb",
+                "reference": "48f9bb9ccb4103df8ff6b3e40a243ff2afd7a4cb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Mastani\\NovaPasswordReset\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mastani\\NovaPasswordReset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Reset your nova password easily from top navigation.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/mastani/nova-password-reset/issues",
+                "source": "https://github.com/mastani/nova-password-reset/tree/v1.0"
+            },
+            "time": "2020-11-20T08:17:00+00:00"
         },
         {
             "name": "maxmind-db/reader",
@@ -13040,7 +13086,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4",
+        "php": ">=7.4",
         "ext-gd": "*",
         "ext-json": "*",
         "ext-mbstring": "*",

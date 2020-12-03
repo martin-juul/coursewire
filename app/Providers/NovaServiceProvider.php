@@ -3,11 +3,8 @@
 namespace App\Providers;
 
 use App\Analytics\Repository;
-use App\Models\Page;
 use App\Models\User;
-use App\PageVisits\Pages\HomePage;
 use Coroowicaksono\ChartJsIntegration\AreaChart;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
@@ -101,6 +98,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
+            new \Mastani\NovaPasswordReset\NovaPasswordReset,
         ];
     }
 
