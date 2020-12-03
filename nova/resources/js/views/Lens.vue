@@ -112,7 +112,9 @@
             :via-has-one="viaHasOne"
             :trashed="trashed"
             :per-page="perPage"
-            :per-page-options="perPageOptions"
+            :per-page-options="
+              perPageOptions || resourceInformation.perPageOptions
+            "
             :show-trashed-option="
               authorizedToForceDeleteAnyResources ||
               authorizedToRestoreAnyResources
@@ -379,7 +381,7 @@ export default {
 
   beforeRouteUpdate(to, from, next) {
     next()
-    this.initializeState(this.lens)
+    this.initializeFilters(this.lens)
   },
 
   methods: {

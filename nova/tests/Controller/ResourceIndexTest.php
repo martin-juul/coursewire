@@ -48,6 +48,13 @@ class ResourceIndexTest extends IntegrationTest
         $response->assertJsonCount(3, 'resources');
     }
 
+    public function test_cant_list_an_invalid_resource()
+    {
+        $this->withExceptionHandling()
+                ->getJson('/nova-api/foo')
+                ->assertStatus(404);
+    }
+
     public function test_authorization_information_is_correctly_adjusted_when_unauthorized()
     {
         factory(User::class)->create();

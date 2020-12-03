@@ -34,7 +34,12 @@ class ServeNova
      */
     protected function isNovaRequest($request)
     {
+        $domain = config('nova.domain');
         $path = trim(Nova::path(), '/') ?: '/';
+
+        if ($domain !== config('app.url') && $path === '/') {
+            return $request->root() === $domain;
+        }
 
         return $request->is($path) ||
                $request->is(trim($path.'/*', '/')) ||

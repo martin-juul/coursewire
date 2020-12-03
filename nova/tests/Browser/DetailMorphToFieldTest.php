@@ -97,4 +97,27 @@ class DetailMorphToFieldTest extends DuskTestCase
             $browser->blank();
         });
     }
+
+    /**
+     * @test
+     */
+    public function morph_to_field_can_be_displayed_when_not_defined_using_types()
+    {
+        $this->setupLaravel();
+
+        $comment = CommentFactory::new()->create([
+            'commentable_type' => \Illuminate\Foundation\Auth\User::class,
+            'commentable_id' => 4,
+        ]);
+
+        $this->browse(function (Browser $browser) use ($comment) {
+            $browser->loginAs(User::find(1))
+                    ->visit(new Detail('comments', 1))
+                    ->within(new DetailComponent('comments', $comment->id), function ($browser) use ($comment) {
+                        $browser->assertSee('Illuminate\Foundation\Auth\User: '.$comment->commentable->id);
+                    });
+
+            $browser->blank();
+        });
+    }
 }
