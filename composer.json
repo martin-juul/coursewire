@@ -33,7 +33,7 @@
         "spatie/laravel-referer": "^1.7",
         "spatie/laravel-sitemap": "^5.9",
         "spatie/schema-org": "^3.2",
-        "tightenco/ziggy": "^0.9.4",
+        "tightenco/ziggy": "^1.0.3",
         "torann/geoip": "^3.0",
         "whitecube/nova-flexible-content": "^0.2.6"
     },
