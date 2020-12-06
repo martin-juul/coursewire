@@ -76,34 +76,7 @@ privileges, unless other is specified.
 
 ## Entity Diagram
 
-    +------------------+      +-------------------+     +-----------------+    +-------------------+     +-------------------+
-    |  courses         |      |  course_semester  |     |  semesters      |    |  education        |     |  education_types  |
-    +------------------+      +-------------------+     +-----------------+    +-------------------+     +-------------------+
-    | id               +---+  | id                | +---+ id              | +--> id                |  +--+  id               |
-    | course_no        |   +--> course_id         | |   | education_id    <--+ | slug              |  |  |  title            |
-    | title            |      | semester_id       +<- ->+ student_type_id |  | | version           |  |  |  slug             |
-    | slug             |      | duration          | | | | semester        |  | | education_type_id +<-+  |  short_name       |
-    | overview         |      | created_at        | +-+ | created_at      |  | | created_at        |     |  image_path       |
-    | about            |      | updated_at        |   | | updated_at      |  | | updated_at        |     |  about            |
-    | created_at       |      |                   |   | |                 |  | |                   |     |  created_at       |
-    | updated_at       |      |                   |   | |                 |  | |                   |     |  updated_at       |
-    +------------------+      +-------------------+   | +-----------------+  | +-------------------+     +-------------------+
-                                                      |                      |
-                                                      | +-----------------+  | +-------------------------+
-                                                      | |  student_types  |  | |  education_student_type |
-                                                      | +-----------------+  | +-------------------------+
-                                                      +-+ id              <<-+ |  id                     |
-                                                        | title           | |--+  education_id           |
-                                                        | slug            | +--+  student_type_id        |
-                                                        | overview        |    |  created_at             |
-                                                        | description     |    |  updated_at             |
-                                                        | created_at      |    |                         |
-                                                        | updated_at      |    |                         |
-                                                        +-----------------+    +-------------------------+
-
-### Graphical
-
-![Entity diagram](./database-diagram.svg)
+<entity-diagram />
 
 ### Class diagram
 
@@ -219,21 +192,113 @@ Endpoint `yourdomain.tld/api/courses/:slug`
 
 Endpoint `yourdomain.tld/api/educations`
 
+```json
+{
+  "data": [
+    {
+        "title": "string",
+        "short_name": "string",
+        "slug": "string",
+        "about": "string|null",
+        "blur_hash": "string|null",
+        "image": "string|null",
+        "created": "datetimetz",
+        "updated": "datetimetz"
+    }
+  ]
+}
+```
+
 #### Show Education
 
 Endpoint `yourdomain.tld/api/educations/type/:slug`
+
+```json
+{
+  "data": {
+    "title": "string",
+    "short_name": "string",
+    "slug": "string",
+    "about": "string|null",
+    "blur_hash": "string|null",
+    "image": "string|null",
+    "created": "datetimetz",
+    "updated": "datetimetz"
+  }
+}
+```
 
 #### Show Education Version
 
 Endpoint `yourdomain.tld/api/educations/:educationTypeSlug`
 
+```json
+{
+  "data": {
+    "parent": "string|omitted",
+    "slug": "string",
+    "version": "string"
+  }
+}
+```
+
+#### Show Education Versions
+
+**Query Param**
+
+| Parameter | Value    | Example |
+|:----------|:---------|:--------|
+| version   | `string` | `9.1`   |
+
+```json
+{
+    "data": [
+      {
+        "parent": "string|omitted",
+        "slug": "string",
+        "version": "string"
+      }
+    ]
+}
+```
+
 ### Student Types
 
 Endpoint `yourdomain.tld/api/student-types`
 
+```json
+{
+  "data": [
+    {
+        "title": "string",
+        "slug": "string",
+        "overview": "string|null",
+        "description": "string|null"
+    }
+  ]
+}
+```
+
 ### Semesters
 
-Endpoint `yourdomain.tld/api/semesters`
+Endpoint `yourdomain.tld/api/semesters/{educationSlug}/{studentTypeSlug}`
+
+```json
+{
+  "data": {
+    "semester": "int",
+    "courses": [
+      {
+        "title": "string",
+        "course_no": "string",
+        "overview": "string|null",
+        "about": "string|null",
+        "duration": "int"
+      }
+    ]
+  }
+}
+```
 
 ## User interface
 

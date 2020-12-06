@@ -139,7 +139,7 @@ module.exports = {
   },
 
   /**
-   * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
+   * Apply plugins，ref：https://vuepress.vuejs.org/plugin/
    */
   plugins: [
     '@vuepress/plugin-back-to-top',
@@ -148,6 +148,12 @@ module.exports = {
       headerAnchorSelector: '.header-anchor',
     },
     'vuepress-plugin-mermaidjs',
+    '@vuepress/last-updated',
+    {
+      dateOptions:{
+        hour12: false
+      },
+    },
   ],
 
   // This will disable ES5 transpilation and polyfills for IE,
