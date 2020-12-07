@@ -348,14 +348,149 @@ Where each block of X's represents external links to branding pages (facebook, y
 
 ### Homepage
 
+The homepage features a _stepper_ where a user can select an education, student type and optionally an education version - to see the semesters for the education.
+
+```mermaid
+graph TD
+    A[Start] --> B(Education)
+    B --> C(IT-Suporter)
+    B --> D(Datatekniker / Programmernig)
+    B --> E(Datatekniker / Infrastruktur)
+    C --> F(Student type)
+    D --> F
+    E --> F
+    F --> G(EUD)
+    F --> H(EUX)
+    F --> I(EUV 1)
+    F --> J(EUV 2)
+    F --> L(EUV 3)
+    G --> M(Education Version)
+    H --> M
+    I --> M
+    J --> M
+    L --> M
+```
+
 ### Course Overview
 
+A page with a table where a user can browse courses
+
+| Course No | Title          |
+|:----------|:---------------|
+| `no`      | `course title` |
+
 #### Course Display
+
+```   
++----------------------------------+
+|                                  |
+|                                  |
+|     title            course_no   |
+|                                  |
+|                                  |
+|     overview                     |
+|                                  |
+|                                  |
+|                                  |
+|     description                  |
+|                                  |
+|                                  |
++----------------------------------+
+```
+
+
+__Structured Data__
+
+To ensure the site is indexed well. The sdt definition for courses is added. An example is shown below:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Computerteknologi",
+  "description": "Kendskab til benyttelse af og forståelse for hvad brugbar dokumentation er\rpå arbejdspladsen, vil give eleven en fordel i faget.",
+  "courseCode": "6225",
+  "image": "https://coursewire.test/asset/hero/Q29tcHV0ZXJ0ZWtub2xvZ2k=",
+  "teaches" :"I dette fag arbejder eleverne med opsætning af et system (server med raid\ropsætning samt server-software.) Under arbejdet med opsætning fører eleverne\rdokumentation for arbejdet (UML orienteret.) Eleverne skal designe\rog benytte: User Story, arbejdslog, fejlformular, konfigurationsdokumentation,\rog Accept test. Faget omhandler i dette henseende træning i forståelse\rog benyttelse af brugbar dokumentation i arbejdssituationen.",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Syddansk Erhvervsskole",
+    "alternateName": "SDE",
+    "url":"https://www.sde.dk",
+    "email":"sde@sde.dk",
+    "telephone":"+4570109900",
+    "address": {
+      "@type":"PostalAddress",
+      "streetAddress":"Munkebjergvej 130",
+      "addressLocality":"Odense",
+      "postalCode":"5230",
+      "addressCountry":"DK"
+    }
+  }
+}
+```
+
+Here's a sample from what it might look like on Google Search
+
+![Search Docs Data Types Courses 01](https://developers.google.com/search/docs/data-types/images/courses01.png)
 
 ### Educations Overview
 
 #### Educations Display
 
+__Structured Data__
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "WorkBasedProgram",
+  "name": "IT-Supporter",
+  "description": "Sørg for den bedste IT-faglige hjælp til maskiner – og menneskerDer findes stort set ikke virksomheder, der ikke er afhængige af it på den ene eller anden måde. Og det betyder samtidig, at stort set alle virksomheder har behov for nogle, der kan sikre, at systemerne virker optimalt – og en, der kan hjælpe, hvis de ikke gør.Som it-supporter skal du ikke alene kunne finde og fikse it-relaterede problemer - du skal også kunne forklare og få folk til at forstå problemet. Eller i det mindste for dem til ikke at lave den samme fejl igen – eller i så fald kunne løse problemet selv.På uddannelsen opnår du en bred viden om it, der gør dig i stand til at finde fejl og se sammenhænge mellem forskellige systemer. Du bliver også klædt på til at foretage rutinetjek i it-afdelingen.Desuden lærer du at opbygge og vedligeholde samt optimere netværksløsninger.Som uddannet it-supporter vil dine primære opgaver være at:drifte og vedligeholdelse af it-systemetfinde og fikse it-relaterede fejl og brugerfejlinstallere og konfigurere computere, programmer og øvrige it-installationervejlede brugerne og sikre hjælp-til-selvhjælptilslutte monitorer, printere, routere, servere mv.",
+  "image": "https://coursewire.test/asset/hero/SVQtU3VwcG9ydGVy",
+  "programType": "apprenticeship",
+  "occupationalCategory": "3512",
+  "timeToComplete": {
+    "@type": "Duration",
+    "timeToComplete": "P2Y6M"
+  },
+  "dayOfWeek": "Monday,Tuesday,Wednesday,Thursday,Friday",
+  "programPrerequisites": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "HighSchool"
+  },
+  "occupationalCredentialAwarded": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "degree"
+  },
+  "trainingSalary": {
+    "@type": "MonetaryAmountDistribution",
+    "currency": "DKK",
+    "median": "72.5"
+  },
+  "salaryUponCompletion": {
+    "@type": "MonetaryAmountDistribution",
+    "currency": "DKK",
+    "median": "176"
+  },
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Syddansk Erhvervsskole",
+    "alternateName": "SDE",
+    "url": "https://www.sde.dk",
+    "email": "sde@sde.dk",
+    "telephone": "+4570109900",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Munkebjergvej 130",
+      "addressLocality": "Odense",
+      "postalCode": "5230",
+      "addressCountry": "DK"
+    }
+  }
+}
+```
+
+![Job Training Example](https://developers.google.com/search/docs/data-types/images/job-training-example.png)
 
 ## Administration Dashboard
 
@@ -420,7 +555,11 @@ Not encforcing escaping during output, would potentially expose users to risk. A
 
 ### Feature Testing
 
+These tests features like the REST api. Expectations are tested against actual responses.
+
 ### Unit Testing
+
+Here we test functionality of e.g. services.
 
 ### Browser Testing
 
