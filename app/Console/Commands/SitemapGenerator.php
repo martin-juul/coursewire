@@ -42,7 +42,7 @@ class SitemapGenerator extends Command
 
     protected function addCourses(Sitemap $sitemap)
     {
-        Course::select(['id', 'course_no', 'updated_at'])->chunk(50, function ($courses) use (&$sitemap) {
+        Course::chunk(50, function ($courses) use (&$sitemap) {
             /** @var Course $course */
             foreach ($courses as $course) {
                 $sitemap->add(

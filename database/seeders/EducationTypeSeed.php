@@ -23,7 +23,7 @@ class EducationTypeSeed extends Seeder
             'short_name'               => 'IT-Supporter',
             'occupational_category'    => '3512',
             'program_type'             => 'apprenticeship',
-            'time_to_complete'         => 'P2Y6M',
+            'time_to_complete'         => 'P2Y11M',
             'credential_awarded'       => 'degree',
             'program_prerequisites'    => 'HighSchool',
             'day_of_week'              => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],

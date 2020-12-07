@@ -38,7 +38,7 @@ class UiController extends Controller
 
     public function educations()
     {
-        $educations = EducationType::select(['id', 'slug'])->get();
+        $educations = EducationType::get();
         $items = [];
 
         foreach ($educations as $index => $item) {
