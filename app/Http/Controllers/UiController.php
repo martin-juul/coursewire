@@ -22,15 +22,9 @@ class UiController extends Controller
     public function showCourse(Request $request, string $courseNo)
     {
         $item = Course::whereCourseNo($courseNo)
-            ->select(['id', 'title', 'course_no', 'overview', 'about'])
             ->firstOrFail();
 
-        $jsonLd = Schema::course()
-            ->name($item->title)
-            ->description(strip_tags($item->overview))
-            ->courseCode($item->course_no)
-            ->image(route('asset.hero', ['text' => base64_encode($item->title)]))
-            ->teaches($item->about)
+        $jsonLd = $item->jsonLd()
             ->provider($this->jsonLdOrg());
 
 
@@ -51,20 +45,8 @@ class UiController extends Controller
     {
         $item = EducationType::whereSlug($slug)->firstOrFail();
 
-        $jsonLd = Schema::workBasedProgram()
-            ->name($item->title)
-            ->description(strip_tags($item->about))
-            ->image(route('asset.hero', ['text' => base64_encode($item->title)]))
-            ->programType(config('branding.education.programType'))
-            ->occupationalCategory($item->occupational_category)
-            ->programPrerequisites(
-                Schema::educationalOccupationalCredential()
-                    ->credentialCategory('HighSchool'),
-            )
-            ->occupationalCredentialAwarded(
-                Schema::educationalOccupationalCredential()
-                    ->credentialCategory($item->title)
-            )->provider($this->jsonLdOrg());
+        $jsonLd = $item->jsonLd()
+            ->provider($this->jsonLdOrg());
 
         return view('education-show', [
             'title'  => $item->title,

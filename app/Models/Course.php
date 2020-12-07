@@ -5,6 +5,7 @@ namespace App\Models;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\SchemaOrg\Schema;
 
 /**
  * App\Models\Course
@@ -60,5 +61,15 @@ class Course extends AbstractModel
         return $this->belongsToMany(Semester::class)
             ->using(CourseSemester::class)
             ->withPivot(['duration']);
+    }
+
+    public function jsonLd(): \Spatie\SchemaOrg\Course
+    {
+        return Schema::course()
+            ->name($this->title)
+            ->description(strip_tags($this->overview))
+            ->courseCode($this->course_no)
+            ->image(route('asset.hero', ['text' => base64_encode($this->title)]))
+            ->teaches($this->about);
     }
 }
