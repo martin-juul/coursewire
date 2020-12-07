@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Services\Markdown;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
@@ -22,7 +23,7 @@ class StudentType extends JsonResource
             'title'       => $this->title,
             'slug'        => $this->slug,
             'overview'    => $this->overview,
-            'description' => $this->description,
+            'description' => $this->description ? app(Markdown::class)->text($this->description) : null,
         ];
     }
 }

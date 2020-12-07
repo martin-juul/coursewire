@@ -17,10 +17,11 @@
             :color="studentType.color"
             dark
           >
-            <v-card-title>{{ studentType.title }}</v-card-title>
+            <v-card-title class="cw-card-title">{{ studentType.title }}</v-card-title>
             <v-card-subtitle
               class="cw-card-subtitle"
-            >{{ studentType.overview }}</v-card-subtitle>
+            >{{ studentType.overview }}
+            </v-card-subtitle>
             <v-card-text
               class="cw-card-text"
               v-html="studentType.description"
@@ -108,10 +109,14 @@ export default {
   padding: 0.5rem;
 }
 
+.cw-card-title {
+  font-weight: 700;
+}
+
 .cw-card-subtitle {
   font-style: normal;
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .cw-card-text {
@@ -120,5 +125,15 @@ export default {
   color: #fff !important;
   line-height: normal;
   word-break: normal;
+}
+</style>
+
+<style>
+.cw-card-text > p:not(:first-child) {
+  margin-top: 16px;
+}
+
+.cw-card-text > ul > li:not(:first-child) {
+  margin-top: 8px;
 }
 </style>
