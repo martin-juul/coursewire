@@ -53,6 +53,14 @@ class Course extends Resource
     }
 
     /**
+     * @return string
+     */
+    public function title(): string
+    {
+        return $this->course_no . ' - ' . $this->title;
+    }
+
+    /**
      * Get the fields displayed by the resource.
      *
      * @param \Illuminate\Http\Request $request
