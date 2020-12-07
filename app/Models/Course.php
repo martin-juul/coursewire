@@ -34,7 +34,7 @@ use Spatie\SchemaOrg\Schema;
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Course extends AbstractModel
+class Course extends AbstractModel implements StructuredData
 {
     use HasFactory, Sluggable, SluggableScopeHelpers;
 

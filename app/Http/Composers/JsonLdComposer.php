@@ -24,14 +24,29 @@ class JsonLdComposer implements ViewComposer
             ->telephone(config('branding.phone'))
             ->address(
                 Schema::postalAddress()
-                ->streetAddress(config('branding.address.street'))
-                ->addressLocality(config('branding.address.locality'))
-                ->addressCountry(config('branding.address.country'))
-                ->addressCountry(config('branding.address.country'))
+                    ->streetAddress(config('branding.address.street'))
+                    ->addressLocality(config('branding.address.locality'))
+                    ->addressCountry(config('branding.address.country'))
+                    ->addressCountry(config('branding.address.country'))
+            );
+
+        $ldWebpage = Schema::webPage()
+            ->url(config('app.url'))
+            ->name(config('app.name'))
+            ->publisher(
+                Schema::organization()
+                    ->name(config('branding.name'))
+                    ->logo(
+                        Schema::imageObject()
+                            ->url(public_path('branding/sde/sde-logo-large.png'))
+                            ->setProperty('height', 384)
+                            ->setProperty('width', 649)
+                    )
             );
 
         $view->with([
-            'ldschema' => $business->jsonSerialize(),
+            'ldschema'  => $business->jsonSerialize(),
+            'ldwebpage' => $ldWebpage->jsonSerialize(),
         ]);
     }
 }

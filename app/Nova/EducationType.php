@@ -172,13 +172,14 @@ class EducationType extends Resource
                 ->options([
                     'IN_PERSON' => 'Fysisk',
                     'ONLINE'    => 'Online',
+                    'HYBRID'    => 'Hybrid',
                 ])->hideFromIndex(),
 
 
             Select::make(__('Finansering'), 'financial_aid_eligible')
                 ->options([
                     'PUBLIC_AID' => 'Offentlig',
-                    'PRIVATE'    => 'Privat',
+                    'PROVIDER_AID'    => 'Skolefinansiert',
                 ])->hideFromIndex(),
 
             Multiselect::make(__('Hovedforløb Uge dage'), 'day_of_week')

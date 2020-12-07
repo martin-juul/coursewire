@@ -16,9 +16,11 @@
         class="mb-4"
       ></v-img>
 
-      <v-spacer class="mt-4"></v-spacer>
+      <article>
+        <v-spacer class="mt-4"></v-spacer>
 
-      <section v-html="education.about"></section>
+        <section v-html="education.about"></section>
+      </article>
     </v-container>
 
   </v-main>

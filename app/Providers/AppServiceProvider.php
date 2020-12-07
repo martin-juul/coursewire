@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\Markdown;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        $this->app->singleton(Markdown::class, function () {
+            return new Markdown((new \Parsedown)
+                ->setBreaksEnabled(config('parsedown.breaks'))
+                ->setMarkupEscaped(config('parsedown.escape'))
+                ->setUrlsLinked(config('parsedown.link_urls'))
+                ->setSafeMode(config('parsedown.safe_mode')));
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+
     }
 }

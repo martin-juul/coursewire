@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Enums\ResourceGroup;
 use App\Nova\Lenses\CourseLens;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 
@@ -63,8 +64,8 @@ class Course extends Resource
         return [
             Text::make(__('Fag Nr'), 'course_no')->required()->sortable(),
             Text::make(__('Titel'), 'title')->required(),
-            Text::make(__('Oversigt'), 'overview')->hideFromIndex(),
-            Trix::make(__('Beskrivelse'), 'about')->hideFromIndex(),
+            Markdown::make(__('Oversigt'), 'overview')->hideFromIndex(),
+            Markdown::make(__('Beskrivelse'), 'about')->hideFromIndex(),
         ];
     }
 

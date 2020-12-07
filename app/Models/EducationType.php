@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\Markdown;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -30,6 +31,7 @@ use Spatie\SchemaOrg\Schema;
  * @property string|null $financial_aid_eligible
  * @property string|null $training_salary
  * @property string|null $completion_salary
+ * @property string|null $program_type
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Education[] $educations
  * @property-read int|null $educations_count
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType findSimilarSlugs($attribute, $config, $slug)
@@ -48,6 +50,7 @@ use Spatie\SchemaOrg\Schema;
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereImagePath($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereOccupationalCategory($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereProgramPrerequisites($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereProgramType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereShortName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereTermDuration($value)
@@ -58,7 +61,7 @@ use Spatie\SchemaOrg\Schema;
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class EducationType extends AbstractModel
+class EducationType extends AbstractModel implements StructuredData
 {
     use HasFactory, Sluggable, SluggableScopeHelpers;
 
@@ -111,7 +114,7 @@ class EducationType extends AbstractModel
     public function jsonLd() {
         return Schema::workBasedProgram()
             ->name($this->title)
-            ->description(strip_tags($this->about))
+            ->description(strip_tags(app(Markdown::class)->text($this->about)))
             ->image(route('asset.hero', ['text' => base64_encode($this->title)]))
             ->programType($this->program_type)
             ->occupationalCategory($this->occupational_category)

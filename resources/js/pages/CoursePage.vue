@@ -7,7 +7,7 @@
         class="pa-4 pa-sm-6 pa-md-8">
 
         <v-responsive class="mx-auto overflow-visible" style="max-width: 868px;">
-          <div class="course-body">
+          <article class="course-body">
             <v-badge
               inline
               :content="courseNo"
@@ -27,7 +27,7 @@
 
               <p>{{ about }}</p>
             </section>
-          </div>
+          </article>
         </v-responsive>
 
       </v-container>

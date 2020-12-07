@@ -16,5 +16,6 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         \View::composer('layouts.app', ConfigComposer::class);
+        \View::composer('layouts.app', JsonLdComposer::class);
     }
 }

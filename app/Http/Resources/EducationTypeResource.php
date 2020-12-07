@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Services\Markdown;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
@@ -22,7 +23,7 @@ class EducationTypeResource extends JsonResource
             'title'      => $this->title,
             'short_name' => $this->short_name,
             'slug'       => $this->slug,
-            'about'      => $this->about ? (new \Parsedown)->setSafeMode(true)->text($this->about) : null,
+            'about'      => $this->about ? app(Markdown::class)->text($this->about) : null,
             'blur_hash'  => $this->blur_hash,
             'image'      => $this->getImageUrl(),
             'created'    => $this->created_at,

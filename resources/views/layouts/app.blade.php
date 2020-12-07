@@ -20,16 +20,25 @@
     @else
         <meta property="og:type" content="website">
     @endif
-    <meta name="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}" />
+    <meta name="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}"/>
 
     @yield('meta_tags')
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="copyright" content="Martin Juul">
+    <meta name="generator" content="CourseWire by Martin Juul">
     <meta name="author" content="{{ config('branding.customer') }}">
-    <meta property="og:site_name" content="{{ config('app.name') }}"/>
+    <meta name="copyright" content="{{ config('branding.name') }}">
+    <meta property="og:site_name" content="{{ config('app.name') }}">
 
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
+    <script type="application/ld+json">
+        @if(app()->environment('local'))
+            {!! json_encode($ldwebpage, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+        @else
+            {!! json_encode($ldwebpage, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+        @endif
+    </script>
+
+    <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin/>
+    <link rel="preconnect dns-prefetch" href="https://cdn.jsdelivr.net"/>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
@@ -40,22 +49,26 @@
     </script>
 
     <script src="{{ mix('js/manifest.js') }}"></script>
-    <script src="{{ mix('js/vendor.js') }}" defer></script>
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="{{ mix('js/vendor.js') }}" defer async></script>
+    <script src="{{ mix('js/app.js') }}" defer async></script>
 </head>
 <body class="font-sans antialiased" dusk="{{ request()->route()->getName() }}">
 @section('jsonld')
-<script type="application/ld+json">
-    @yield('jsonld')
-</script>
+    <script type="application/ld+json">
+        @yield('jsonld')
+    </script>
 @endsection
 
 @if(View::hasSection('jsonld'))
-@yield('jsonld')
+    @yield('jsonld')
 @else
-<script type="application/ld+json">
-    {!! json_encode($ldschema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
-</script>
+    <script type="application/ld+json">
+        @if(app()->environment('local'))
+            {!! json_encode($ldschema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+        @else
+            {!! json_encode($ldschema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+        @endif
+    </script>
 @endif
 
 <div id="app">

@@ -22,6 +22,7 @@ class EducationTypeSeed extends Seeder
             'title'                    => 'IT-Supporter',
             'short_name'               => 'IT-Supporter',
             'occupational_category'    => '3512',
+            'program_type'             => 'apprenticeship',
             'time_to_complete'         => 'P2Y6M',
             'credential_awarded'       => 'degree',
             'program_prerequisites'    => 'HighSchool',
@@ -53,6 +54,7 @@ Som uddannet it-supporter vil dine primære opgaver være at:
             'title'                    => 'Datatekniker med speciale i programmering',
             'short_name'               => 'Datatekniker / Programmering',
             'occupational_category'    => '2512',
+            'program_type'             => 'apprenticeship',
             'time_to_complete'         => 'P5Y',
             'credential_awarded'       => 'degree',
             'program_prerequisites'    => 'HighSchool',
@@ -82,6 +84,7 @@ Som uddannet datatekniker med speciale i programmering vil dine primære opgaver
             'title'                    => 'Datatekniker med speciale i infrastruktur',
             'short_name'               => 'Datatekniker / Infrastruktur',
             'occupational_category'    => '3513',
+            'program_type'             => 'apprenticeship',
             'time_to_complete'         => 'P5Y',
             'credential_awarded'       => 'degree',
             'program_prerequisites'    => 'HighSchool',
@@ -91,7 +94,7 @@ Som uddannet datatekniker med speciale i programmering vil dine primære opgaver
             'financial_aid_eligible'   => 'PUBLIC_AID',
             'training_salary'          => 72.50,
             'completion_salary'        => 250,
-            'about' => '# Opbyg brugbare og brugervenlige IT-Systemer og Netværk
+            'about'                    => '# Opbyg brugbare og brugervenlige IT-Systemer og Netværk
 
 De kan være simple eller avancerede. Statiske eller dynamiske. Til brugere eller superbrugere. Som datetekniker med speciale i infrastruktur er det din opgave, at netværket eller it-systemet fungerer optimalt i forhold til målgruppen.
 Selv de nyeste og hurtigste maskiner arbejder ikke hurtigere end it-infrastrukturen giver plads til. Det er derfor dit job at sikre lynhurtige forbindelser internt og eksternt. Derfor har de fleste virksomheder brug for datateknikere med speciale i it-infrastruktur til at opbygge netværk, server- og storage-systemer.
