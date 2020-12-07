@@ -38,7 +38,18 @@ class UiController extends Controller
 
     public function educations()
     {
-        return view('educations');
+        $educations = EducationType::select(['id', 'slug'])->get();
+        $items = [];
+
+        foreach ($educations as $index => $item) {
+            $items[] = Schema::listItem()
+                ->position($index + 1)
+                ->url(route('educations.show', ['slug' => $item->slug]));
+        }
+
+        $jsonLd = Schema::itemList()->itemListElement($items);
+
+        return view('educations', ['jsonld' => $jsonLd]);
     }
 
     public function showEducation(Request $request, string $slug)
