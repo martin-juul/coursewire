@@ -22,7 +22,7 @@ class EducationTypeResource extends JsonResource
             'title'      => $this->title,
             'short_name' => $this->short_name,
             'slug'       => $this->slug,
-            'about'      => $this->about,
+            'about'      => $this->about ? (new \Parsedown)->setSafeMode(true)->text($this->about) : null,
             'blur_hash'  => $this->blur_hash,
             'image'      => $this->getImageUrl(),
             'created'    => $this->created_at,
