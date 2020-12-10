@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 use GuzzleHttp\RequestOptions;
 use Spatie\Sitemap\Crawler\Profile;

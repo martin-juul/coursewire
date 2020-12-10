@@ -1,10 +1,12 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Models;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Laravel\Nova\Actions\Actionable;
 
 /**
  * App\Models\Education
@@ -30,7 +32,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  */
 class Education extends AbstractModel
 {
-    use HasFactory, Sluggable, SluggableScopeHelpers;
+    use Actionable, HasFactory, Sluggable, SluggableScopeHelpers;
 
     protected $fillable = [
         'version',

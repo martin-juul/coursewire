@@ -19,13 +19,13 @@
             <section id="overview">
               <h2>Oversigt</h2>
 
-              <p>{{ overview }}</p>
+              <div v-html="overview"></div>
             </section>
 
             <section id="about">
               <h2>Om</h2>
 
-              <p>{{ about }}</p>
+              <div v-html="about"></div>
             </section>
           </article>
         </v-responsive>

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 use App\Nova\ActionEvent;
 use Laravel\Nova\Http\Middleware\{
@@ -118,7 +119,7 @@ return [
     |
     */
 
-    'pagination' => 'simple',
+    'pagination' => 'links',
 
     /*
     |--------------------------------------------------------------------------

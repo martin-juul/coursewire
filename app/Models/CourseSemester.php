@@ -1,6 +1,9 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Models;
+
+use Laravel\Nova\Actions\Actionable;
 
 /**
  * App\Models\CourseSemester
@@ -28,6 +31,8 @@ namespace App\Models;
  */
 class CourseSemester extends AbstractPivot
 {
+    use Actionable;
+
     protected $table = 'course_semester';
 
     protected $fillable = [

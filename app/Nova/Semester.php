@@ -1,8 +1,11 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Nova;
 
 use App\Nova\Enums\ResourceGroup;
+use App\Nova\Filters\SemesterEducationVersion;
+use App\Nova\Filters\SemesterStudentType;
 use Illuminate\Http\Request;
 use Juul\Fields\BelongsToMany;
 use Laravel\Nova\Fields\{BelongsTo, Number, Text};
@@ -92,7 +95,10 @@ class Semester extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new SemesterStudentType,
+            new SemesterEducationVersion,
+        ];
     }
 
     /**

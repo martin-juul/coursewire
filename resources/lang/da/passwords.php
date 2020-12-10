@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 return [
 
@@ -13,10 +14,10 @@ return [
     |
     */
 
-    'reset'     => 'Your password has been reset!',
-    'sent'      => 'We have emailed your password reset link!',
-    'throttled' => 'Please wait before retrying.',
-    'token'     => 'This password reset token is invalid.',
-    'user'      => "We can't find a user with that email address.",
+    'reset'     => 'Dit kodeord er blevet nulstillet!',
+    'sent'      => 'Vi har sendt et nulstillingslink til dig!',
+    'throttled' => 'Vent venligst før du prøver igen.',
+    'token'     => 'Der skete en fejl.',
+    'user'      => "Vi kan ikke finde en bruger med disse oplysniger.",
 
 ];

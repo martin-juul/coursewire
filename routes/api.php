@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 Route::get('courses', 'CourseController@index')
     ->name('api.courses.index');

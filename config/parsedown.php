@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 return [
     'safe_mode' => env('PARSEDOWN_SAFE_MODE', true),

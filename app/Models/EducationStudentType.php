@@ -1,6 +1,9 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Models;
+
+use Laravel\Nova\Actions\Actionable;
 
 /**
  * App\Models\EducationStudentType
@@ -25,6 +28,8 @@ namespace App\Models;
  */
 class EducationStudentType extends AbstractPivot
 {
+    use Actionable;
+
     public function education()
     {
         return $this->belongsTo(Education::class);

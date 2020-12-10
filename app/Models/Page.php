@@ -1,8 +1,10 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Laravel\Nova\Actions\Actionable;
 
 /**
  * App\Models\Page
@@ -26,7 +28,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  */
 class Page extends AbstractModel
 {
-    use HasFactory;
+    use Actionable, HasFactory;
 
     protected $fillable = [
         'title',

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Analytics;
 
@@ -76,7 +77,7 @@ class Metric extends DataModel
             }
         }
 
-        return 'unknown';
+        return __('Unknown');
     }
 
     private static function getLang(Request $request): string
