@@ -18,10 +18,13 @@ use Laravel\Nova\Actions\Actionable;
  * @property string|null $description
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ActionEvent[] $actions
+ * @property-read int|null $actions_count
+ * @method static \Illuminate\Database\Eloquent\Builder|AbstractModel disableCache()
  * @method static \Illuminate\Database\Eloquent\Builder|StudentType findSimilarSlugs($attribute, $config, $slug)
- * @method static \Illuminate\Database\Eloquent\Builder|StudentType newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|StudentType newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|StudentType query()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|StudentType newModelQuery()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|StudentType newQuery()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|StudentType query()
  * @method static \Illuminate\Database\Eloquent\Builder|StudentType whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|StudentType whereDescription($value)
  * @method static \Illuminate\Database\Eloquent\Builder|StudentType whereId($value)
@@ -29,6 +32,7 @@ use Laravel\Nova\Actions\Actionable;
  * @method static \Illuminate\Database\Eloquent\Builder|StudentType whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|StudentType whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|StudentType whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|AbstractModel withCacheCooldownSeconds($seconds = null)
  * @mixin \Eloquent
  */
 class StudentType extends AbstractModel

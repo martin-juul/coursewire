@@ -24,6 +24,8 @@ use Laravel\Sanctum\HasApiTokens;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $two_factor_secret
  * @property string|null $two_factor_recovery_codes
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ActionEvent[] $actions
+ * @property-read int|null $actions_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Sanctum\PersonalAccessToken[] $tokens

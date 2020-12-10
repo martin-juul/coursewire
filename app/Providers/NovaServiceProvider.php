@@ -7,8 +7,10 @@ use App\Analytics\Repository;
 use App\Models\User;
 use Coroowicaksono\ChartJsIntegration\AreaChart;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use OptimistDigital\NovaSettings\NovaSettings;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -22,6 +24,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         parent::boot();
 
         Nova::style('cw-dash', base_path('public/css/dashboard.css'));
+
+        static::bootSettings();
     }
 
     /**
@@ -100,6 +104,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             new \Mastani\NovaPasswordReset\NovaPasswordReset,
+            new \OptimistDigital\NovaSettings\NovaSettings,
         ];
     }
 
@@ -111,5 +116,20 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function register()
     {
         //
+    }
+
+    protected static function bootSettings()
+    {
+        NovaSettings::addSettingsFields([
+            Text::make('Navn', 'name'),
+            Text::make('Akronym', 'acronym'),
+            Text::make('E-Mail', 'email'),
+            Text::make('Telefon nr.', 'phone'),
+            Text::make('Hjemmeside', 'url'),
+            Text::make('Vej', 'street'),
+            Text::make('By', 'locality'),
+            Text::make('Post nr', 'postal_code'),
+            Text::make('Landekode', 'country'),
+        ], [], 'Branding');
     }
 }

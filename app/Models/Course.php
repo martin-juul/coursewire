@@ -20,12 +20,15 @@ use Spatie\SchemaOrg\Schema;
  * @property string|null $about
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ActionEvent[] $actions
+ * @property-read int|null $actions_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Semester[] $semesters
  * @property-read int|null $semesters_count
+ * @method static \Illuminate\Database\Eloquent\Builder|AbstractModel disableCache()
  * @method static \Illuminate\Database\Eloquent\Builder|Course findSimilarSlugs($attribute, $config, $slug)
- * @method static \Illuminate\Database\Eloquent\Builder|Course newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Course newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Course query()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Course newModelQuery()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Course newQuery()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Course query()
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereAbout($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereCourseNo($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereCreatedAt($value)
@@ -34,6 +37,7 @@ use Spatie\SchemaOrg\Schema;
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|AbstractModel withCacheCooldownSeconds($seconds = null)
  * @mixin \Eloquent
  */
 class Course extends AbstractModel implements StructuredData

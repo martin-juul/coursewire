@@ -15,19 +15,23 @@ use Laravel\Nova\Actions\Actionable;
  * @property int $semester
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ActionEvent[] $actions
+ * @property-read int|null $actions_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Course[] $courses
  * @property-read int|null $courses_count
  * @property-read \App\Models\Education $education
  * @property-read \App\Models\StudentType $studentType
- * @method static \Illuminate\Database\Eloquent\Builder|Semester newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Semester newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Semester query()
+ * @method static \Illuminate\Database\Eloquent\Builder|AbstractModel disableCache()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Semester newModelQuery()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Semester newQuery()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Semester query()
  * @method static \Illuminate\Database\Eloquent\Builder|Semester whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Semester whereEducationId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Semester whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Semester whereSemester($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Semester whereStudentTypeId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Semester whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|AbstractModel withCacheCooldownSeconds($seconds = null)
  * @mixin \Eloquent
  */
 class Semester extends AbstractModel

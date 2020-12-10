@@ -76,17 +76,17 @@ class UiController extends Controller
     private function jsonLdOrg(): EducationalOrganization
     {
         return Schema::educationalOrganization()
-            ->name(config('branding.name'))
-            ->alternateName(config('branding.acronym'))
-            ->url(config('branding.url'))
-            ->email(config('branding.email'))
-            ->telephone(config('branding.phone'))
+            ->name(nova_get_setting('branding.name', config('branding.name')))
+            ->alternateName(nova_get_setting('branding.acronym', config('branding.acronym')))
+            ->url(nova_get_setting('branding.url', config('branding.url')))
+            ->email(nova_get_setting('branding.email', config('branding.email')))
+            ->telephone(nova_get_setting('branding.phone', config('branding.phone')))
             ->address(
                 Schema::postalAddress()
-                    ->streetAddress(config('branding.address.street'))
-                    ->addressLocality(config('branding.address.locality'))
-                    ->postalCode(config('branding.address.postal_code'))
-                    ->addressCountry(config('branding.address.country'))
+                    ->streetAddress(nova_get_setting('branding.street', config('branding.address.street')))
+                    ->addressLocality(nova_get_setting('branding.locality', config('branding.address.locality')))
+                    ->addressCountry(nova_get_setting('branding.country', config('branding.address.country')))
+                    ->postalCode(nova_get_setting('branding.postal_code', config('branding.address.postal_code')))
             );
     }
 }

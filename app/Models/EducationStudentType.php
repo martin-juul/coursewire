@@ -13,6 +13,8 @@ use Laravel\Nova\Actions\Actionable;
  * @property string $student_type_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ActionEvent[] $actions
+ * @property-read int|null $actions_count
  * @property-read \App\Models\User $createdBy
  * @property-read \App\Models\Education $education
  * @property-read \App\Models\StudentType $studentType

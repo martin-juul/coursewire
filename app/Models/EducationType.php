@@ -34,12 +34,15 @@ use Spatie\SchemaOrg\Schema;
  * @property string|null $training_salary
  * @property string|null $completion_salary
  * @property string|null $program_type
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ActionEvent[] $actions
+ * @property-read int|null $actions_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Education[] $educations
  * @property-read int|null $educations_count
+ * @method static \Illuminate\Database\Eloquent\Builder|AbstractModel disableCache()
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType findSimilarSlugs($attribute, $config, $slug)
- * @method static \Illuminate\Database\Eloquent\Builder|EducationType newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|EducationType newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|EducationType query()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|EducationType newModelQuery()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|EducationType newQuery()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|EducationType query()
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereAbout($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereBlurHash($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereCompletionSalary($value)
@@ -61,6 +64,7 @@ use Spatie\SchemaOrg\Schema;
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereTrainingSalary($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EducationType whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|AbstractModel withCacheCooldownSeconds($seconds = null)
  * @mixin \Eloquent
  */
 class EducationType extends AbstractModel implements StructuredData
