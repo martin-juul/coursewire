@@ -7,6 +7,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Collection as BaseCollection;
 use OptimistDigital\NovaSettings\NovaSettings;
 
+/**
+ * App\Models\Settings
+ *
+ * @property string $key
+ * @property string|null $value
+ * @method static \Illuminate\Database\Eloquent\Builder|AbstractModel disableCache()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Settings newModelQuery()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Settings newQuery()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Settings query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Settings whereKey($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Settings whereValue($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|AbstractModel withCacheCooldownSeconds($seconds = null)
+ * @mixin \Eloquent
+ */
 class Settings extends AbstractModel
 {
     protected $primaryKey = 'key';
