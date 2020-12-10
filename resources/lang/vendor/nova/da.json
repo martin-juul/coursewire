@@ -42,9 +42,11 @@
     "Another user has updated this resource since this page was loaded. Please refresh the page and try again.": "Another user has updated this resource since this page was loaded. Please refresh the page and try again.",
     "Are you sure you want to delete this file?": "Are you sure you want to delete this file?",
     "Are you sure you want to run this action?": "Are you sure you want to run this action?",
-    "Attach": "Vedhæft",
-    "Attach & Attach Another": "Vedhæft & Vedhæft En Mere",
+    "Attach": "Tilføj",
+    "Attach Resource": "Tilføj",
+    "Attach & Attach Another": "Tilføj & Tilføj Ny",
     "Cancel": "Afslut",
+    "Cancel Attaching": "Fortryd",
     "Choose": "Vælg",
     "Choose File": "Vælg Fil",
     "Choose Type": "Vælg Type",
@@ -52,7 +54,7 @@
     "Click to choose": "Klik for at vælg",
     "Reset Filters": "Nulstil Filtre",
     "Create": "Opret",
-    "Create & Add Another": "Opret & Tilføj En Mere",
+    "Create & Add Another": "Opret & Tilføj Ny",
     "Delete File": "Slet Fil",
     "Edit": "Redigér",
     "Edit Attached": "Redigér Vedhæftede",
@@ -437,5 +439,8 @@
     "Thursday": "Torsdag",
     "Friday": "Fredag",
     "Saturday": "Lørdag",
-    "Sunday": "Søndag"
+    "Sunday": "Søndag",
+    "Target": "Målrettet",
+    "Exception": "Fejl",
+    "Finished": "Afsluttet"
 }
