@@ -28,7 +28,12 @@
   - [Educations Overview](#educations-overview)
     - [Educations Display](#educations-display)
   - [Administration Dashboard](#administration-dashboard)
-    - [Authentication](#authentication)
+    - [Student Type](#student-type)
+    - [Course](#course)
+    - [Semester](#semester)
+    - [Education](#education)
+    - [Education Version](#education-version)
+    - [Settings](#settings)
   - [Security Measures](#security-measures)
     - [Cross Site Request Forgery (CSRF)](#cross-site-request-forgery-csrf)
     - [Cross Origin Resource Sharing (CORS)](#cross-origin-resource-sharing-cors)
@@ -494,8 +499,83 @@ __Structured Data__
 
 ## Administration Dashboard
 
-### Authentication
+The dashboard provides the functionality to manage the actual resources in the application.
 
+To the left of the view, the sidebar is shown:
+
+![Sidebar](./admin-sidebar.png)
+
+The following sections displays the resource features. I've chosen to show all types on actions on Student Type,
+and omitted them from the other resource types - as the functionality behaves mostly the same.
+
+### Student Type
+
+**Index**
+
+![Student Type Index](./admin-student-type-index.png)
+
+**Detail**
+
+![Student Type Detail](./admin-student-type-detail.png)
+
+**Create**
+
+![Student Type Create](./admin-student-type-create.png)
+
+**Update**
+![Student Type Update](./admin-student-type-update.png)
+
+### Course
+
+**Index**
+
+![Course Index](./admin-course-index.png)
+
+### Semester
+
+**Index**
+
+![Semester Index](./admin-semesters-index.png)
+
+**Detail**
+
+![Semester Detail](./admin-semester-detail.png)
+
+**Filters**
+
+![Semester Filters](./admin-semester-filters.png)
+
+**Create**
+
+![Semester Create Step 1](./admin-semester-create-1.png)
+
+![Semester Create Step 2](./admin-semester-create-2.png)
+
+![Semester Create Step 3](./admin-semester-create-3.png)
+
+![Semester Create Step 4](./admin-semester-create-4.png)
+
+![Semester Create Step 5](./admin-semester-create-5.png)
+
+### Education
+
+**Index**
+
+![Education Index](./admin-education-index.png)
+
+**Detail**
+
+![Education Detail](./admin-education-detail.png)
+
+### Education Version
+
+**Index**
+
+![Education Version Index](./admin-education-version-index.png)
+
+### Settings
+
+![Settings](./admin-settings.png)
 
 ## Security Measures
 
