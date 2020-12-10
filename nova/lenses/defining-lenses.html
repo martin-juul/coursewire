@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Defining Lenses | CourseWire Docs</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="Informing about educations">
+    <meta name="theme-color" content="#c87f2f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/coursewire/assets/css/0.styles.bfc8dd69.css" as="style"><link rel="preload" href="/coursewire/assets/js/app.02511102.js" as="script"><link rel="preload" href="/coursewire/assets/js/2.fbd24a80.js" as="script"><link rel="preload" href="/coursewire/assets/js/34.6e3f0c23.js" as="script"><link rel="prefetch" href="/coursewire/assets/js/10.4212c2f9.js"><link rel="prefetch" href="/coursewire/assets/js/11.3c48ff1c.js"><link rel="prefetch" href="/coursewire/assets/js/12.8c4af0eb.js"><link rel="prefetch" href="/coursewire/assets/js/13.bf842588.js"><link rel="prefetch" href="/coursewire/assets/js/14.37b2191d.js"><link rel="prefetch" href="/coursewire/assets/js/15.c876d26f.js"><link rel="prefetch" href="/coursewire/assets/js/16.073345a7.js"><link rel="prefetch" href="/coursewire/assets/js/17.e24f1dd7.js"><link rel="prefetch" href="/coursewire/assets/js/18.8bfdb26b.js"><link rel="prefetch" href="/coursewire/assets/js/19.ffc8cf96.js"><link rel="prefetch" href="/coursewire/assets/js/20.36a0871b.js"><link rel="prefetch" href="/coursewire/assets/js/21.35f26c2d.js"><link rel="prefetch" href="/coursewire/assets/js/22.e5eca7c6.js"><link rel="prefetch" href="/coursewire/assets/js/23.585f7050.js"><link rel="prefetch" href="/coursewire/assets/js/24.1eb91c63.js"><link rel="prefetch" href="/coursewire/assets/js/25.b87544a9.js"><link rel="prefetch" href="/coursewire/assets/js/26.ca38d820.js"><link rel="prefetch" href="/coursewire/assets/js/27.cdd47a7e.js"><link rel="prefetch" href="/coursewire/assets/js/28.910457fd.js"><link rel="prefetch" href="/coursewire/assets/js/29.c1ae8d42.js"><link rel="prefetch" href="/coursewire/assets/js/3.8bf11098.js"><link rel="prefetch" href="/coursewire/assets/js/30.5cc41175.js"><link rel="prefetch" href="/coursewire/assets/js/31.9e2127cc.js"><link rel="prefetch" href="/coursewire/assets/js/32.5397ea66.js"><link rel="prefetch" href="/coursewire/assets/js/33.45080a30.js"><link rel="prefetch" href="/coursewire/assets/js/35.ddd28f5a.js"><link rel="prefetch" href="/coursewire/assets/js/36.bfb957fe.js"><link rel="prefetch" href="/coursewire/assets/js/37.52edfd39.js"><link rel="prefetch" href="/coursewire/assets/js/38.0c7c9bb2.js"><link rel="prefetch" href="/coursewire/assets/js/39.134dd667.js"><link rel="prefetch" href="/coursewire/assets/js/4.c93ddc9d.js"><link rel="prefetch" href="/coursewire/assets/js/40.0321689a.js"><link rel="prefetch" href="/coursewire/assets/js/41.685503da.js"><link rel="prefetch" href="/coursewire/assets/js/42.73b1c1d1.js"><link rel="prefetch" href="/coursewire/assets/js/43.ff4aa68f.js"><link rel="prefetch" href="/coursewire/assets/js/44.2cb09a15.js"><link rel="prefetch" href="/coursewire/assets/js/45.9071b634.js"><link rel="prefetch" href="/coursewire/assets/js/46.691acbad.js"><link rel="prefetch" href="/coursewire/assets/js/47.09900fe0.js"><link rel="prefetch" href="/coursewire/assets/js/48.31c05462.js"><link rel="prefetch" href="/coursewire/assets/js/49.3eb88337.js"><link rel="prefetch" href="/coursewire/assets/js/5.acf75b03.js"><link rel="prefetch" href="/coursewire/assets/js/50.be69d7ce.js"><link rel="prefetch" href="/coursewire/assets/js/51.d6025ff9.js"><link rel="prefetch" href="/coursewire/assets/js/52.afab6d12.js"><link rel="prefetch" href="/coursewire/assets/js/6.a7a1e44e.js"><link rel="prefetch" href="/coursewire/assets/js/7.cf5f8500.js"><link rel="prefetch" href="/coursewire/assets/js/8.80f7340e.js"><link rel="prefetch" href="/coursewire/assets/js/9.749dd9d2.js">
+    <link rel="stylesheet" href="/coursewire/assets/css/0.styles.bfc8dd69.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/coursewire/" class="home-link router-link-active"><!----> <span class="site-name">CourseWire Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/coursewire/specification/" class="nav-link">
+  Specification
+</a></div><div class="nav-item"><a href="/coursewire/setup/" class="nav-link">
+  Setup
+</a></div><div class="nav-item"><a href="/coursewire/style-guide/" class="nav-link">
+  Style guide
+</a></div><div class="nav-item"><a href="/coursewire/nova/" class="nav-link router-link-active">
+  Nova
+</a></div><div class="nav-item"><a href="/coursewire/forge/" class="nav-link">
+  Forge
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/coursewire/specification/" class="nav-link">
+  Specification
+</a></div><div class="nav-item"><a href="/coursewire/setup/" class="nav-link">
+  Setup
+</a></div><div class="nav-item"><a href="/coursewire/style-guide/" class="nav-link">
+  Style guide
+</a></div><div class="nav-item"><a href="/coursewire/nova/" class="nav-link router-link-active">
+  Nova
+</a></div><div class="nav-item"><a href="/coursewire/forge/" class="nav-link">
+  Forge
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Nova</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/coursewire/nova/" aria-current="page" class="sidebar-link">Laravel Nova</a></li><li><a href="/coursewire/nova/actions/defining-actions.html" class="sidebar-link">Defining Actions</a></li><li><a href="/coursewire/nova/actions/registering-actions.html" class="sidebar-link">Registering Actions</a></li><li><a href="/coursewire/nova/customization/assets.html" class="sidebar-link">Assets</a></li><li><a href="/coursewire/nova/customization/cards.html" class="sidebar-link">Cards</a></li><li><a href="/coursewire/nova/customization/dashboards.html" class="sidebar-link">Dashboards</a></li><li><a href="/coursewire/nova/customization/fields.html" class="sidebar-link">Fields</a></li><li><a href="/coursewire/nova/customization/frontend.html" class="sidebar-link">CSS / JavaScript</a></li><li><a href="/coursewire/nova/customization/localization.html" class="sidebar-link">Localization</a></li><li><a href="/coursewire/nova/customization/resource-tools.html" class="sidebar-link">Resource Tools</a></li><li><a href="/coursewire/nova/customization/stubs.html" class="sidebar-link">Stubs</a></li><li><a href="/coursewire/nova/customization/themes.html" class="sidebar-link">Themes</a></li><li><a href="/coursewire/nova/customization/tools.html" class="sidebar-link">Tools</a></li><li><a href="/coursewire/nova/dashboard/metrics.html" class="sidebar-link">Metrics</a></li><li><a href="/coursewire/nova/dashboard/tools.html" class="sidebar-link">Tools</a></li><li><a href="/coursewire/nova/filters/defining-filters.html" class="sidebar-link">Defining Filters</a></li><li><a href="/coursewire/nova/filters/registering-filters.html" class="sidebar-link">Registering Filters</a></li><li><a href="/coursewire/nova/lenses/defining-lenses.html" aria-current="page" class="active sidebar-link">Defining Lenses</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/coursewire/nova/lenses/registering-lenses.html" class="sidebar-link">Registering Lenses</a></li><li><a href="/coursewire/nova/metrics/defining-metrics.html" class="sidebar-link">Defining Metrics</a></li><li><a href="/coursewire/nova/metrics/registering-metrics.html" class="sidebar-link">Registering Metrics</a></li><li><a href="/coursewire/nova/nova-js/" class="sidebar-link">Overview</a></li><li><a href="/coursewire/nova/nova-js/event-bus.html" class="sidebar-link">Event Bus</a></li><li><a href="/coursewire/nova/nova-js/methods.html" class="sidebar-link">Methods</a></li><li><a href="/coursewire/nova/nova-js/properties.html" class="sidebar-link">Properties</a></li><li><a href="/coursewire/nova/resources/" class="sidebar-link">The Basics</a></li><li><a href="/coursewire/nova/resources/authorization.html" class="sidebar-link">Authorization</a></li><li><a href="/coursewire/nova/resources/date-fields.html" class="sidebar-link">Date Fields</a></li><li><a href="/coursewire/nova/resources/fields.html" class="sidebar-link">Fields</a></li><li><a href="/coursewire/nova/resources/file-fields.html" class="sidebar-link">File Fields</a></li><li><a href="/coursewire/nova/resources/relationships.html" class="sidebar-link">Relationships</a></li><li><a href="/coursewire/nova/resources/validation.html" class="sidebar-link">Validation</a></li><li><a href="/coursewire/nova/search/global-search.html" class="sidebar-link">Global Search</a></li><li><a href="/coursewire/nova/search/scout-integration.html" class="sidebar-link">Scout Integration</a></li><li><a href="/coursewire/nova/installation.html" class="sidebar-link">Installation</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="defining-lenses"><a href="#defining-lenses" class="header-anchor">#</a> Defining Lenses</h1> <p></p><div class="table-of-contents"><ul><li><a href="#lens-metrics">Lens Metrics</a></li><li><a href="#lens-filters">Lens Filters</a></li><li><a href="#lens-actions">Lens Actions</a></li></ul></div><p></p> <p>While similar to filters, Nova lenses allow you to fully customize the underlying resource Eloquent query. For example, you may want to list of all your application's users sorted by their total lifetime revenue. Creating such a list may require you to join to additional tables and perform aggregate functions within the query. If it sounds complicated, don't worry - this is exactly the type of situation lenses are designed to solve:</p> <p><img src="img/lens.png" alt="Lens"></p> <p>To get started, you may use the <code>nova:lens</code> Artisan command. By default, Nova will place newly generated lenses in the <code>app/Nova/Lenses</code> directory:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>php artisan nova:lens MostValuableUsers
+</code></pre></div><p>Each lens generated by Nova contains several methods. However, the two methods we are currently concerned with are the <code>query</code> and <code>fields</code> methods. The <code>query</code> method is responsible for building the Eloquent query that is needed to retrieve the desired data, while the <code>fields</code> method returns an array of fields that should be displayed when viewing the lens.</p> <p>To learn more, let's take a look at a complete lens definition that displays users and their lifetime revenue:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Nova<span class="token punctuation">\</span>Lenses</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Laravel<span class="token punctuation">\</span>Nova<span class="token punctuation">\</span>Fields<span class="token punctuation">\</span>ID</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Request</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Laravel<span class="token punctuation">\</span>Nova<span class="token punctuation">\</span>Fields<span class="token punctuation">\</span>Text</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Laravel<span class="token punctuation">\</span>Nova<span class="token punctuation">\</span>Lenses<span class="token punctuation">\</span>Lens</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Laravel<span class="token punctuation">\</span>Nova<span class="token punctuation">\</span>Fields<span class="token punctuation">\</span>Number</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Facades<span class="token punctuation">\</span>DB</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Laravel<span class="token punctuation">\</span>Nova<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Requests<span class="token punctuation">\</span>LensRequest</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MostValuableUsers</span> <span class="token keyword">extends</span> <span class="token class-name">Lens</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * Get the query builder / paginator for the lens.
+     *
+     * @param  \Laravel\Nova\Http\Requests\LensRequest  $request
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return mixed
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">function</span> <span class="token function">query</span><span class="token punctuation">(</span>LensRequest <span class="token variable">$request</span><span class="token punctuation">,</span> <span class="token variable">$query</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">withOrdering</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">withFilters</span><span class="token punctuation">(</span>
+            <span class="token variable">$query</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">select</span><span class="token punctuation">(</span>self<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">columns</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                  <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'licenses'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'users.id'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'licenses.user_id'</span><span class="token punctuation">)</span>
+                  <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">orderBy</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'revenue'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'desc'</span><span class="token punctuation">)</span>
+                  <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">groupBy</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users.id'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'users.name'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * Get the columns that should be selected.
+     *
+     * @return array
+     */</span>
+    <span class="token keyword">protected</span> <span class="token keyword">static</span> <span class="token keyword">function</span> <span class="token function">columns</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>
+            <span class="token single-quoted-string string">'users.id'</span><span class="token punctuation">,</span>
+            <span class="token single-quoted-string string">'users.name'</span><span class="token punctuation">,</span>
+            <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">raw</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'sum(licenses.price) as revenue'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * Get the fields available to the lens.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">fields</span><span class="token punctuation">(</span>Request <span class="token variable">$request</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>
+            <span class="token constant">ID</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">make</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'ID'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'id'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            Text<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">make</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+            Number<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">make</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Revenue'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'revenue'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token single-quoted-string string">'$'</span><span class="token punctuation">.</span><span class="token function">number_format</span><span class="token punctuation">(</span><span class="token variable">$value</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * Get the cards available for the lens.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">cards</span><span class="token punctuation">(</span>Request <span class="token variable">$request</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * Get the filters available for the lens.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">filters</span><span class="token punctuation">(</span>Request <span class="token variable">$request</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * Get the actions available for the lens.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">actions</span><span class="token punctuation">(</span>Request <span class="token variable">$request</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * Get the URI key for the lens.
+     *
+     * @return string
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">uriKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token single-quoted-string string">'most-profitable-users'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></code></pre></div><div class="custom-block tip"><p class="custom-block-title">Columns Method</p> <p>In this example, the <code>columns</code> method has been extracted from the <code>query</code> method for readability. It is not &quot;required&quot; and is not a &quot;feature&quot; of lenses.</p></div> <div class="custom-block warning"><p class="custom-block-title">Lens Column Selection</p> <p>When writing your lens query, you should always try to include the resource's ID as a selected column. If the ID is not included, Nova will not be able to display the &quot;Select All Matching&quot; option for the lens. In addition, the resource deletion menu will not be available.</p></div> <p>As you can see in the example above, the <code>query</code> method has full control of the Eloquent query used to retrieve the lens data. The <code>fields</code> method may leverage any of Nova's fields in order to appropriately display the data retrieved by the query.</p> <h3 id="lens-metrics"><a href="#lens-metrics" class="header-anchor">#</a> Lens Metrics</h3> <p>Each Nova lens also contains a <code>cards</code> method. This method allows you to attach any of your existing <a href="/coursewire/nova/metrics/defining-metrics.html">metrics</a> to the lens:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Nova<span class="token punctuation">\</span>Metrics<span class="token punctuation">\</span>NewUsers</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * Get the cards available for the lens.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return array
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">cards</span><span class="token punctuation">(</span>Request <span class="token variable">$request</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">NewUsers</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="lens-filters"><a href="#lens-filters" class="header-anchor">#</a> Lens Filters</h3> <p>Each Nova lens also contains a <code>filters</code> method. This method allows you to attach any of your existing <a href="/coursewire/nova/filters/defining-filters.html">filters</a> to the lens:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Nova<span class="token punctuation">\</span>Filters<span class="token punctuation">\</span>UserType</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * Get the filters available for the lens.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return array
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">filters</span><span class="token punctuation">(</span>Request <span class="token variable">$request</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">UserType</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="lens-actions"><a href="#lens-actions" class="header-anchor">#</a> Lens Actions</h3> <p>Each Nova lens also contains an <code>actions</code> method. This method allows you to attach any of your existing <a href="/coursewire/nova/actions/defining-actions.html">actions</a> to the lens:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Nova<span class="token punctuation">\</span>Actions<span class="token punctuation">\</span>Export</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * Get the actions available for the lens.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return array
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">actions</span><span class="token punctuation">(</span>Request <span class="token variable">$request</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">Export</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="custom-block warning"><p class="custom-block-title">Resource Actions</p> <p>By default, lens will inherit the actions of their associated resource. However, you may override the <code>actions</code> method on the lens to define a custom set of actions that should be available to the lens.</p></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/24/2020, 11:08:49 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/coursewire/nova/filters/registering-filters.html" class="prev">
+        Registering Filters
+      </a></span> <span class="next"><a href="/coursewire/nova/lenses/registering-lenses.html">
+        Registering Lenses
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/coursewire/assets/js/app.02511102.js" defer></script><script src="/coursewire/assets/js/2.fbd24a80.js" defer></script><script src="/coursewire/assets/js/34.6e3f0c23.js" defer></script>
+  </body>
+</html>
