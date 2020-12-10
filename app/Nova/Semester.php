@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Nova;
 
 use App\Nova\Enums\ResourceGroup;
+use App\Nova\Filters\SemesterEducationType;
 use App\Nova\Filters\SemesterEducationVersion;
 use App\Nova\Filters\SemesterStudentType;
 use Illuminate\Http\Request;
@@ -96,6 +97,7 @@ class Semester extends Resource
     public function filters(Request $request)
     {
         return [
+            new SemesterEducationType,
             new SemesterStudentType,
             new SemesterEducationVersion,
         ];
