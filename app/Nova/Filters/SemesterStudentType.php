@@ -28,9 +28,7 @@ class SemesterStudentType extends Filter
      */
     public function apply(Request $request, $query, $value)
     {
-        return $query->whereHas('studentType', function ($query) use ($value) {
-            $query->where('slug', $value);
-        });
+        return $query->where('student_type_id', $value);
     }
 
     /**
@@ -47,7 +45,7 @@ class SemesterStudentType extends Filter
         foreach ($res as $studentType) {
             $options[] = [
                 'name' => $studentType->title,
-                'id' => $studentType->slug,
+                'value' => $studentType->id,
             ];
         }
 
