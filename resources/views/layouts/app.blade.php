@@ -12,7 +12,7 @@
         @endif
     </title>
 
-    <link rel="shortcut icon" type="image/x-icon" href="/branding/sde/favicon.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ \App\Assets\Logo::favicon() }}"/>
 
 
     @if(View::hasSection('og.type'))

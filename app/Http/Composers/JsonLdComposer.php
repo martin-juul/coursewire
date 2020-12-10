@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Http\Composers;
 
+use App\Assets\Logo;
 use Illuminate\View\View;
 use Spatie\SchemaOrg\Schema;
 
@@ -39,7 +40,7 @@ class JsonLdComposer implements ViewComposer
                     ->name(config('branding.name'))
                     ->logo(
                         Schema::imageObject()
-                            ->url(public_path('branding/sde/sde-logo-large.png'))
+                            ->url(secure_url(Logo::banner()))
                             ->setProperty('height', 384)
                             ->setProperty('width', 649)
                     )

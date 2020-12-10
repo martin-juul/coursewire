@@ -180,7 +180,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\ModelObserverProvider::class,
-        App\Providers\PageVisitsServiceProvider::class,
         App\Providers\ViewServiceProvider::class,
         App\Providers\BladeExtensionProvider::class,
 

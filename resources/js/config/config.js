@@ -8,6 +8,8 @@ export function parseConfig() {
     customer: '',
     customerAcronym: '',
     customerUrl: '',
+    icon: '',
+    logo: '',
     env: '',
     error: false,
   };

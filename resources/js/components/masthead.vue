@@ -10,7 +10,7 @@
     <v-img
       max-height="40"
       max-width="40"
-      src="/branding/sde/sde-brand.svg"
+      :src="icon"
       contain
     ></v-img>
   </v-app-bar-nav-icon>
@@ -29,5 +29,10 @@
 </template>
 
 <script>
-export default {};
+import config from '../config';
+export default {
+  data: () => ({
+    icon: config.icon,
+  })
+};
 </script>

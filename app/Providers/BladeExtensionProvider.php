@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\Assets\Logo;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -33,5 +34,9 @@ class BladeExtensionProvider extends ServiceProvider
             $route = request()->route()->getName();
             return "<?php echo dusk=\"{$route}\" ?>";
         });
+
+        Blade::directive('appbanner', fn() => Logo::banner());
+        Blade::directive('appfavicon', fn() => Logo::favicon());
+        Blade::directive('appicon', fn() => Logo::icon());
     }
 }

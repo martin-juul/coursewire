@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Http\Composers;
 
+use App\Assets\Logo;
 use Illuminate\View\View;
 
 class ConfigComposer implements ViewComposer
@@ -16,6 +17,8 @@ class ConfigComposer implements ViewComposer
             'customerUrl'     => nova_get_setting('branding.url', config('branding.url')),
             'env'             => config('app.env'),
             'baseUrl'         => config('app.url'),
+            'banner'          => secure_url(Logo::banner()),
+            'icon'            => secure_url(Logo::icon()),
         ]);
     }
 }

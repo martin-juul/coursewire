@@ -4,9 +4,11 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use App\Analytics\Repository;
+use App\Assets\Logo;
 use App\Models\User;
 use Coroowicaksono\ChartJsIntegration\AreaChart;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
@@ -120,6 +122,35 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     protected static function bootSettings()
     {
+        NovaSettings::addSettingsFields([
+            Image::make('Banner', 'banner')
+                ->disk('spaces')
+                ->prunable()
+                ->preview(function ($value, $disk) {
+                    return $value ?
+                        config('app.cdn_url') . '/' . $value
+                        : Logo::banner();
+                }),
+
+            Image::make('Favicon', 'favicon')
+                ->disk('spaces')
+                ->prunable()
+                ->preview(function ($value, $disk) {
+                    return $value ?
+                        config('app.cdn_url') . '/' . $value
+                        : Logo::favicon();
+                }),
+
+            Image::make('Ikon', 'icon')
+                ->disk('spaces')
+                ->prunable()
+                ->preview(function ($value, $disk) {
+                    return $value ?
+                        config('app.cdn_url') . '/' . $value
+                        : Logo::icon();
+                }),
+        ], [], 'Logo');
+
         NovaSettings::addSettingsFields([
             Text::make('Navn', 'name'),
             Text::make('Akronym', 'acronym'),
