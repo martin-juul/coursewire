@@ -22,8 +22,7 @@
             {{ course.title }}
           </v-card-title>
 
-          <v-card-text class="white text--primary pa-4">
-            <p>{{ course.overview }}</p>
+          <v-card-text class="white text--primary pa-4" v-html="course.overview">
           </v-card-text>
 
           <v-card-actions class="no-print">
