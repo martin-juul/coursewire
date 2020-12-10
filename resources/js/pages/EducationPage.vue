@@ -13,10 +13,10 @@
         class="mb-4"
       ></v-img>
 
-      <article>
+      <article class="mb-4 mt-4">
         <v-spacer class="mt-4"></v-spacer>
 
-        <section v-html="education.about"></section>
+        <section class="cw-text" v-html="education.about"></section>
       </article>
     </v-container>
 
