@@ -6,6 +6,8 @@
     >
       <v-img
         :src="education.image"
+        :alt="education.title"
+        aria-roledescription="title"
         max-height="200"
         contain
         class="mb-4"
