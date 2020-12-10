@@ -145,6 +145,10 @@ class Repository
 
     public function isRecorded(string $ip): bool
     {
+        if (!(bool)$this->config['remember_ip']) {
+            return false;
+        }
+
         $key = "{$this->prefix}_ips:$ip";
 
         if ($this->connection->client()->exists($key)) {
@@ -163,7 +167,7 @@ class Repository
      */
     protected function noExpiration($periodKey): bool
     {
-        return $this->connection->client()->ttl($periodKey) === -1 || !$this->connection->client()->exists($periodKey);
+        return $this->connection->client()->ttl($periodKey) === -1 || $this->connection->client()->exists($periodKey);
     }
 
     /**
