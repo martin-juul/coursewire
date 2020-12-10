@@ -1,10 +1,5 @@
 <template>
   <v-main v-if="!error">
-    <Header
-      v-if="!loading"
-      class="text-center" style="margin-top: -54px;"
-      :title="education.title"></Header>
-
     <v-container
       style="max-width: 868px;" class="pb-4"
       v-if="!loading"
