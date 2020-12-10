@@ -28,6 +28,8 @@ class ActionEvent extends ActionResource
 
     public static $title = 'name';
 
+    public static $globallySearchable = false;
+
     /**
      * Get the fields displayed by the resource.
      *

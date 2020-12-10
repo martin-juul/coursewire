@@ -25,14 +25,9 @@ class CourseSemester extends Resource
      */
     public static $title = 'id';
 
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-        'id',
-    ];
+    public static $searchable = false;
+
+    public static $globallySearchable = false;
 
     public static $displayInNavigation = false;
 
@@ -46,7 +41,6 @@ class CourseSemester extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
             BelongsTo::make('Semester'),
             BelongsTo::make('Course'),
             Number::make(__('Dage'), 'duration'),
