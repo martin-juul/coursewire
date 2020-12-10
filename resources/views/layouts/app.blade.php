@@ -53,22 +53,18 @@
     <script src="{{ mix('js/app.js') }}" defer async></script>
 </head>
 <body class="font-sans antialiased" dusk="{{ request()->route()->getName() }}">
-@section('jsonld')
-    <script type="application/ld+json">
-        @yield('jsonld')
-    </script>
-@endsection
-
 @if(View::hasSection('jsonld'))
     @yield('jsonld')
 @else
-    <script type="application/ld+json">
-        @if(app()->environment('local'))
-            {!! json_encode($ldschema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
-        @else
-            {!! json_encode($ldschema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
-        @endif
-    </script>
+    @isset($ldschema)
+        <script type="application/ld+json">
+            @if(app()->environment('local'))
+                {!! json_encode($ldschema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+            @else
+                {!! json_encode($ldschema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+            @endif
+        </script>
+    @endisset
 @endif
 
 <div id="app">
