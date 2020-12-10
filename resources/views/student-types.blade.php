@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Elevtyper
-@endsection
+@section('title', __('common.studentTypes'))
 
 @section('meta_tags')
     <meta name="description"

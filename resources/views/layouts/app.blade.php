@@ -52,7 +52,12 @@
     <script src="{{ mix('js/vendor.js') }}" defer async></script>
     <script src="{{ mix('js/app.js') }}" defer async></script>
 </head>
+@if(request()->route())
 <body class="font-sans antialiased" dusk="{{ request()->route()->getName() }}">
+@else
+<body class="font-sans antialiased">
+@endif
+
 @if(View::hasSection('jsonld'))
     @yield('jsonld')
 @else
@@ -73,7 +78,13 @@
         <wire-masthead></wire-masthead>
 
         <v-main>
-            <router-view></router-view>
+            @if(View::hasSection('content'))
+                <v-container>
+                    @yield('content')
+                </v-container>
+            @else
+                <router-view></router-view>
+            @endif
         </v-main>
 
         <wire-impressum></wire-impressum>

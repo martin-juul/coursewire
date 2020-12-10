@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    {{ $title }}
-@endsection
+@section('title', $title)
 
 @section('meta_tags')
     <meta property="og:title" content="{{ $title }}" />

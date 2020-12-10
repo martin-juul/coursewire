@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Fag
-@endsection
+@section('title', __('common.courses'))
 
 @section('meta_tags')
     <meta name="description"

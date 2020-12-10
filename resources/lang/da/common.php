@@ -2,5 +2,8 @@
 declare(strict_types=1);
 
 return [
-    'Unknown' => 'Ukendt',
+    'courses'      => 'Fag',
+    'educations'   => 'Uddannelser',
+    'studentTypes' => 'Elev typer',
+    'unknown'      => 'Ukendt',
 ];
