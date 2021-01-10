@@ -9379,23 +9379,23 @@
         },
         {
             "name": "torann/geoip",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Torann/laravel-geoip.git",
-                "reference": "41b153a5b71267b23846319da7cbed3436e289e6"
+                "reference": "f16d5df66ecb6ba4ffaef52abef519fbc19596d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Torann/laravel-geoip/zipball/41b153a5b71267b23846319da7cbed3436e289e6",
-                "reference": "41b153a5b71267b23846319da7cbed3436e289e6",
+                "url": "https://api.github.com/repos/Torann/laravel-geoip/zipball/f16d5df66ecb6ba4ffaef52abef519fbc19596d3",
+                "reference": "f16d5df66ecb6ba4ffaef52abef519fbc19596d3",
                 "shasum": ""
             },
             "require": {
                 "illuminate/cache": "^8.0",
                 "illuminate/console": "^8.0",
                 "illuminate/support": "^8.0",
-                "php": "^7.2"
+                "php": "^7.2 || ^8.0"
             },
             "require-dev": {
                 "geoip2/geoip2": "~2.1",
@@ -9453,9 +9453,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Torann/laravel-geoip/issues",
-                "source": "https://github.com/Torann/laravel-geoip/tree/3.0.1"
+                "source": "https://github.com/Torann/laravel-geoip/tree/3.0.2"
             },
-            "time": "2020-09-10T13:32:34+00:00"
+            "time": "2020-12-21T19:12:11+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
