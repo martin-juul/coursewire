@@ -9666,19 +9666,20 @@
         },
         {
             "name": "whitecube/nova-flexible-content",
-            "version": "v0.2.6",
+            "version": "0.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/whitecube/nova-flexible-content.git",
-                "reference": "6b48d047d864b1d8178d9dae1b3294ea1098d0d9"
+                "reference": "d773313e03b7acdc3e698c1c7b4abf414c156359"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/whitecube/nova-flexible-content/zipball/6b48d047d864b1d8178d9dae1b3294ea1098d0d9",
-                "reference": "6b48d047d864b1d8178d9dae1b3294ea1098d0d9",
+                "url": "https://api.github.com/repos/whitecube/nova-flexible-content/zipball/d773313e03b7acdc3e698c1c7b4abf414c156359",
+                "reference": "d773313e03b7acdc3e698c1c7b4abf414c156359",
                 "shasum": ""
             },
             "require": {
+                "laravel/nova": "^3.2",
                 "php": ">=7.1.0"
             },
             "type": "library",
@@ -9716,7 +9717,7 @@
             ],
             "support": {
                 "issues": "https://github.com/whitecube/nova-flexible-content/issues",
-                "source": "https://github.com/whitecube/nova-flexible-content/tree/v0.2.6"
+                "source": "https://github.com/whitecube/nova-flexible-content/tree/0.2.7"
             },
             "funding": [
                 {
@@ -9724,7 +9725,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-14T17:15:59+00:00"
+            "time": "2021-01-07T09:14:09+00:00"
         }
     ],
     "packages-dev": [
