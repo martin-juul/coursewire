@@ -3324,16 +3324,16 @@
         },
         {
             "name": "mastani/nova-password-reset",
-            "version": "v1.0",
+            "version": "v1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mastani/nova-password-reset.git",
-                "reference": "48f9bb9ccb4103df8ff6b3e40a243ff2afd7a4cb"
+                "reference": "115a31d60bcec927b52092a1c357ed5acc09fa6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mastani/nova-password-reset/zipball/48f9bb9ccb4103df8ff6b3e40a243ff2afd7a4cb",
-                "reference": "48f9bb9ccb4103df8ff6b3e40a243ff2afd7a4cb",
+                "url": "https://api.github.com/repos/mastani/nova-password-reset/zipball/115a31d60bcec927b52092a1c357ed5acc09fa6b",
+                "reference": "115a31d60bcec927b52092a1c357ed5acc09fa6b",
                 "shasum": ""
             },
             "require": {
@@ -3363,9 +3363,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mastani/nova-password-reset/issues",
-                "source": "https://github.com/mastani/nova-password-reset/tree/v1.0"
+                "source": "https://github.com/mastani/nova-password-reset/tree/v1.1"
             },
-            "time": "2020-11-20T08:17:00+00:00"
+            "time": "2020-12-16T22:33:39+00:00"
         },
         {
             "name": "maxmind-db/reader",
