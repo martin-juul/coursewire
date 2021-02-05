@@ -5796,23 +5796,23 @@
         },
         {
             "name": "spatie/laravel-referer",
-            "version": "1.7.0",
+            "version": "1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-referer.git",
-                "reference": "990a25338404b3c46fa034a29bf0b9438ef7687c"
+                "reference": "09a72574fb1ca2c2973eab67c4e30d6109eabcf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-referer/zipball/990a25338404b3c46fa034a29bf0b9438ef7687c",
-                "reference": "990a25338404b3c46fa034a29bf0b9438ef7687c",
+                "url": "https://api.github.com/repos/spatie/laravel-referer/zipball/09a72574fb1ca2c2973eab67c4e30d6109eabcf9",
+                "reference": "09a72574fb1ca2c2973eab67c4e30d6109eabcf9",
                 "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "~5.8.0|^6.0|^7.0|^8.0",
                 "illuminate/http": "~5.8.0|^6.0|^7.0|^8.0",
                 "illuminate/support": "~5.8.0|^6.0|^7.0|^8.0",
-                "php": "^7.2"
+                "php": "^7.2|^8.0"
             },
             "require-dev": {
                 "orchestra/testbench": "~3.8.0|^4.0|^5.0|^6.0",
@@ -5855,7 +5855,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2020-09-09T09:14:36+00:00"
+            "time": "2021-01-15T07:42:58+00:00"
         },
         {
             "name": "spatie/laravel-sitemap",
