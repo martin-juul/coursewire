@@ -3789,16 +3789,16 @@
         },
         {
             "name": "optimistdigital/nova-settings",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/optimistdigital/nova-settings.git",
-                "reference": "90cf967fbee60e22ac6683502989d38d9350263c"
+                "reference": "96cf5c88998185f635349d3b6ab22b47f6b79906"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/optimistdigital/nova-settings/zipball/90cf967fbee60e22ac6683502989d38d9350263c",
-                "reference": "90cf967fbee60e22ac6683502989d38d9350263c",
+                "url": "https://api.github.com/repos/optimistdigital/nova-settings/zipball/96cf5c88998185f635349d3b6ab22b47f6b79906",
+                "reference": "96cf5c88998185f635349d3b6ab22b47f6b79906",
                 "shasum": ""
             },
             "require": {
@@ -3843,7 +3843,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-12-04T08:22:05+00:00"
+            "time": "2021-01-18T10:23:46+00:00"
         },
         {
             "name": "optimistdigital/nova-translations-loader",
